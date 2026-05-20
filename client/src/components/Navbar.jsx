@@ -5,8 +5,13 @@ import { assets } from '../../assets/assets'
 
 const Navbar = ({ setShowLogin }) => {
 
+    const navigate = useNavigate()
+    const location = useLocation()
+    const searchRef = useRef(null)
+    const [showSearch, setShowSearch] = useState(false)
+
     const cartCount = getTotalCartCount ? getTotalCartCount() : 0
-    
+
     const navLinks = [
         { label: 'Home', path: '/' },
         { label: 'Menu', href: '#explore-menu' },
