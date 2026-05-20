@@ -36,6 +36,9 @@ const LoginPopup = ({ setShowLogin }) => {
         setError('')
     }
 
+    const onSubmit = async e => {
+    }
+
     return (
         <div className='login-popup' onClick={e => e.target === e.currentTarget && setShowLogin(false)}>
             <form className="login-popup-container" onSubmit={onSubmit}>
