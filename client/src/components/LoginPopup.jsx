@@ -37,6 +37,7 @@ const LoginPopup = ({ setShowLogin }) => {
     }
 
     const onSubmit = async e => {
+        e.preventDefault()
     }
 
     return (
