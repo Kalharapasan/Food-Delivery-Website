@@ -36,7 +36,12 @@ const Footer = () => {
 
             <div className="footer-col">
                 <h4>Support</h4>
-                
+                <ul>
+                    <li>FAQ</li>
+                    <li>Help Center</li>
+                    <li>Track Order</li>
+                    <li>Refund Policy</li>
+                </ul>
             </div>
 
 
