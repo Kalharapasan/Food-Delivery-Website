@@ -4,7 +4,7 @@ import Fooditem from '../Fooditem'
 
 const SkeletonCard = () => (
     <div className="food-item-skeleton">
-        
+        <div className="skeleton skeleton-img" />
     </div>
 )
 
