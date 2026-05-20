@@ -39,12 +39,10 @@ const LoginPopup = ({ setShowLogin }) => {
     const onSubmit = async e => {
         e.preventDefault()
         if (!agreed) { setError('Please agree to the terms'); return }
-
         setLoading(true)
         setError('')
 
         let result
-
         if (currState === "Login") {
             result = await login(data.email, data.password)
         } else {
@@ -52,7 +50,6 @@ const LoginPopup = ({ setShowLogin }) => {
         }
 
         setLoading(false)
-
         if (result.success) {
             setShowLogin(false)
         } else {
@@ -69,7 +66,6 @@ const LoginPopup = ({ setShowLogin }) => {
     return (
         <div className='login-popup' onClick={e => e.target === e.currentTarget && setShowLogin(false)}>
             <form className="login-popup-container" onSubmit={onSubmit}>
-
                 <button
                     type="button"
                     className="login-popup-close"
@@ -177,8 +173,9 @@ const LoginPopup = ({ setShowLogin }) => {
                         <>Already have an account? <span onClick={() => switchState('Login')}>Sign in</span></>
                     )}
                 </p>
-
             </form>
         </div>
     )
 }
+
+export default LoginPopup
