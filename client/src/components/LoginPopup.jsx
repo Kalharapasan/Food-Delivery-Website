@@ -47,6 +47,10 @@ const LoginPopup = ({ setShowLogin }) => {
                     <span>Mr.Chai</span>
                 </div>
 
+                <div className="login-popup-title">
+                    
+                </div>
+
             </form>
         </div>
     )
