@@ -4,6 +4,11 @@ import { StoreContext } from '../../context/StoreContext'
 import { assets } from '../../assets/assets'
 
 const Navbar = ({ setShowLogin }) => {
+
+    const handleSearchSelect = (item) => {
+        
+    }
+
     return (
         <nav className="navbar">
 
