@@ -109,6 +109,17 @@ const StoreContextProvider = ({ children }) => {
         }
     };
 
+    const getTotalCartAmount = () => {
+        let total = 0;
+        for (const [id, qty] of Object.entries(cartItem)) {
+            if (qty > 0) {
+                const product = food_list.find(p => p._id === id);
+                if (product) total += product.price * qty;
+            }
+        }
+        return total;
+    };
+
     const contextValue = {
         food_list,
         cartItem,
