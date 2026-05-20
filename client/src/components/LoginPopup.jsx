@@ -106,6 +106,15 @@ const LoginPopup = ({ setShowLogin }) => {
                     </div>
                 </div>
 
+                {error && (
+                    <div style={{
+                        background: '#FEE2E2', color: '#EF4444', borderRadius: 8,
+                        padding: '10px 14px', fontSize: 13, fontWeight: 500
+                    }}>
+                        {error}
+                    </div>
+                )}
+
             </form>
         </div>
     )
