@@ -23,5 +23,12 @@ const UserIcon = () => (
 )
 
 const LoginPopup = ({ setShowLogin }) => {
+    const { login, register } = useContext(StoreContext)
+    const [currState, setCurrState] = useState("Login")
+    const [loading, setLoading] = useState(false)
+    const [error, setError] = useState('')
+    const [agreed, setAgreed] = useState(false)
+
+
     return ()
 }
