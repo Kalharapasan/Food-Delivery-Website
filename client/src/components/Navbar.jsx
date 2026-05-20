@@ -15,6 +15,10 @@ const CartIcon = () => (
     </svg>
 )
 
+const UserIcon = () => (
+  
+)
+
 const Navbar = ({ setShowLogin }) => {
 
     const {
