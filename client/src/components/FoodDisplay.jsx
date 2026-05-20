@@ -25,6 +25,9 @@ const FoodDisplay = ({ category }) => {
                     </span>
                 )}
             </div>
+            <div className="food-display-list">
+                
+            </div>
         </div>
     )
 }
