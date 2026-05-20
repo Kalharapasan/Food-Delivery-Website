@@ -155,6 +155,22 @@ const StoreContextProvider = ({ children }) => {
         }
     };
 
+    const register = async (name, email, password) => {
+        try {
+            const response = await axios.post(`${url}/api/user/register`, { name, email, password });
+            if (response.data.success) {
+                const tok = response.data.token;
+                setToken(tok);
+                localStorage.setItem("token", tok);
+                addToast("Account created successfully! 🎉", "success");
+                return { success: true };
+            }
+            return { success: false, message: response.data.message };
+        } catch (error) {
+            return { success: false, message: error.response?.data?.message || "Registration failed" };
+        }
+    };
+
     const contextValue = {
         food_list,
         cartItem,
