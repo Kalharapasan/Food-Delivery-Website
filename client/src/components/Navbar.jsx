@@ -21,6 +21,9 @@ const UserIcon = () => (
     </svg>
 )
 
+const OrdersIcon = () => (
+)
+
 const Navbar = ({ setShowLogin }) => {
 
     const {
