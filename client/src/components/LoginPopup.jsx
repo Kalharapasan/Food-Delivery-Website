@@ -42,6 +42,11 @@ const LoginPopup = ({ setShowLogin }) => {
         setLoading(true)
         setError('')
         let result
+        if (currState === "Login") {
+            result = await login(data.email, data.password)
+        } else {
+            result = await register(data.name, data.email, data.password)
+        }
     }
 
     return (
