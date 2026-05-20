@@ -52,5 +52,11 @@ const StoreContextProvider = ({ children }) => {
         userProfile,
         setUserProfile,
     };
+    
+    return (
+        <StoreContext.Provider value={contextValue}>
+            {children}
+        </StoreContext.Provider>
+    );
 }
 export default StoreContextProvider;
