@@ -47,10 +47,21 @@ const Fooditem = ({ id, name, price, description, image, category, isNew, isPopu
 
                 {/* Cart controls */}
                 <div className="food-item-actions">
-                    
+                    {count === 0
+                        ? (
+                            <button className="add-btn" onClick={() => addToCart(id)} title="Add to cart">
+                                +
+                            </button>
+                        )
+                        : (
+                            <div className="food-item-counter">
+                                <button className="counter-minus" onClick={() => removeFromCart(id)}>−</button>
+                                <span className="counter-num">{count}</span>
+                                <button className="counter-plus" onClick={() => addToCart(id)}>+</button>
+                            </div>
+                        )
+                    }
                 </div>
-
-
             </div>
         </div>
     )
