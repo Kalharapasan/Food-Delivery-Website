@@ -8,6 +8,7 @@ const SkeletonCard = () => (
          <div className="skeleton-body">
             <div className="skeleton skeleton-line" />
             <div className="skeleton skeleton-line w-3/4" />
+            <div className="skeleton skeleton-line w-1/2" />
          </div>
     </div>
 )
