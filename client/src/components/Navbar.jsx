@@ -6,7 +6,12 @@ import { assets } from '../../assets/assets'
 const Navbar = ({ setShowLogin }) => {
 
     const handleSearchSelect = (item) => {
-        
+        setSearchQuery('')
+        setShowSearch(false)
+        navigate('/')
+        setTimeout(() => {
+            document.getElementById('food-display')?.scrollIntoView({ behavior: 'smooth' })
+        }, 100)
     }
 
     return (
