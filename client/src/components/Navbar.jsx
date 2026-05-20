@@ -5,6 +5,13 @@ import { assets } from '../../assets/assets'
 
 const Navbar = ({ setShowLogin }) => {
 
+    const navLinks = [
+        { label: 'Home', path: '/' },
+        { label: 'Menu', href: '#explore-menu' },
+        { label: 'App', href: '#app-download' },
+        { label: 'Contact', href: '#footer' },
+    ]
+
     useEffect(() => {
         const handleClick = (e) => {
             if (searchRef.current && !searchRef.current.contains(e.target)) {
