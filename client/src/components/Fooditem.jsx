@@ -28,6 +28,8 @@ const Fooditem = ({ id, name, price, description, image, category, isNew, isPopu
                     onError={() => setImgError(true)}
                 />
 
+                <div className="food-item-img-overlay" />
+
             </div>
         </div>
     )
