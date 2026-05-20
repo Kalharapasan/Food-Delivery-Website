@@ -3,3 +3,7 @@ import { Link, useNavigate, useLocation } from 'react-router-dom'
 import { StoreContext } from '../../context/StoreContext'
 import { assets } from '../../assets/assets'
 
+const Navbar = ({ setShowLogin }) => {
+    return ();
+}
+export default Navbar
