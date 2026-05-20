@@ -29,7 +29,9 @@ const Header = () => {
         </div>
       </div>
       <div className="header-stats">
-
+        <div className="stat-chip">
+          
+        </div>
       </div>
     </div>
   )
