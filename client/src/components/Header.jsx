@@ -9,7 +9,9 @@ const Header = () => {
         <div className="header-badge">
           🔥 Free delivery on first order
         </div>
-        
+        <h2>
+          Order your <em>favourite</em><br />Food here
+        </h2>
       </div>
     </div>
   )
