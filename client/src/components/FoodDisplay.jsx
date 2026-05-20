@@ -3,7 +3,7 @@ import { StoreContext } from '../context/StoreContext'
 import Fooditem from '../Fooditem'
 
 const FoodDisplay = ({ category }) => {
-    
+
     const { food_list, loading, searchQuery } = useContext(StoreContext)
     const filteredList = food_list.filter(item => {
         const matchesCategory = category === 'All' || category === item.category
@@ -16,7 +16,9 @@ const FoodDisplay = ({ category }) => {
     return (
         <div className='food-display' id='food-display'>
             <div className="food-display-header">
-                
+                <h2>
+                    {category === 'All' ? 'Top dishes near you' : category}
+                </h2>
             </div>
         </div>
     )
