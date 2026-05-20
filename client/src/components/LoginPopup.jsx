@@ -15,6 +15,10 @@ const LockIcon = () => (
     </svg>
 )
 
+const UserIcon = () => (
+ 
+)
+
 const LoginPopup = ({ setShowLogin }) => {
     return ()
 }
