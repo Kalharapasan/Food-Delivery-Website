@@ -36,6 +36,15 @@ const Fooditem = ({ id, name, price, description, image, category, isNew, isPopu
                     {isPopular && <span className="badge badge-popular">Popular</span>}
                 </div>
 
+                {/* Wishlist */}
+                <button
+                    className={`wishlist-btn${inWishlist ? ' active' : ''}`}
+                    onClick={(e) => { e.stopPropagation(); toggleWishlist(id) }}
+                    title={inWishlist ? 'Remove from wishlist' : 'Add to wishlist'}
+                >
+                    {inWishlist ? '❤️' : '🤍'}
+                </button>
+
 
             </div>
         </div>
