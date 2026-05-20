@@ -53,6 +53,23 @@ const StoreContextProvider = ({ children }) => {
         }
     };
 
+    const addToCart = async (itemId) => {
+        const item = food_list.find(f => f._id === itemId);
+        setCartItem(prev => ({ ...prev, [itemId]: (prev[itemId] || 0) + 1 }));
+        addToast(`${item?.name || "Item"} added to cart 🛒`, "success");
+        if (token) {
+            try {
+                await axios.post(
+                    `${url}/api/cart/add`,
+                    { itemId },
+                    { headers: { token } }
+                );
+            } catch (error) {
+                console.error("Failed to sync cart add:", error);
+            }
+        }
+    };
+
     const contextValue = {
         food_list,
         cartItem,
