@@ -120,6 +120,10 @@ const StoreContextProvider = ({ children }) => {
         return total;
     };
 
+    const getTotalCartCount = () => {
+        return Object.values(cartItem).reduce((sum, qty) => sum + qty, 0);
+    };
+
     const contextValue = {
         food_list,
         cartItem,
