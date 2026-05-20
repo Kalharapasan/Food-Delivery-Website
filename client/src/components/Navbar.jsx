@@ -4,6 +4,10 @@ import { StoreContext } from '../../context/StoreContext'
 import { assets } from '../../assets/assets'
 
 const Navbar = ({ setShowLogin }) => {
-    return ();
+    return (
+        <nav className="navbar">
+            
+        </nav>
+    )
 }
 export default Navbar
