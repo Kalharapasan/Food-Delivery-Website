@@ -138,6 +138,23 @@ const StoreContextProvider = ({ children }) => {
         });
     };
 
+    const login = async (email, password) => {
+        try {
+            const response = await axios.post(`${url}/api/user/login`, { email, password });
+            if (response.data.success) {
+                const tok = response.data.token;
+                setToken(tok);
+                localStorage.setItem("token", tok);
+                await loadCartData(tok);
+                addToast("Welcome back! 👋", "success");
+                return { success: true };
+            }
+            return { success: false, message: response.data.message };
+        } catch (error) {
+            return { success: false, message: error.response?.data?.message || "Login failed" };
+        }
+    };
+
     const contextValue = {
         food_list,
         cartItem,
