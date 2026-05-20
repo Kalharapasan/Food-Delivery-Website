@@ -67,6 +67,10 @@ const Navbar = ({ setShowLogin }) => {
 
             </div>
 
+            <div className="navbar-right">
+                
+            </div>
+
         </nav>
     )
 }
