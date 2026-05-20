@@ -14,6 +14,7 @@ const StoreContextProvider = ({ children }) => {
     const [searchQuery, setSearchQuery] = useState("");
     const [userProfile, setUserProfile] = useState(null);
 
+    const url = import.meta.env.VITE_BACKEND_URL || "http://localhost:4000";
     
 
 }
