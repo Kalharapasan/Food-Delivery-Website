@@ -9,6 +9,9 @@ const Navbar = ({ setShowLogin }) => {
             <Link to="/">
                 <img className="logo" src={assets.logo} alt="Logo" />
             </Link>
+            <ul className="navbar-menu">
+
+            </ul>
         </nav>
     )
 }
