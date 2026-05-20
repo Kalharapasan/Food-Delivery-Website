@@ -12,6 +12,10 @@ const Header = () => {
         <h2>
           Order your <em>favourite</em><br />Food here
         </h2>
+        <p>
+          Choose from a diverse menu featuring a delectable array of dishes
+          crafted with the finest ingredients and delivered fresh to your door.
+        </p>
       </div>
     </div>
   )
