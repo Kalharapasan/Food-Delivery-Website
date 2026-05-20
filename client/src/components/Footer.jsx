@@ -5,7 +5,9 @@ const Footer = () => {
     return (
         <footer className='footer' id='footer'>
             <div className="footer-grid">
-                
+                <div className="footer-brand">
+                    
+                </div>
             </div>
         </footer>
     )
