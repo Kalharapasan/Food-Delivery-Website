@@ -49,7 +49,11 @@ const LoginPopup = ({ setShowLogin }) => {
 
                 <div className="login-popup-title">
                     <h2>{currState === 'Login' ? 'Welcome back' : 'Create account'}</h2>
-
+                    <p>
+                        {currState === 'Login'
+                            ? 'Sign in to access your orders and cart'
+                            : 'Join us and start ordering your favourite food'}
+                    </p>
                 </div>
 
             </form>
