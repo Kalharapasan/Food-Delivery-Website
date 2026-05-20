@@ -188,6 +188,21 @@ const StoreContextProvider = ({ children }) => {
         ).slice(0, 8)
         : [];
 
+    useEffect(() => {
+        const init = async () => {
+            setLoading(true);
+            await fetchFoodList();
+            const savedToken = localStorage.getItem("token");
+            if (savedToken) {
+                setToken(savedToken);
+                await loadCartData(savedToken);
+            }
+            setLoading(false);
+        };
+        init();
+    }, []);
+
+
     const contextValue = {
         food_list,
         cartItem,
