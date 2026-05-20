@@ -44,6 +44,10 @@ const Footer = () => {
                 </ul>
             </div>
 
+            <div className="footer-col">
+                
+            </div>
+
 
         </footer>
     )
