@@ -41,6 +41,7 @@ const LoginPopup = ({ setShowLogin }) => {
         if (!agreed) { setError('Please agree to the terms'); return }
         setLoading(true)
         setError('')
+        let result
     }
 
     return (
