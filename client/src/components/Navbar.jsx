@@ -68,6 +68,13 @@ const Navbar = ({ setShowLogin }) => {
             </div>
 
             <div className="navbar-right">
+
+                {/* Cart */}
+                <Link to="/cart" className="navbar-cart-btn">
+                    <CartIcon />
+                    <span>Cart</span>
+                    {cartCount > 0 && <span className="cart-badge">{cartCount}</span>}
+                </Link>
                 
             </div>
 
