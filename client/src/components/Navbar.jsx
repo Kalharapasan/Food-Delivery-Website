@@ -5,6 +5,16 @@ import { assets } from '../../assets/assets'
 
 const Navbar = ({ setShowLogin }) => {
 
+    useEffect(() => {
+        const handleClick = (e) => {
+            if (searchRef.current && !searchRef.current.contains(e.target)) {
+                setShowSearch(false)
+            }
+        }
+        document.addEventListener('mousedown', handleClick)
+        return () => document.removeEventListener('mousedown', handleClick)
+    }, [])
+
     const handleSearchSelect = (item) => {
         setSearchQuery('')
         setShowSearch(false)
@@ -76,7 +86,7 @@ const Navbar = ({ setShowLogin }) => {
                     {cartCount > 0 && <span className="cart-badge">{cartCount}</span>}
                 </Link>
 
-                
+
                 {/* Auth */}
                 {!token ? (
                     <button className="navbar-signin-btn" onClick={() => setShowLogin(true)}>
