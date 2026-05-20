@@ -12,6 +12,8 @@ const Fooditem = ({ id, name, price, description, image, category, isNew, isPopu
     const { cartItem, addToCart, removeFromCart, url, wishlist, toggleWishlist, token } = useContext(StoreContext)
     const [imgError, setImgError] = useState(false)
 
+    const count = cartItem[id] || 0
+    const inWishlist = wishlist?.has(id)
 
     return (
 
