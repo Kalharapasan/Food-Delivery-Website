@@ -34,6 +34,15 @@ const LoginPopup = ({ setShowLogin }) => {
         <div className='login-popup' onClick={e => e.target === e.currentTarget && setShowLogin(false)}>
             <form className="login-popup-container" onSubmit={onSubmit}>
                 
+                <button
+                    type="button"
+                    className="login-popup-close"
+                    onClick={() => setShowLogin(false)}
+                >
+                    ✕
+                </button>
+                
+
             </form>
         </div>
     )
