@@ -45,6 +45,7 @@ const Footer = () => {
             </div>
 
             <div className="footer-col">
+                <h4>Get in Touch</h4>
                 
             </div>
 
