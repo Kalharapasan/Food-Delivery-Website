@@ -134,6 +134,14 @@ const LoginPopup = ({ setShowLogin }) => {
                     }
                 </button>
 
+                <p className="login-popup-switch">
+                    {currState === 'Login' ? (
+                        <>Don't have an account? <span onClick={() => switchState('Sign Up')}>Sign up free</span></>
+                    ) : (
+                        <>Already have an account? <span onClick={() => switchState('Login')}>Sign in</span></>
+                    )}
+                </p>
+
             </form>
         </div>
     )
