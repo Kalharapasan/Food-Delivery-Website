@@ -18,7 +18,9 @@ const Fooditem = ({ id, name, price, description, image, category, isNew, isPopu
     const deliveryTime = `${15 + ((id?.charCodeAt(1) || 30) % 20)}-${25 + ((id?.charCodeAt(1) || 30) % 20)} min`
 
     return (
-
+        <div className='food-item'>
+            
+        </div>
     )
 
 }
