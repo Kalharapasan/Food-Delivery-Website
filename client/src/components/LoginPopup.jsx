@@ -115,6 +115,10 @@ const LoginPopup = ({ setShowLogin }) => {
                     </div>
                 )}
 
+                <div className="login-popup-condition">
+                    
+                </div>
+
             </form>
         </div>
     )
