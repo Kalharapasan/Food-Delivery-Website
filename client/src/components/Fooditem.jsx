@@ -9,6 +9,10 @@ const StarIcon = ({ filled }) => (
 
 const Fooditem = ({ id, name, price, description, image, category, isNew, isPopular }) => {
 
+    const { cartItem, addToCart, removeFromCart, url, wishlist, toggleWishlist, token } = useContext(StoreContext)
+    const [imgError, setImgError] = useState(false)
+
+
     return (
 
     )
