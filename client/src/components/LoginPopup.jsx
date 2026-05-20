@@ -91,7 +91,7 @@ const LoginPopup = ({ setShowLogin }) => {
                 </div>
 
                 <div className="input-group">
-                    
+                    <label>Password</label>
                 </div>
 
             </form>
