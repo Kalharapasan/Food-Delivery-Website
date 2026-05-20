@@ -38,6 +38,8 @@ const LoginPopup = ({ setShowLogin }) => {
 
     const onSubmit = async e => {
         e.preventDefault()
+        if (!agreed) { setError('Please agree to the terms'); return }
+        
     }
 
     return (
