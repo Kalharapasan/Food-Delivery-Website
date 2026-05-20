@@ -30,6 +30,13 @@ const Fooditem = ({ id, name, price, description, image, category, isNew, isPopu
 
                 <div className="food-item-img-overlay" />
 
+                {/* Badges */}
+                <div className="food-item-badges">
+                    {isNew && <span className="badge badge-new">New</span>}
+                    {isPopular && <span className="badge badge-popular">Popular</span>}
+                </div>
+
+
             </div>
         </div>
     )
