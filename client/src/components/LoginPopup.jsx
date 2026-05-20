@@ -127,6 +127,13 @@ const LoginPopup = ({ setShowLogin }) => {
                     </label>
                 </div>
 
+                <button type="submit" className="login-popup-submit" disabled={loading}>
+                    {loading
+                        ? (currState === 'Login' ? 'Signing in...' : 'Creating account...')
+                        : (currState === 'Login' ? 'Sign In' : 'Create Account')
+                    }
+                </button>
+
             </form>
         </div>
     )
