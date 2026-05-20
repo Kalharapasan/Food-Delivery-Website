@@ -19,6 +19,11 @@ const FoodDisplay = ({ category }) => {
                 <h2>
                     {category === 'All' ? 'Top dishes near you' : category}
                 </h2>
+                {!loading && (
+                    <span className="results-count">
+                        {filteredList.length} {filteredList.length === 1 ? 'dish' : 'dishes'} found
+                    </span>
+                )}
             </div>
         </div>
     )
