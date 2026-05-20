@@ -6,11 +6,11 @@ import { assets } from '../../assets/assets'
 const Navbar = ({ setShowLogin }) => {
     return (
         <nav className="navbar">
-            
+
             <Link to="/">
                 <img className="logo" src={assets.logo} alt="Logo" />
             </Link>
-           
+
             <ul className="navbar-menu">
                 {navLinks.map(link => (
                     <li key={link.label}>
@@ -24,7 +24,10 @@ const Navbar = ({ setShowLogin }) => {
                     </li>
                 ))}
             </ul>
+            
+            <div className="navbar-search" ref={searchRef} style={{ position: 'relative' }}>
 
+            </div>
 
         </nav>
     )
