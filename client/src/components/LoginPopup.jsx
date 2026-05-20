@@ -94,6 +94,15 @@ const LoginPopup = ({ setShowLogin }) => {
                     <label>Password</label>
                     <div className="input-wrapper">
                         <LockIcon />
+                        <input
+                            name="password"
+                            type="password"
+                            placeholder={currState === 'Login' ? '••••••••' : 'At least 8 characters'}
+                            value={data.password}
+                            onChange={onChange}
+                            required
+                            autoComplete={currState === 'Login' ? 'current-password' : 'new-password'}
+                        />
                     </div>
                 </div>
 
