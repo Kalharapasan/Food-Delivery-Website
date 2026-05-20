@@ -32,7 +32,9 @@ const LoginPopup = ({ setShowLogin }) => {
     const [data, setData] = useState({ name: '', email: '', password: '' })
     return (
         <div className='login-popup' onClick={e => e.target === e.currentTarget && setShowLogin(false)}>
-            
+            <form className="login-popup-container" onSubmit={onSubmit}>
+                
+            </form>
         </div>
     )
 }
