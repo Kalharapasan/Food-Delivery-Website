@@ -3,6 +3,7 @@ import { StoreContext } from '../context/StoreContext'
 import Fooditem from '../Fooditem'
 
 const FoodDisplay = ({ category }) => {
+    
     const { food_list, loading, searchQuery } = useContext(StoreContext)
     const filteredList = food_list.filter(item => {
         const matchesCategory = category === 'All' || category === item.category
@@ -11,9 +12,11 @@ const FoodDisplay = ({ category }) => {
             item.description?.toLowerCase().includes(searchQuery.toLowerCase())
         return matchesCategory && matchesSearch
     })
-    
-    return (
 
+    return (
+        <div className='food-display' id='food-display'>
+            
+        </div>
     )
 }
 
