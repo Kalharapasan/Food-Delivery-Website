@@ -24,9 +24,9 @@ const Navbar = ({ setShowLogin }) => {
                     </li>
                 ))}
             </ul>
-            
-            <div className="navbar-search" ref={searchRef} style={{ position: 'relative' }}>
 
+            <div className="navbar-search" ref={searchRef} style={{ position: 'relative' }}>
+                <SearchIcon />
             </div>
 
         </nav>
