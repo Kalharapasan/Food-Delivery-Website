@@ -39,13 +39,24 @@ const LoginPopup = ({ setShowLogin }) => {
     const onSubmit = async e => {
         e.preventDefault()
         if (!agreed) { setError('Please agree to the terms'); return }
+
         setLoading(true)
         setError('')
+
         let result
+
         if (currState === "Login") {
             result = await login(data.email, data.password)
         } else {
             result = await register(data.name, data.email, data.password)
+        }
+        
+        setLoading(false)
+
+        if (result.success) {
+            setShowLogin(false)
+        } else {
+            setError(result.message || 'Something went wrong')
         }
     }
 
