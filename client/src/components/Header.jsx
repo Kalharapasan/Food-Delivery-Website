@@ -16,6 +16,9 @@ const Header = () => {
           Choose from a diverse menu featuring a delectable array of dishes
           crafted with the finest ingredients and delivered fresh to your door.
         </p>
+        <div className="header-actions">
+
+        </div>
       </div>
     </div>
   )
