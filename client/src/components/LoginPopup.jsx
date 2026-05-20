@@ -56,6 +56,24 @@ const LoginPopup = ({ setShowLogin }) => {
                     </p>
                 </div>
 
+                {currState === 'Sign Up' && (
+                    <div className="input-group">
+                        <label>Full Name</label>
+                        <div className="input-wrapper">
+                            <UserIcon />
+                            <input
+                                name="name"
+                                type="text"
+                                placeholder="John Doe"
+                                value={data.name}
+                                onChange={onChange}
+                                required
+                                autoComplete="name"
+                            />
+                        </div>
+                    </div>
+                )}
+
             </form>
         </div>
     )
