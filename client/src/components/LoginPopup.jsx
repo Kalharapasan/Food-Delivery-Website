@@ -75,6 +75,7 @@ const LoginPopup = ({ setShowLogin }) => {
                 )}
 
                 <div className="input-group">
+                    <label>Email Address</label>
                     
                 </div>
 
