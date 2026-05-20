@@ -26,7 +26,30 @@ const FoodDisplay = ({ category }) => {
                 )}
             </div>
             <div className="food-display-list">
-                
+                {loading
+                    ? Array.from({ length: 8 }).map((_, i) => <SkeletonCard key={i} />)
+                    : filteredList.length === 0
+                        ? (
+                            <div className="no-results">
+                                <div className="icon">🍽️</div>
+                                <h3>No dishes found</h3>
+                                <p>Try a different category or search term</p>
+                            </div>
+                        )
+                        : filteredList.map((item, index) => (
+                            <Fooditem
+                                key={item._id}
+                                id={item._id}
+                                name={item.name}
+                                description={item.description}
+                                price={item.price}
+                                image={item.image}
+                                category={item.category}
+                                isNew={index < 3}
+                                isPopular={index >= 3 && index < 7}
+                            />
+                        ))
+                }
             </div>
         </div>
     )
