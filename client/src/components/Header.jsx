@@ -5,6 +5,9 @@ const Header = () => {
   return (
     <div className='header' style={{ backgroundImage: `url(${headerImage})` }}>
       <div className="header-overlay" /> 
+      <div className="header-contents">
+
+      </div>
     </div>
   )
 }
