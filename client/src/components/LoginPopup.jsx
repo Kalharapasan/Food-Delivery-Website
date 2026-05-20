@@ -48,7 +48,8 @@ const LoginPopup = ({ setShowLogin }) => {
                 </div>
 
                 <div className="login-popup-title">
-                    
+                    <h2>{currState === 'Login' ? 'Welcome back' : 'Create account'}</h2>
+
                 </div>
 
             </form>
