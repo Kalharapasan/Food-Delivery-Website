@@ -53,6 +53,11 @@ const Footer = () => {
                 </ul>
             </div>
 
+            <div className="footer-bottom">
+                <p>© 2025 Mr.Chai · All rights reserved.</p>
+                <p>Made with ❤️ in Sri Lanka</p>
+            </div>
+
 
         </footer>
     )
