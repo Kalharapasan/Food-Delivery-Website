@@ -14,6 +14,9 @@ const Footer = () => {
                         Delivering happiness one meal at a time. Your favourite restaurant meals, delivered fresh and fast to your doorstep.
                     </p>
                 </div>
+                <div className="footer-social">
+                    
+                </div>
             </div>
         </footer>
     )
