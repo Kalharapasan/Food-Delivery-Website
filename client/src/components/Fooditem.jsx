@@ -20,7 +20,14 @@ const Fooditem = ({ id, name, price, description, image, category, isNew, isPopu
     return (
         <div className='food-item'>
             <div className="food-item-img-container">
-                
+
+                <img
+                    className='food-item-image'
+                    src={imgError ? '/placeholder-food.jpg' : `${url}/image/${image}`}
+                    alt={name}
+                    onError={() => setImgError(true)}
+                />
+
             </div>
         </div>
     )
