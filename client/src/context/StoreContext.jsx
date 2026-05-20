@@ -90,6 +90,25 @@ const StoreContextProvider = ({ children }) => {
         }
     };
 
+    const clearCartItem = async (itemId) => {
+        setCartItem(prev => {
+            const next = { ...prev };
+            delete next[itemId];
+            return next;
+        });
+        if (token) {
+            try {
+                await axios.post(
+                    `${url}/api/cart/remove`,
+                    { itemId, removeAll: true },
+                    { headers: { token } }
+                );
+            } catch (error) {
+                console.error("Failed to sync cart clear:", error);
+            }
+        }
+    };
+
     const contextValue = {
         food_list,
         cartItem,
