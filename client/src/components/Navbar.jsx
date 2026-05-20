@@ -9,6 +9,10 @@ const SearchIcon = () => (
     </svg>
 )
 
+const CartIcon = () => (
+  
+)
+
 const Navbar = ({ setShowLogin }) => {
 
     const {
