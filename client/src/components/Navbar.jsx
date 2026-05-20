@@ -3,13 +3,17 @@ import { Link, useNavigate, useLocation } from 'react-router-dom'
 import { StoreContext } from '../../context/StoreContext'
 import { assets } from '../../assets/assets'
 
+const SearchIcon = () => (
+    
+)
+
 const Navbar = ({ setShowLogin }) => {
 
     const {
         getTotalCartCount, token, logout,
         searchQuery, setSearchQuery, searchResults, url
     } = useContext(StoreContext)
-    
+
     const navigate = useNavigate()
     const location = useLocation()
     const searchRef = useRef(null)
