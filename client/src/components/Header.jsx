@@ -30,7 +30,8 @@ const Header = () => {
       </div>
       <div className="header-stats">
         <div className="stat-chip">
-          
+          <span className="num">50+</span>
+          <span className="label">Restaurants</span>
         </div>
       </div>
     </div>
