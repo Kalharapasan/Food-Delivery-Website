@@ -122,6 +122,9 @@ const LoginPopup = ({ setShowLogin }) => {
                         checked={agreed}
                         onChange={e => setAgreed(e.target.checked)}
                     />
+                    <label htmlFor="agree">
+                        <p>By continuing, I agree to the <span style={{ color: 'var(--accent)', cursor: 'pointer' }}>Terms of Use</span> & <span style={{ color: 'var(--accent)', cursor: 'pointer' }}>Privacy Policy</span>.</p>
+                    </label>
                 </div>
 
             </form>
