@@ -29,6 +29,6 @@ const LoginPopup = ({ setShowLogin }) => {
     const [error, setError] = useState('')
     const [agreed, setAgreed] = useState(false)
 
-
+    const [data, setData] = useState({ name: '', email: '', password: '' })
     return ()
 }
