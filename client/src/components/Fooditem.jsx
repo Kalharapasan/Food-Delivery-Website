@@ -75,6 +75,10 @@ const Fooditem = ({ id, name, price, description, image, category, isNew, isPopu
                 <p className="food-item-desc">{description}</p>
                 <div className="food-item-footer">
                     <p className="food-item-price">${price}</p>
+                    <span className="food-item-time">
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" /></svg>
+                        {deliveryTime}
+                    </span>
                 </div>
             </div>
 
