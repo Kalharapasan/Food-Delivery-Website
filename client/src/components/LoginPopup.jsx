@@ -116,7 +116,12 @@ const LoginPopup = ({ setShowLogin }) => {
                 )}
 
                 <div className="login-popup-condition">
-                    
+                    <input
+                        type="checkbox"
+                        id="agree"
+                        checked={agreed}
+                        onChange={e => setAgreed(e.target.checked)}
+                    />
                 </div>
 
             </form>
