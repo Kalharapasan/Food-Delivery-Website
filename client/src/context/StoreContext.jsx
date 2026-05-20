@@ -70,6 +70,26 @@ const StoreContextProvider = ({ children }) => {
         }
     };
 
+    const removeFromCart = async (itemId) => {
+        setCartItem(prev => {
+            const count = prev[itemId] || 0;
+            const next = { ...prev, [itemId]: count > 1 ? count - 1 : 0 };
+            if (next[itemId] === 0) delete next[itemId];
+            return next;
+        });
+        if (token) {
+            try {
+                await axios.post(
+                    `${url}/api/cart/remove`,
+                    { itemId },
+                    { headers: { token } }
+                );
+            } catch (error) {
+                console.error("Failed to sync cart remove:", error);
+            }
+        }
+    };
+
     const contextValue = {
         food_list,
         cartItem,
