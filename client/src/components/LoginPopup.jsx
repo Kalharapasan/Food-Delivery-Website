@@ -93,7 +93,7 @@ const LoginPopup = ({ setShowLogin }) => {
                 <div className="input-group">
                     <label>Password</label>
                     <div className="input-wrapper">
-                        
+                        <LockIcon />
                     </div>
                 </div>
 
