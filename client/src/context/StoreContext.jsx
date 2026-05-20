@@ -171,6 +171,15 @@ const StoreContextProvider = ({ children }) => {
         }
     };
 
+
+    const logout = () => {
+        localStorage.removeItem("token");
+        setToken("");
+        setCartItem({});
+        setUserProfile(null);
+        addToast("Logged out successfully", "info");
+    };
+
     const contextValue = {
         food_list,
         cartItem,
