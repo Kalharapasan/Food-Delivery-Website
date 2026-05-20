@@ -6,7 +6,9 @@ import { assets } from '../../assets/assets'
 const Navbar = ({ setShowLogin }) => {
     return (
         <nav className="navbar">
-            
+            <Link to="/">
+                <img className="logo" src={assets.logo} alt="Logo" />
+            </Link>
         </nav>
     )
 }
