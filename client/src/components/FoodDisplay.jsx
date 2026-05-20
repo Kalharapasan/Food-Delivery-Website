@@ -3,7 +3,9 @@ import { StoreContext } from '../context/StoreContext'
 import Fooditem from '../Fooditem'
 
 const SkeletonCard = () => (
-    
+    <div className="food-item-skeleton">
+        
+    </div>
 )
 
 const FoodDisplay = ({ category }) => {
