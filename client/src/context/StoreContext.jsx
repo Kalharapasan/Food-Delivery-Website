@@ -26,6 +26,31 @@ const StoreContextProvider = ({ children }) => {
         setToasts(prev => prev.filter(t => t.id !== id));
     }, []);
 
-
+    const contextValue = {
+        food_list,
+        cartItem,
+        wishlist,
+        addToCart,
+        removeFromCart,
+        clearCartItem,
+        getTotalCartAmount,
+        getTotalCartCount,
+        toggleWishlist,
+        url,
+        token,
+        setToken,
+        login,
+        register,
+        logout,
+        loading,
+        toasts,
+        addToast,
+        removeToast,
+        searchQuery,
+        setSearchQuery,
+        searchResults,
+        userProfile,
+        setUserProfile,
+    };
 }
 export default StoreContextProvider;
