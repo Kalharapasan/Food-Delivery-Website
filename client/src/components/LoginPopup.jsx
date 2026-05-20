@@ -8,6 +8,10 @@ const MailIcon = () => (
     </svg>
 )
 
+const LockIcon = () => (
+  
+)
+
 const LoginPopup = ({ setShowLogin }) => {
     return ()
 }
