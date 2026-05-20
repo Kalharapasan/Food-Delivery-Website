@@ -38,6 +38,21 @@ const StoreContextProvider = ({ children }) => {
         }
     };
 
+    const loadCartData = async (tok) => {
+        try {
+            const response = await axios.post(
+                `${url}/api/cart/get`,
+                {},
+                { headers: { token: tok } }
+            );
+            if (response.data.success) {
+                setCartItem(response.data.cartData || {});
+            }
+        } catch (error) {
+            console.error("Failed to load cart:", error);
+        }
+    };
+
     const contextValue = {
         food_list,
         cartItem,
