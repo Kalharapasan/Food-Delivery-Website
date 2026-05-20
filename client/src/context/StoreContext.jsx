@@ -26,6 +26,18 @@ const StoreContextProvider = ({ children }) => {
         setToasts(prev => prev.filter(t => t.id !== id));
     }, []);
 
+    const fetchFoodList = async () => {
+        try {
+            const response = await axios.get(`${url}/api/food/list`);
+            if (response.data.success) {
+                setFoodList(response.data.foods || response.data.data || []);
+            }
+        } catch (error) {
+            console.error("Failed to fetch food list:", error);
+            addToast("Failed to load menu. Please refresh.", "error");
+        }
+    };
+
     const contextValue = {
         food_list,
         cartItem,
@@ -52,7 +64,7 @@ const StoreContextProvider = ({ children }) => {
         userProfile,
         setUserProfile,
     };
-    
+
     return (
         <StoreContext.Provider value={contextValue}>
             {children}
