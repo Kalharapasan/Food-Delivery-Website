@@ -5,17 +5,17 @@ import Fooditem from '../Fooditem'
 const SkeletonCard = () => (
     <div className="food-item-skeleton">
         <div className="skeleton skeleton-img" />
-         <div className="skeleton-body">
+        <div className="skeleton-body">
             <div className="skeleton skeleton-line" />
             <div className="skeleton skeleton-line w-3/4" />
             <div className="skeleton skeleton-line w-1/2" />
-         </div>
+        </div>
     </div>
 )
 
 const FoodDisplay = ({ category }) => {
-
     const { food_list, loading, searchQuery } = useContext(StoreContext)
+
     const filteredList = food_list.filter(item => {
         const matchesCategory = category === 'All' || category === item.category
         const matchesSearch = !searchQuery || searchQuery.length < 2 ||
@@ -36,6 +36,7 @@ const FoodDisplay = ({ category }) => {
                     </span>
                 )}
             </div>
+
             <div className="food-display-list">
                 {loading
                     ? Array.from({ length: 8 }).map((_, i) => <SkeletonCard key={i} />)
