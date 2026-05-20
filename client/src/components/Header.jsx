@@ -3,7 +3,7 @@ import headerImage from '../../assets/header_im.jpg'
 
 const Header = () => {
   return (
-    <div>
+    <div className='header' style={{ backgroundImage: `url(${headerImage})` }}>
       
     </div>
   )
