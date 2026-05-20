@@ -4,7 +4,6 @@ import { assets } from '../../assets/assets'
 const Footer = () => {
     return (
         <footer className='footer' id='footer'>
-
             <div className="footer-grid">
                 <div className="footer-brand">
                     <div className="logo-row">
@@ -14,51 +13,49 @@ const Footer = () => {
                     <p>
                         Delivering happiness one meal at a time. Your favourite restaurant meals, delivered fresh and fast to your doorstep.
                     </p>
+                    <div className="footer-social">
+                        <div className="social-icon" title="Facebook">𝗙</div>
+                        <div className="social-icon" title="Twitter">𝕏</div>
+                        <div className="social-icon" title="Instagram">◈</div>
+                        <div className="social-icon" title="LinkedIn">in</div>
+                    </div>
                 </div>
-                <div className="footer-social">
-                    <div className="social-icon" title="Facebook">𝗙</div>
-                    <div className="social-icon" title="Twitter">𝕏</div>
-                    <div className="social-icon" title="Instagram">◈</div>
-                    <div className="social-icon" title="LinkedIn">in</div>
+
+                <div className="footer-col">
+                    <h4>Company</h4>
+                    <ul>
+                        <li>Home</li>
+                        <li>About Us</li>
+                        <li>Delivery</li>
+                        <li>Privacy Policy</li>
+                        <li>Terms of Service</li>
+                    </ul>
                 </div>
-            </div>
 
-            <div className="footer-col">
-                <h4>Company</h4>
-                <ul>
-                    <li>Home</li>
-                    <li>About Us</li>
-                    <li>Delivery</li>
-                    <li>Privacy Policy</li>
-                    <li>Terms of Service</li>
-                </ul>
-            </div>
+                <div className="footer-col">
+                    <h4>Support</h4>
+                    <ul>
+                        <li>FAQ</li>
+                        <li>Help Center</li>
+                        <li>Track Order</li>
+                        <li>Refund Policy</li>
+                    </ul>
+                </div>
 
-            <div className="footer-col">
-                <h4>Support</h4>
-                <ul>
-                    <li>FAQ</li>
-                    <li>Help Center</li>
-                    <li>Track Order</li>
-                    <li>Refund Policy</li>
-                </ul>
-            </div>
-
-            <div className="footer-col">
-                <h4>Get in Touch</h4>
-                <ul>
-                    <li>📞 +94 58965478</li>
-                    <li>✉️ YummyJet@gmail.com</li>
-                    <li>📍 Colombo, Sri Lanka</li>
-                </ul>
+                <div className="footer-col">
+                    <h4>Get in Touch</h4>
+                    <ul>
+                        <li>📞 +94 58965478</li>
+                        <li>✉️ YummyJet@gmail.com</li>
+                        <li>📍 Colombo, Sri Lanka</li>
+                    </ul>
+                </div>
             </div>
 
             <div className="footer-bottom">
                 <p>© 2025 Mr.Chai · All rights reserved.</p>
                 <p>Made with ❤️ in Sri Lanka</p>
             </div>
-
-
         </footer>
     )
 }
