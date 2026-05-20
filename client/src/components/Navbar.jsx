@@ -27,7 +27,7 @@ const Navbar = ({ setShowLogin }) => {
 
             <div className="navbar-search" ref={searchRef} style={{ position: 'relative' }}>
                 <SearchIcon />
-                
+
                 <input
                     type="text"
                     placeholder="Search dishes..."
@@ -36,7 +36,24 @@ const Navbar = ({ setShowLogin }) => {
                     onFocus={() => setShowSearch(true)}
                 />
 
-                
+                {showSearch && searchResults.length > 0 && (
+                    <div className="search-results-panel">
+                        {searchResults.map(item => (
+                            <div
+                                key={item._id}
+                                className="search-result-item"
+                                onClick={() => handleSearchSelect(item)}
+                            >
+                                <img src={`${url}/image/${item.image}`} alt={item.name} />
+                                <div>
+                                    <div className="search-result-name">{item.name}</div>
+                                    <div className="search-result-category">{item.category}</div>
+                                </div>
+                                <div className="search-result-price" style={{ marginLeft: 'auto' }}>${item.price}</div>
+                            </div>
+                        ))}
+                    </div>
+                )}
 
             </div>
 
