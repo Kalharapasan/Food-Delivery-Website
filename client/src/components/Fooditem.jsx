@@ -19,7 +19,9 @@ const Fooditem = ({ id, name, price, description, image, category, isNew, isPopu
 
     return (
         <div className='food-item'>
-            
+            <div className="food-item-img-container">
+                
+            </div>
         </div>
     )
 
