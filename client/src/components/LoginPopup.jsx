@@ -41,7 +41,10 @@ const LoginPopup = ({ setShowLogin }) => {
                 >
                     ✕
                 </button>
-                
+
+                <div className="login-popup-brand">
+                    
+                </div>
 
             </form>
         </div>
