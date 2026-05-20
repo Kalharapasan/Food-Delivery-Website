@@ -72,6 +72,7 @@ const Fooditem = ({ id, name, price, description, image, category, isNew, isPopu
                         <span className="rating-num">{rating}</span>
                     </div>
                 </div>
+                <p className="food-item-desc">{description}</p>
             </div>
 
         </div>
