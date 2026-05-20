@@ -78,7 +78,15 @@ const LoginPopup = ({ setShowLogin }) => {
                     <label>Email Address</label>
                     <div className="input-wrapper">
                         <MailIcon />
-
+                        <input
+                            name="email"
+                            type="email"
+                            placeholder="you@example.com"
+                            value={data.email}
+                            onChange={onChange}
+                            required
+                            autoComplete="email"
+                        />
                     </div>
                 </div>
 
