@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react'
-import { StoreContext } from '../context/StoreContext'
+import { StoreContext } from '../../context/StoreContext'
 
 const StarIcon = ({ filled }) => (
     <svg width="12" height="12" viewBox="0 0 24 24" fill={filled ? '#F59E0B' : 'none'} stroke="#F59E0B" strokeWidth="2">
@@ -8,26 +8,26 @@ const StarIcon = ({ filled }) => (
 )
 
 const Fooditem = ({ id, name, price, description, image, category, isNew, isPopular }) => {
-
     const { cartItem, addToCart, removeFromCart, url, wishlist, toggleWishlist, token } = useContext(StoreContext)
     const [imgError, setImgError] = useState(false)
 
     const count = cartItem[id] || 0
     const inWishlist = wishlist?.has(id)
+
+    // Generate stable rating from id
     const rating = (((id?.charCodeAt(0) || 65) % 10) / 10 * 1.5 + 3.5).toFixed(1)
+
     const deliveryTime = `${15 + ((id?.charCodeAt(1) || 30) % 20)}-${25 + ((id?.charCodeAt(1) || 30) % 20)} min`
 
     return (
         <div className='food-item'>
             <div className="food-item-img-container">
-
                 <img
                     className='food-item-image'
                     src={imgError ? '/placeholder-food.jpg' : `${url}/image/${image}`}
                     alt={name}
                     onError={() => setImgError(true)}
                 />
-
                 <div className="food-item-img-overlay" />
 
                 {/* Badges */}
@@ -72,7 +72,9 @@ const Fooditem = ({ id, name, price, description, image, category, isNew, isPopu
                         <span className="rating-num">{rating}</span>
                     </div>
                 </div>
+
                 <p className="food-item-desc">{description}</p>
+
                 <div className="food-item-footer">
                     <p className="food-item-price">${price}</p>
                     <span className="food-item-time">
@@ -81,9 +83,8 @@ const Fooditem = ({ id, name, price, description, image, category, isNew, isPopu
                     </span>
                 </div>
             </div>
-
         </div>
     )
-
 }
+
 export default Fooditem
