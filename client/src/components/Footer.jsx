@@ -4,7 +4,7 @@ import { assets } from '../../assets/assets'
 const Footer = () => {
     return (
         <footer className='footer' id='footer'>
-           
+
             <div className="footer-grid">
                 <div className="footer-brand">
                     <div className="logo-row">
@@ -25,7 +25,13 @@ const Footer = () => {
 
             <div className="footer-col">
                 <h4>Company</h4>
-                
+                <ul>
+                    <li>Home</li>
+                    <li>About Us</li>
+                    <li>Delivery</li>
+                    <li>Privacy Policy</li>
+                    <li>Terms of Service</li>
+                </ul>
             </div>
 
 
