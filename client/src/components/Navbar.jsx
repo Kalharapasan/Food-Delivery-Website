@@ -27,6 +27,17 @@ const Navbar = ({ setShowLogin }) => {
 
             <div className="navbar-search" ref={searchRef} style={{ position: 'relative' }}>
                 <SearchIcon />
+                
+                <input
+                    type="text"
+                    placeholder="Search dishes..."
+                    value={searchQuery}
+                    onChange={e => { setSearchQuery(e.target.value); setShowSearch(true) }}
+                    onFocus={() => setShowSearch(true)}
+                />
+
+                
+
             </div>
 
         </nav>
