@@ -3,7 +3,8 @@ import { StoreContext } from '../context/StoreContext'
 import Fooditem from '../Fooditem'
 
 const FoodDisplay = ({ category }) => {
-    return(
+    const { food_list, loading, searchQuery } = useContext(StoreContext)
+    return (
 
     )
 }
