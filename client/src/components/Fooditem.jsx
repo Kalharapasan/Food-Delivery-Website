@@ -14,6 +14,8 @@ const Fooditem = ({ id, name, price, description, image, category, isNew, isPopu
 
     const count = cartItem[id] || 0
     const inWishlist = wishlist?.has(id)
+    const rating = (((id?.charCodeAt(0) || 65) % 10) / 10 * 1.5 + 3.5).toFixed(1)
+    const deliveryTime = `${15 + ((id?.charCodeAt(1) || 30) % 20)}-${25 + ((id?.charCodeAt(1) || 30) % 20)} min`
 
     return (
 
