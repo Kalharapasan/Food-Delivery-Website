@@ -28,6 +28,10 @@ const OrdersIcon = () => (
     </svg>
 )
 
+const LogoutIcon = () => (
+  
+)
+
 
 const Navbar = ({ setShowLogin }) => {
 
