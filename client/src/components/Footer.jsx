@@ -10,6 +10,9 @@ const Footer = () => {
                         <img src={assets.logo} alt="Mr.Chai" />
                         <span>Mr.Chai</span>
                     </div>
+                    <p>
+                        Delivering happiness one meal at a time. Your favourite restaurant meals, delivered fresh and fast to your doorstep.
+                    </p>
                 </div>
             </div>
         </footer>
