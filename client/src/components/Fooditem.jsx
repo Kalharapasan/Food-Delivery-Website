@@ -45,6 +45,11 @@ const Fooditem = ({ id, name, price, description, image, category, isNew, isPopu
                     {inWishlist ? '❤️' : '🤍'}
                 </button>
 
+                {/* Cart controls */}
+                <div className="food-item-actions">
+                    
+                </div>
+
 
             </div>
         </div>
