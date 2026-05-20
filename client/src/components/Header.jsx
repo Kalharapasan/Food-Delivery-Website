@@ -33,6 +33,10 @@ const Header = () => {
           <span className="num">50+</span>
           <span className="label">Restaurants</span>
         </div>
+        <div className="stat-chip">
+
+        </div>
+        <div></div>
       </div>
     </div>
   )
