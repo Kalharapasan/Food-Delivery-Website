@@ -33,7 +33,7 @@ const LoginPopup = ({ setShowLogin }) => {
     return (
         <div className='login-popup' onClick={e => e.target === e.currentTarget && setShowLogin(false)}>
             <form className="login-popup-container" onSubmit={onSubmit}>
-                
+
                 <button
                     type="button"
                     className="login-popup-close"
@@ -43,7 +43,8 @@ const LoginPopup = ({ setShowLogin }) => {
                 </button>
 
                 <div className="login-popup-brand">
-                    
+                    <div className="brand-dot">🍽️</div>
+                    <span>Mr.Chai</span>
                 </div>
 
             </form>
