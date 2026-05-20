@@ -5,6 +5,11 @@ import { assets } from '../../assets/assets'
 
 const Navbar = ({ setShowLogin }) => {
 
+    const {
+        getTotalCartCount, token, logout,
+        searchQuery, setSearchQuery, searchResults, url
+    } = useContext(StoreContext)
+    
     const navigate = useNavigate()
     const location = useLocation()
     const searchRef = useRef(null)
