@@ -180,6 +180,14 @@ const StoreContextProvider = ({ children }) => {
         addToast("Logged out successfully", "info");
     };
 
+    const searchResults = searchQuery.length > 1
+        ? food_list.filter(item =>
+            item.name?.toLowerCase().includes(searchQuery.toLowerCase()) ||
+            item.category?.toLowerCase().includes(searchQuery.toLowerCase()) ||
+            item.description?.toLowerCase().includes(searchQuery.toLowerCase())
+        ).slice(0, 8)
+        : [];
+
     const contextValue = {
         food_list,
         cartItem,
