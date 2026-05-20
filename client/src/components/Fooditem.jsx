@@ -65,7 +65,9 @@ const Fooditem = ({ id, name, price, description, image, category, isNew, isPopu
             </div>
             
             <div className="food-item-info">
-                
+                <div className="food-item-name-rating">
+                    
+                </div>
             </div>
 
         </div>
