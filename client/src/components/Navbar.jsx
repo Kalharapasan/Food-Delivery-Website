@@ -34,9 +34,7 @@ const LogoutIcon = () => (
     </svg>
 )
 
-
 const Navbar = ({ setShowLogin }) => {
-
     const {
         getTotalCartCount, token, logout,
         searchQuery, setSearchQuery, searchResults, url
@@ -77,7 +75,6 @@ const Navbar = ({ setShowLogin }) => {
 
     return (
         <nav className="navbar">
-
             <Link to="/">
                 <img className="logo" src={assets.logo} alt="Logo" />
             </Link>
@@ -96,9 +93,9 @@ const Navbar = ({ setShowLogin }) => {
                 ))}
             </ul>
 
+            {/* Search */}
             <div className="navbar-search" ref={searchRef} style={{ position: 'relative' }}>
                 <SearchIcon />
-
                 <input
                     type="text"
                     placeholder="Search dishes..."
@@ -106,7 +103,6 @@ const Navbar = ({ setShowLogin }) => {
                     onChange={e => { setSearchQuery(e.target.value); setShowSearch(true) }}
                     onFocus={() => setShowSearch(true)}
                 />
-
                 {showSearch && searchResults.length > 0 && (
                     <div className="search-results-panel">
                         {searchResults.map(item => (
@@ -125,18 +121,15 @@ const Navbar = ({ setShowLogin }) => {
                         ))}
                     </div>
                 )}
-
             </div>
 
             <div className="navbar-right">
-
                 {/* Cart */}
                 <Link to="/cart" className="navbar-cart-btn">
                     <CartIcon />
                     <span>Cart</span>
                     {cartCount > 0 && <span className="cart-badge">{cartCount}</span>}
                 </Link>
-
 
                 {/* Auth */}
                 {!token ? (
@@ -161,10 +154,9 @@ const Navbar = ({ setShowLogin }) => {
                         </ul>
                     </div>
                 )}
-
             </div>
-
         </nav>
     )
 }
+
 export default Navbar
