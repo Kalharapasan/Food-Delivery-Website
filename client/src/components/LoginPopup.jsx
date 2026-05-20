@@ -50,7 +50,7 @@ const LoginPopup = ({ setShowLogin }) => {
         } else {
             result = await register(data.name, data.email, data.password)
         }
-        
+
         setLoading(false)
 
         if (result.success) {
@@ -58,6 +58,12 @@ const LoginPopup = ({ setShowLogin }) => {
         } else {
             setError(result.message || 'Something went wrong')
         }
+    }
+
+    const switchState = (state) => {
+        setCurrState(state)
+        setError('')
+        setData({ name: '', email: '', password: '' })
     }
 
     return (
