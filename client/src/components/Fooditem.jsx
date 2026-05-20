@@ -73,6 +73,9 @@ const Fooditem = ({ id, name, price, description, image, category, isNew, isPopu
                     </div>
                 </div>
                 <p className="food-item-desc">{description}</p>
+                <div className="food-item-footer">
+                    
+                </div>
             </div>
 
         </div>
