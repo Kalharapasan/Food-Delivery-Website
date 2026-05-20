@@ -202,6 +202,20 @@ const StoreContextProvider = ({ children }) => {
         init();
     }, []);
 
+    useEffect(() => {
+        const interceptor = axios.interceptors.response.use(
+            res => res,
+            err => {
+                if (err.response?.status === 401) {
+                    logout();
+                    addToast("Session expired. Please log in again.", "error");
+                }
+                return Promise.reject(err);
+            }
+        );
+        return () => axios.interceptors.response.eject(interceptor);
+    }, []);
+
 
     const contextValue = {
         food_list,
