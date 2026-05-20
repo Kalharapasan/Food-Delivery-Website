@@ -6,7 +6,9 @@ const Footer = () => {
         <footer className='footer' id='footer'>
             <div className="footer-grid">
                 <div className="footer-brand">
-                    
+                    <div className="logo-row">
+                        
+                    </div>
                 </div>
             </div>
         </footer>
