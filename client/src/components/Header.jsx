@@ -34,7 +34,8 @@ const Header = () => {
           <span className="label">Restaurants</span>
         </div>
         <div className="stat-chip">
-
+          <span className="num">200+</span>
+          <span className="label">Dishes</span>
         </div>
         <div></div>
       </div>
