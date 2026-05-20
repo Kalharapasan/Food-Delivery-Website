@@ -124,6 +124,20 @@ const StoreContextProvider = ({ children }) => {
         return Object.values(cartItem).reduce((sum, qty) => sum + qty, 0);
     };
 
+    const toggleWishlist = (itemId) => {
+        setWishlist(prev => {
+            const next = new Set(prev);
+            if (next.has(itemId)) {
+                next.delete(itemId);
+                addToast("Removed from wishlist", "info");
+            } else {
+                next.add(itemId);
+                addToast("Added to wishlist ❤️", "success");
+            }
+            return next;
+        });
+    };
+
     const contextValue = {
         food_list,
         cartItem,
