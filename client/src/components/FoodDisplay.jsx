@@ -6,7 +6,7 @@ const SkeletonCard = () => (
     <div className="food-item-skeleton">
         <div className="skeleton skeleton-img" />
          <div className="skeleton-body">
-            
+            <div className="skeleton skeleton-line" />
          </div>
     </div>
 )
