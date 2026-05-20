@@ -30,5 +30,9 @@ const LoginPopup = ({ setShowLogin }) => {
     const [agreed, setAgreed] = useState(false)
 
     const [data, setData] = useState({ name: '', email: '', password: '' })
-    return ()
+    return (
+        <div className='login-popup' onClick={e => e.target === e.currentTarget && setShowLogin(false)}>
+            
+        </div>
+    )
 }
