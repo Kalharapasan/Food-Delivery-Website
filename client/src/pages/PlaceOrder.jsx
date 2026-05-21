@@ -131,7 +131,22 @@ const PlaceOrder = () => {
 
                     {/* Items */}
                     <div style={{ marginBottom: 16 }}>
-
+                        {cartItemsList.map(item => (
+                            <div key={item._id} style={{ display: 'flex', alignItems: 'center', gap: 10, padding: '8px 0', borderBottom: '1px solid var(--border-light)' }}>
+                                <img
+                                    src={`${url}/image/${item.image}`}
+                                    alt={item.name}
+                                    style={{ width: 44, height: 44, borderRadius: 8, objectFit: 'cover', flexShrink: 0 }}
+                                />
+                                <div style={{ flex: 1 }}>
+                                    <p style={{ fontSize: 13, fontWeight: 600 }}>{item.name}</p>
+                                    <p style={{ fontSize: 12, color: 'var(--text-muted)' }}>×{cartItem[item._id]}</p>
+                                </div>
+                                <span style={{ fontSize: 14, fontWeight: 700 }}>
+                                    ${(item.price * cartItem[item._id]).toFixed(2)}
+                                </span>
+                            </div>
+                        ))}
                     </div>
                 </div>
             </div>
