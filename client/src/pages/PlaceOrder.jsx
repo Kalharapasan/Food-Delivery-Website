@@ -33,6 +33,7 @@ const PlaceOrder = () => {
         if (!data.country) e.country = 'Required'
         return e
     }
+    const placeOrder = async e => {}
 
     return (
         <div className="place-order">
