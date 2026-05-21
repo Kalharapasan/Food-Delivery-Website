@@ -70,6 +70,16 @@ const PlaceOrder = () => {
     const subtotal = getTotalCartAmount()
     const cartItemsList = food_list.filter(item => cartItem[item._id] > 0)
 
+    if (!token) {
+        return (
+            <div style={{ textAlign: 'center', padding: '80px 20px' }}>
+                <div style={{ fontSize: 48, marginBottom: 16 }}>🔐</div>
+                <h2 style={{ fontFamily: 'Playfair Display, serif', marginBottom: 8 }}>Sign in to checkout</h2>
+                <p style={{ color: 'var(--text-muted)' }}>Please sign in to your account to complete your order.</p>
+            </div>
+        )
+    }
+
 
 
     return (
