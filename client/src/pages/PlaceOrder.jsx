@@ -20,7 +20,13 @@ const PlaceOrder = () => {
 
                     <div className="form-row">
                         <div className="form-field">
-
+                            <label>First Name</label>
+                            <input
+                                name="firstName" placeholder="John"
+                                value={data.firstName} onChange={onChange}
+                                style={{ borderColor: errors.firstName ? '#EF4444' : undefined }}
+                            />
+                            {errors.firstName && <span style={{ fontSize: 12, color: '#EF4444' }}>{errors.firstName}</span>}
                         </div>
                     </div>
 
