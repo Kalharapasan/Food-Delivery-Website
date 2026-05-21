@@ -114,6 +114,15 @@ const PlaceOrder = () => {
 
 
                 </div>
+
+                <button
+                    type="submit"
+                    className="btn-primary"
+                    disabled={loading}
+                    style={{ width: '100%', justifyContent: 'center', padding: '15px', fontSize: 16 }}
+                >
+                    {loading ? 'Processing...' : 'Proceed to Payment →'}
+                </button>
             </form>
 
 
