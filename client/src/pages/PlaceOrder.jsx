@@ -156,6 +156,9 @@ const PlaceOrder = () => {
                         <span>Delivery</span>
                         <span>$2.00</span>
                     </div>
+                    <div className="summary-line total">
+                        
+                    </div>
                 </div>
             </div>
 
