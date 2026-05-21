@@ -49,17 +49,18 @@ const PlaceOrder = () => {
                             />
                             {errors.email && <span style={{ fontSize: 12, color: '#EF4444' }}>{errors.email}</span>}
                         </div>
+                        <div className="form-field">
+                            <label>Phone</label>
+                            <input
+                                name="phone" type="tel" placeholder="+1 234 567 8900"
+                                value={data.phone} onChange={onChange}
+                                style={{ borderColor: errors.phone ? '#EF4444' : undefined }}
+                            />
+                            {errors.phone && <span style={{ fontSize: 12, color: '#EF4444' }}>{errors.phone}</span>}
+                        </div>
                     </div>
 
-                    <div className="form-field">
-                        <label>Phone</label>
-                        <input
-                            name="phone" type="tel" placeholder="+1 234 567 8900"
-                            value={data.phone} onChange={onChange}
-                            style={{ borderColor: errors.phone ? '#EF4444' : undefined }}
-                        />
-                        {errors.phone && <span style={{ fontSize: 12, color: '#EF4444' }}>{errors.phone}</span>}
-                    </div>
+
 
                 </div>
             </form>
