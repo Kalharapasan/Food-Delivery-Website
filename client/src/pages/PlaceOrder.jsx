@@ -40,13 +40,15 @@ const PlaceOrder = () => {
         if (Object.keys(errs).length > 0) { setErrors(errs); return }
         setLoading(true)
         try {
-            
+            const orderItems = food_list
+                .filter(item => cartItem[item._id] > 0)
+                .map(item => ({ ...item, quantity: cartItem[item._id] }))
         } catch (error) {
-            
+
         }
     }
 
-    
+
 
     return (
         <div className="place-order">
