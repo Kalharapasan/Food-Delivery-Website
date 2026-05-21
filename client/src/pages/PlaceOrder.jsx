@@ -21,7 +21,17 @@ const PlaceOrder = () => {
     }
 
     const validate = () => {
-        
+        const e = {}
+        if (!data.firstName) e.firstName = 'Required'
+        if (!data.lastName) e.lastName = 'Required'
+        if (!data.email || !/\S+@\S+\.\S+/.test(data.email)) e.email = 'Valid email required'
+        if (!data.phone) e.phone = 'Required'
+        if (!data.street) e.street = 'Required'
+        if (!data.city) e.city = 'Required'
+        if (!data.state) e.state = 'Required'
+        if (!data.zipcode) e.zipcode = 'Required'
+        if (!data.country) e.country = 'Required'
+        return e
     }
 
     return (
