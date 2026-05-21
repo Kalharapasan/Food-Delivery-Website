@@ -152,6 +152,9 @@ const PlaceOrder = () => {
                         <span>Subtotal</span>
                         <span>${subtotal.toFixed(2)}</span>
                     </div>
+                    <div className="summary-line">
+                        
+                    </div>
                 </div>
             </div>
 
