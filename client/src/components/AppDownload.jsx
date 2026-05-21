@@ -22,7 +22,8 @@ const AppDownload = () => {
                     <div className="store-btn">
                         <span className="store-icon">🍎</span>
                         <div className="store-btn-text">
-                            
+                            <small>DOWNLOAD ON THE</small>
+                            <strong>App Store</strong>
                         </div>
                     </div>
                 </div>
