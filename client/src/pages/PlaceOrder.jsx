@@ -102,7 +102,13 @@ const PlaceOrder = () => {
                             {errors.zipcode && <span style={{ fontSize: 12, color: '#EF4444' }}>{errors.zipcode}</span>}
                         </div>
                         <div className="form-field">
-                            
+                            <label>Country</label>
+                            <input
+                                name="country" placeholder="United States"
+                                value={data.country} onChange={onChange}
+                                style={{ borderColor: errors.country ? '#EF4444' : undefined }}
+                            />
+                            {errors.country && <span style={{ fontSize: 12, color: '#EF4444' }}>{errors.country}</span>}
                         </div>
                     </div>
 
