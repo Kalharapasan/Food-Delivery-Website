@@ -4,7 +4,6 @@ import { menu_list } from '../assets/assets'
 const ExploreMenu = ({ category, setCategory }) => {
     return (
         <div className='explore-menu' id='explore-menu'>
-
             <div className="section-header">
                 <div className="section-tag">Categories</div>
                 <h2>Explore our menu</h2>
@@ -40,6 +39,7 @@ const ExploreMenu = ({ category, setCategory }) => {
                 ))}
             </div>
 
+            <hr className="explore-menu-divider" />
         </div>
     )
 }
