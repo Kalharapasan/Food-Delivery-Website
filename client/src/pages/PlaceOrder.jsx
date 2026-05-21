@@ -4,15 +4,20 @@ import axios from 'axios'
 
 
 const PlaceOrder = () => {
-    
-    
-    return(
+
+
+    return (
         <div className="place-order">
 
             <form onSubmit={placeOrder} className="place-order-left">
                 <h2>Checkout</h2>
                 <div className="form-card">
                     
+                    <h3>
+                        <span className="step-num">1</span>
+                        Delivery Information
+                    </h3>
+
                 </div>
             </form>
 
