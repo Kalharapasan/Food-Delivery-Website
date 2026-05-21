@@ -125,6 +125,10 @@ const PlaceOrder = () => {
                 </button>
             </form>
 
+             <div style={{ position: 'sticky', top: 90 }}>
+                
+             </div>
+
 
         </div>
     )
