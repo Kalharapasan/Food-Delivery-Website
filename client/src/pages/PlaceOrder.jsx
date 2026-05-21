@@ -33,12 +33,15 @@ const PlaceOrder = () => {
         if (!data.country) e.country = 'Required'
         return e
     }
-    
+
     const placeOrder = async e => {
         e.preventDefault()
         const errs = validate()
         if (Object.keys(errs).length > 0) { setErrors(errs); return }
+        setLoading(true)
     }
+
+    
 
     return (
         <div className="place-order">
