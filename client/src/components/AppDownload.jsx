@@ -8,6 +8,9 @@ const AppDownload = () => {
                 <h2>
                     Order faster with<br />our mobile app
                 </h2>
+                <p>
+                    Track your orders in real-time, save your favourites, and get exclusive app-only deals. Available on iOS and Android.
+                </p>
             </div>
         </div>
     )
