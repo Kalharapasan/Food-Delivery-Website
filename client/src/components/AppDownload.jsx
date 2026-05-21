@@ -19,6 +19,9 @@ const AppDownload = () => {
                             <strong>Google Play</strong>
                         </div>
                     </div>
+                    <div className="store-btn">
+                        
+                    </div>
                 </div>
             </div>
         </div>
