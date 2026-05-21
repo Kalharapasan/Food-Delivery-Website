@@ -17,6 +17,10 @@ const PlaceOrder = () => {
                         <span className="step-num">1</span>
                         Delivery Information
                     </h3>
+                    
+                    <div className="form-row">
+
+                    </div>
 
                 </div>
             </form>
