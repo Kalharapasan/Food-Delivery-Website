@@ -127,7 +127,7 @@ const PlaceOrder = () => {
 
              <div style={{ position: 'sticky', top: 90 }}>
                 <div className="cart-summary">
-                    
+                    <h3>Order Summary</h3>
                 </div>
              </div>
 
