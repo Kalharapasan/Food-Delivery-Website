@@ -81,7 +81,13 @@ const PlaceOrder = () => {
                             {errors.city && <span style={{ fontSize: 12, color: '#EF4444' }}>{errors.city}</span>}
                         </div>
                         <div className="form-field">
-                            
+                            <label>State</label>
+                            <input
+                                name="state" placeholder="NY"
+                                value={data.state} onChange={onChange}
+                                style={{ borderColor: errors.state ? '#EF4444' : undefined }}
+                            />
+                            {errors.state && <span style={{ fontSize: 12, color: '#EF4444' }}>{errors.state}</span>}
                         </div>
                     </div>
 
