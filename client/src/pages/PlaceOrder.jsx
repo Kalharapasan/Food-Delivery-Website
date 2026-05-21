@@ -8,7 +8,12 @@ const PlaceOrder = () => {
     
     return(
         <div className="place-order">
-            
+
+            <form onSubmit={placeOrder} className="place-order-left">
+                
+            </form>
+
+
         </div>
     )
 }
