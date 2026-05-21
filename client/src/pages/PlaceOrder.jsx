@@ -5,6 +5,15 @@ import axios from 'axios'
 
 const PlaceOrder = () => {
     const { getTotalCartAmount, token, food_list, cartItem, url } = useContext(StoreContext)
+    
+    const [data, setData] = useState({
+        firstName: '', lastName: '', email: '',
+        street: '', city: '', state: '', zipcode: '', country: '',
+        phone: ''
+    })
+
+    
+
 
     return (
         <div className="place-order">
