@@ -2,8 +2,10 @@ import React from 'react'
 import { assets } from '../assets/assets'
 
 const AppDownload = () => {
-    return(
+    return (
+        <div className='app-download' id='app-download'>
 
+        </div>
     )
 }
 export default AppDownload
