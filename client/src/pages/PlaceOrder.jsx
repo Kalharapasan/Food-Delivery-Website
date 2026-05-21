@@ -2,7 +2,6 @@ import React, { useContext, useState } from 'react'
 import { StoreContext } from '../context/StoreContext'
 import axios from 'axios'
 
-
 const PlaceOrder = () => {
     const { getTotalCartAmount, token, food_list, cartItem, url } = useContext(StoreContext)
 
@@ -38,6 +37,7 @@ const PlaceOrder = () => {
         e.preventDefault()
         const errs = validate()
         if (Object.keys(errs).length > 0) { setErrors(errs); return }
+
         setLoading(true)
         try {
             const orderItems = food_list
@@ -59,7 +59,6 @@ const PlaceOrder = () => {
             } else {
                 alert(res.data.message || 'Order failed. Please try again.')
             }
-
         } catch (err) {
             alert(err.response?.data?.message || 'Failed to place order. Please try again.')
         } finally {
@@ -80,15 +79,13 @@ const PlaceOrder = () => {
         )
     }
 
-
-
     return (
         <div className="place-order">
-
             <form onSubmit={placeOrder} className="place-order-left">
                 <h2>Checkout</h2>
-                <div className="form-card">
 
+                {/* Delivery Info */}
+                <div className="form-card">
                     <h3>
                         <span className="step-num">1</span>
                         Delivery Information
@@ -187,8 +184,6 @@ const PlaceOrder = () => {
                             {errors.country && <span style={{ fontSize: 12, color: '#EF4444' }}>{errors.country}</span>}
                         </div>
                     </div>
-
-
                 </div>
 
                 <button
@@ -201,6 +196,7 @@ const PlaceOrder = () => {
                 </button>
             </form>
 
+            {/* Order Summary */}
             <div style={{ position: 'sticky', top: 90 }}>
                 <div className="cart-summary">
                     <h3>Order Summary</h3>
@@ -224,6 +220,7 @@ const PlaceOrder = () => {
                             </div>
                         ))}
                     </div>
+
                     <div className="summary-line">
                         <span>Subtotal</span>
                         <span>${subtotal.toFixed(2)}</span>
@@ -236,13 +233,12 @@ const PlaceOrder = () => {
                         <span>Total</span>
                         <span className="amount">${(subtotal + 2).toFixed(2)}</span>
                     </div>
+
                     <p style={{ textAlign: 'center', fontSize: 12, color: 'var(--text-muted)', marginTop: 16, display: 'flex', alignItems: 'center', gap: 6, justifyContent: 'center' }}>
                         🔒 Secured by Stripe · SSL encrypted
                     </p>
                 </div>
             </div>
-
-
         </div>
     )
 }
