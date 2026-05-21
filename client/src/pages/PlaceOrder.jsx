@@ -148,6 +148,9 @@ const PlaceOrder = () => {
                             </div>
                         ))}
                     </div>
+                    <div className="summary-line">
+                        
+                    </div>
                 </div>
             </div>
 
