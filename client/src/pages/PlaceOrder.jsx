@@ -61,7 +61,7 @@ const PlaceOrder = () => {
             }
 
         } catch (error) {
-
+            alert(err.response?.data?.message || 'Failed to place order. Please try again.')
         }
     }
 
