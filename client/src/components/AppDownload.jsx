@@ -14,6 +14,9 @@ const AppDownload = () => {
                 <div className="app-store-buttons">
                     <div className="store-btn">
                         <span className="store-icon">▶</span>
+                        <div className="store-btn-text">
+                            
+                        </div>
                     </div>
                 </div>
             </div>
