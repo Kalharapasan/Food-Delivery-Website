@@ -20,6 +20,10 @@ const PlaceOrder = () => {
         setErrors(prev => ({ ...prev, [e.target.name]: '' }))
     }
 
+    const validate = () => {
+        
+    }
+
     return (
         <div className="place-order">
 
