@@ -4,7 +4,7 @@ import axios from 'axios'
 
 
 const PlaceOrder = () => {
-
+    const { getTotalCartAmount, token, food_list, cartItem, url } = useContext(StoreContext)
 
     return (
         <div className="place-order">
