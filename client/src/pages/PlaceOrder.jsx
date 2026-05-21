@@ -41,7 +41,13 @@ const PlaceOrder = () => {
 
                     <div className="form-row">
                         <div className="form-field">
-                            
+                            <label>Email</label>
+                            <input
+                                name="email" type="email" placeholder="you@example.com"
+                                value={data.email} onChange={onChange}
+                                style={{ borderColor: errors.email ? '#EF4444' : undefined }}
+                            />
+                            {errors.email && <span style={{ fontSize: 12, color: '#EF4444' }}>{errors.email}</span>}
                         </div>
                     </div>
 
