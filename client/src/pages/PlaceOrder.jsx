@@ -70,6 +70,10 @@ const PlaceOrder = () => {
                         {errors.street && <span style={{ fontSize: 12, color: '#EF4444' }}>{errors.street}</span>}
                     </div>
 
+                    <div className="form-row">
+                        
+                    </div>
+
 
                 </div>
             </form>
