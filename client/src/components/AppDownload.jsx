@@ -13,7 +13,7 @@ const AppDownload = () => {
                 </p>
                 <div className="app-store-buttons">
                     <div className="store-btn">
-                        
+                        <span className="store-icon">▶</span>
                     </div>
                 </div>
             </div>
