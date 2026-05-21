@@ -28,6 +28,9 @@ const PlaceOrder = () => {
                             />
                             {errors.firstName && <span style={{ fontSize: 12, color: '#EF4444' }}>{errors.firstName}</span>}
                         </div>
+                        <div className="form-field">
+                            
+                        </div>
                     </div>
 
                 </div>
