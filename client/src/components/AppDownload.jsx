@@ -28,6 +28,9 @@ const AppDownload = () => {
                     </div>
                 </div>
             </div>
+            <div className="app-download-image">
+                
+            </div>
         </div>
     )
 }
