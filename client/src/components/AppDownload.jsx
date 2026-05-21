@@ -21,6 +21,9 @@ const AppDownload = () => {
                     </div>
                     <div className="store-btn">
                         <span className="store-icon">🍎</span>
+                        <div className="store-btn-text">
+                            
+                        </div>
                     </div>
                 </div>
             </div>
