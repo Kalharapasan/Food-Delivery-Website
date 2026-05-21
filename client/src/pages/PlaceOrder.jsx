@@ -160,6 +160,9 @@ const PlaceOrder = () => {
                         <span>Total</span>
                         <span className="amount">${(subtotal + 2).toFixed(2)}</span>
                     </div>
+                    <p style={{ textAlign: 'center', fontSize: 12, color: 'var(--text-muted)', marginTop: 16, display: 'flex', alignItems: 'center', gap: 6, justifyContent: 'center' }}>
+                        🔒 Secured by Stripe · SSL encrypted
+                    </p>
                 </div>
             </div>
 
