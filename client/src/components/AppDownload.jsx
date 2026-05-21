@@ -12,7 +12,9 @@ const AppDownload = () => {
                     Track your orders in real-time, save your favourites, and get exclusive app-only deals. Available on iOS and Android.
                 </p>
                 <div className="app-store-buttons">
-                    
+                    <div className="store-btn">
+                        
+                    </div>
                 </div>
             </div>
         </div>
