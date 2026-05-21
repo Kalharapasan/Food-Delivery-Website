@@ -43,6 +43,13 @@ const PlaceOrder = () => {
             const orderItems = food_list
                 .filter(item => cartItem[item._id] > 0)
                 .map(item => ({ ...item, quantity: cartItem[item._id] }))
+
+            const orderData = {
+                address: data,
+                items: orderItems,
+                amount: getTotalCartAmount() + 2
+            }
+
         } catch (error) {
 
         }
