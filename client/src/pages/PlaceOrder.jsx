@@ -39,6 +39,11 @@ const PlaceOrder = () => {
         const errs = validate()
         if (Object.keys(errs).length > 0) { setErrors(errs); return }
         setLoading(true)
+        try {
+            
+        } catch (error) {
+            
+        }
     }
 
     
