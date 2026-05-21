@@ -60,12 +60,15 @@ const PlaceOrder = () => {
                 alert(res.data.message || 'Order failed. Please try again.')
             }
 
-        } catch (error) {
+        } catch (err) {
             alert(err.response?.data?.message || 'Failed to place order. Please try again.')
         } finally {
             setLoading(false)
         }
     }
+
+    const subtotal = getTotalCartAmount()
+    const cartItemsList = food_list.filter(item => cartItem[item._id] > 0)
 
 
 
