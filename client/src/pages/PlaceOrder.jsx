@@ -80,6 +80,9 @@ const PlaceOrder = () => {
                             />
                             {errors.city && <span style={{ fontSize: 12, color: '#EF4444' }}>{errors.city}</span>}
                         </div>
+                        <div className="form-field">
+                            
+                        </div>
                     </div>
 
 
