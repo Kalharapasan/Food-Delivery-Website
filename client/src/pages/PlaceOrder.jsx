@@ -49,6 +49,10 @@ const PlaceOrder = () => {
                 items: orderItems,
                 amount: getTotalCartAmount() + 2
             }
+            
+            const res = await axios.post(`${url}/api/order/place`, orderData, {
+                headers: { token }
+            })
 
         } catch (error) {
 
