@@ -15,6 +15,10 @@ const PlaceOrder = () => {
     const [loading, setLoading] = useState(false)
     const [errors, setErrors] = useState({})
 
+    const onChange = e => {
+        setData(prev => ({ ...prev, [e.target.name]: e.target.value }))
+        setErrors(prev => ({ ...prev, [e.target.name]: '' }))
+    }
 
     return (
         <div className="place-order">
