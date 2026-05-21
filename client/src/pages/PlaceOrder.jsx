@@ -125,11 +125,16 @@ const PlaceOrder = () => {
                 </button>
             </form>
 
-             <div style={{ position: 'sticky', top: 90 }}>
+            <div style={{ position: 'sticky', top: 90 }}>
                 <div className="cart-summary">
                     <h3>Order Summary</h3>
+
+                    {/* Items */}
+                    <div style={{ marginBottom: 16 }}>
+
+                    </div>
                 </div>
-             </div>
+            </div>
 
 
         </div>
