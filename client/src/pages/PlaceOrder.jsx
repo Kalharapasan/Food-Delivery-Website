@@ -91,6 +91,10 @@ const PlaceOrder = () => {
                         </div>
                     </div>
 
+                    <div className="form-row">
+                        
+                    </div>
+
 
                 </div>
             </form>
