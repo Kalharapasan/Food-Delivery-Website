@@ -11,6 +11,9 @@ const PlaceOrder = () => {
 
             <form onSubmit={placeOrder} className="place-order-left">
                 <h2>Checkout</h2>
+                <div className="form-card">
+                    
+                </div>
             </form>
 
 
