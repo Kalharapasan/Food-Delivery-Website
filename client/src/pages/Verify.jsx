@@ -13,6 +13,10 @@ const Verify = () => {
 
     const [status, setStatus] = useState('loading') 
 
+    useEffect(() => {
+        
+    })
+
 
     return (
         <div>
