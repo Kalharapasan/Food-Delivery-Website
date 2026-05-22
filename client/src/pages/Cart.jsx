@@ -39,7 +39,7 @@ const Cart = () => {
                 <h1 className="cart-page-title">Your Cart</h1>
                 <div className="cart-items">
                     <div className="cart-empty">
-                        
+                        <div className="icon">🛒</div>
                     </div>
                 </div>
             </div>
