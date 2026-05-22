@@ -47,6 +47,9 @@ const Cart = () => {
                     {/* Summary */}
                     <div className="cart-summary">
                         <h3>Order Summary</h3>
+                        <div className="summary-line">
+                            
+                        </div>
                     </div>
 
                 </div>
