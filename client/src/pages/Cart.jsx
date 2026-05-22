@@ -22,6 +22,11 @@ const Cart = () => {
 
     const applyPromo = () => {
         const code = promoCode.toUpperCase().trim()
+        if (condition) {
+            
+        }else{
+            
+        }
     }
 
     return (
