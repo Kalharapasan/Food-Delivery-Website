@@ -52,7 +52,8 @@ const Cart = () => {
                             <span>${subtotal.toFixed(2)}</span>
                         </div>
                         <div className="summary-line">
-                            
+                            <span>Delivery fee</span>
+                            <span>{delivery === 0 ? 'Free' : `$${delivery.toFixed(2)}`}</span>
                         </div>
                     </div>
 
