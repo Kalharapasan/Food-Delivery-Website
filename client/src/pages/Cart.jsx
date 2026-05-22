@@ -26,16 +26,20 @@ const Cart = () => {
                             <div className="cart-item-product">
                                 <img src={`${url}/image/${item.image}`} alt={item.name} />
                                 <div className="cart-item-product-info">
+                                    <p className="cart-item-name">{item.name}</p>
+                                    <p className="cart-item-category">{item.category}</p>
+                                </div>
+                            </div>
                     ))}
 
-                </div>
+                        </div>
 
             </div>
 
 
-        </div>
-    )
+            </div>
+            )
 
 }
 
-export default Cart
+            export default Cart
