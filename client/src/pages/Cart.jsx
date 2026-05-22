@@ -35,7 +35,9 @@ const Cart = () => {
 
      if (cartItems.length === 0) {
          return (
-            
+            <div className="cart">
+                
+            </div>
          )
      }
 
