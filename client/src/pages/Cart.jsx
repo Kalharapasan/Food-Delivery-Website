@@ -13,6 +13,7 @@ const Cart = () => {
     const [discount, setDiscount] = useState(0)
     const [promoError, setPromoError] = useState('')
     const [promoSuccess, setPromoSuccess] = useState('')
+    const PROMO_CODES = { 'SAVE10': 10, 'FIRST20': 20, 'WELCOME15': 15 }
 
     return (
         <div className="cart">
