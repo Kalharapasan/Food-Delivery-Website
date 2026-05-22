@@ -95,6 +95,11 @@ const Cart = () => {
                             />
                             <button className="promo-apply-btn" onClick={applyPromo}>Apply</button>
                         </div>
+                        {promoError && <p style={{ fontSize: 12, color: '#EF4444', marginTop: 8 }}>{promoError}</p>}
+                        {promoSuccess && <p style={{ fontSize: 12, color: 'var(--green)', marginTop: 8 }}>{promoSuccess}</p>}
+                        <p style={{ fontSize: 12, color: 'var(--text-muted)', marginTop: 8 }}>
+                            Try: SAVE10, FIRST20, WELCOME15
+                        </p>
                     </div>
 
                 </div>
