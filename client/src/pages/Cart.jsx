@@ -44,6 +44,10 @@ const Cart = () => {
                 </div>
                 {/* Sidebar */}
                 <div className="cart-sidebar">
+                    {/* Summary */}
+                    <div className="cart-summary">
+                        
+                    </div>
 
                 </div>
 
