@@ -65,6 +65,13 @@ const Cart = () => {
                             <span>Total</span>
                             <span className="amount">${total.toFixed(2)}</span>
                         </div>
+                        <button
+                            className="checkout-btn"
+                            onClick={() => {
+                                if (!token) { alert('Please sign in to checkout'); return }
+                                navigate('/order')
+                            }}
+                        ></button>
                     </div>
 
                 </div>
