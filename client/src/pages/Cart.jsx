@@ -23,7 +23,7 @@ const Cart = () => {
                     </div>
                     {cartItems.map(item => (
                         <div key={item._id} className="cart-item-row">
-                            
+                            <div className="cart-item-product">
                     ))}
 
                 </div>
