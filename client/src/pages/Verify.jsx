@@ -35,6 +35,7 @@ const Verify = () => {
             setStatus('failed')
             setTimeout(() => navigate('/cart'), 3000)
         }
+        if (token) verifyPayment()
     }, [token])
 
 
