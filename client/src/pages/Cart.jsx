@@ -36,16 +36,19 @@ const Cart = () => {
                                 <span className="qty-num">{cartItem[item._id]}</span>
                                 <button className="qty-btn" onClick={() => addToCart(item._id)}>+</button>
                             </div>
+                            <p className="cart-total-price">${(item.price * cartItem[item._id]).toFixed(2)}</p>
+                            <button className="remove-btn" onClick={() => clearCartItem(item._id)} title="Remove item">✕</button>
+                        </div>
                     ))}
 
-                        </div>
+                </div>
 
             </div>
 
 
-            </div>
-            )
+        </div>
+    )
 
 }
 
-            export default Cart
+export default Cart
