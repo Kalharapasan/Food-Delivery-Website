@@ -8,6 +8,11 @@ const Cart = () => {
         cartItem, food_list, removeFromCart, addToCart,
         clearCartItem, getTotalCartAmount, url, token
     } = useContext(StoreContext)
+    const navigate = useNavigate()
+    const [promoCode, setPromoCode] = useState('')
+    const [discount, setDiscount] = useState(0)
+    const [promoError, setPromoError] = useState('')
+    const [promoSuccess, setPromoSuccess] = useState('')
 
     return (
         <div className="cart">
