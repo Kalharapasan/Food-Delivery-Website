@@ -21,6 +21,10 @@ const Cart = () => {
                         <span>Total</span>
                         <span></span>
                     </div>
+                    {cartItems.map(item => (
+                        
+                    ))}
+
                 </div>
 
             </div>
