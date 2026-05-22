@@ -77,6 +77,9 @@ const Cart = () => {
                                 <polyline points="12 5 19 12 12 19" />
                             </svg>
                         </button>
+                        <p style={{ textAlign: 'center', fontSize: 12, color: 'var(--text-muted)', marginTop: 12 }}>
+                            🔒 Secure checkout powered by Stripe
+                        </p>
                     </div>
 
                 </div>
