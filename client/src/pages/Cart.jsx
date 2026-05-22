@@ -55,6 +55,12 @@ const Cart = () => {
                             <span>Delivery fee</span>
                             <span>{delivery === 0 ? 'Free' : `$${delivery.toFixed(2)}`}</span>
                         </div>
+                        {discount > 0 && (
+                            <div className="summary-line" style={{ color: 'var(--green)' }}>
+                                <span>Discount ({discount}%)</span>
+                                <span>−${discountAmount.toFixed(2)}</span>
+                            </div>
+                        )}
                     </div>
 
                 </div>
