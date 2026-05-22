@@ -20,6 +20,16 @@ const Verify = () => {
                 { success, orderId },
                 { headers: { token } }
             )
+
+            if (res.data.success) {
+                setStatus('success')
+                setCartItem({})
+                addToast && addToast('Order placed successfully! 🎉', 'success')
+                setTimeout(() => navigate('/myorders'), 3000)
+            } else {
+
+            }
+
         } catch (error) {
 
         }
