@@ -30,6 +30,7 @@ const Cart = () => {
                                     <p className="cart-item-category">{item.category}</p>
                                 </div>
                             </div>
+                            <p className="cart-price">${item.price.toFixed(2)}</p>
                     ))}
 
                         </div>
