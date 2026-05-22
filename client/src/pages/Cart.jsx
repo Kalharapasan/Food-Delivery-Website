@@ -4,6 +4,10 @@ import { useNavigate } from 'react-router-dom'
 
 const Cart = () => {
 
+    const {
+        
+    } =useContext(StoreContext)
+
     return (
         <div className="cart">
 
