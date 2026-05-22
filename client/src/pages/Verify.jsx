@@ -4,9 +4,19 @@ import { StoreContext } from '../context/StoreContext'
 import axios from 'axios'
 
 const Verify = () => {
+    const [searchParams] = useSearchParams()
+    const { url, token, setCartItem, addToast } = useContext(StoreContext)
+    const navigate = useNavigate()
+
+    const success = searchParams.get('success')
+    const orderId = searchParams.get('orderId')
+
+    const [status, setStatus] = useState('loading') 
+
+
     return (
         <div>
-            
+
         </div>
     )
 }
