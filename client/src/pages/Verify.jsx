@@ -15,7 +15,7 @@ const Verify = () => {
 
     useEffect(() => {
         try {
-            
+            const res = await axios.post()
         } catch (error) {
             
         }
