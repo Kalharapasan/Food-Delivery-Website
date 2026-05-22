@@ -32,7 +32,8 @@ const Verify = () => {
             }
 
         } catch (error) {
-
+            setStatus('failed')
+            setTimeout(() => navigate('/cart'), 3000)
         }
     }, [token])
 
