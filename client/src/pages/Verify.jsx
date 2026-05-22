@@ -27,7 +27,8 @@ const Verify = () => {
                 addToast && addToast('Order placed successfully! 🎉', 'success')
                 setTimeout(() => navigate('/myorders'), 3000)
             } else {
-
+                setStatus('failed')
+                setTimeout(() => navigate('/cart'), 3000)
             }
 
         } catch (error) {
