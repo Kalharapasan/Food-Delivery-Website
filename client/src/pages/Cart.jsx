@@ -46,7 +46,7 @@ const Cart = () => {
                 <div className="cart-sidebar">
                     {/* Summary */}
                     <div className="cart-summary">
-                        
+                        <h3>Order Summary</h3>
                     </div>
 
                 </div>
