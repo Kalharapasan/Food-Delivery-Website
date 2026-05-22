@@ -37,6 +37,9 @@ const Cart = () => {
          return (
             <div className="cart">
                 <h1 className="cart-page-title">Your Cart</h1>
+                <div className="cart-items">
+                    
+                </div>
             </div>
          )
      }
