@@ -14,7 +14,11 @@ const Verify = () => {
     const [status, setStatus] = useState('loading') 
 
     useEffect(() => {
-
+        try {
+            
+        } catch (error) {
+            
+        }
     }, [token])
 
 
