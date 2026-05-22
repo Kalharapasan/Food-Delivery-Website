@@ -33,18 +33,23 @@ const Cart = () => {
         }
     }
 
-     if (cartItems.length === 0) {
-         return (
+    if (cartItems.length === 0) {
+        return (
             <div className="cart">
                 <h1 className="cart-page-title">Your Cart</h1>
                 <div className="cart-items">
                     <div className="cart-empty">
                         <div className="icon">🛒</div>
+                        <h3>Your cart is empty</h3>
+                        <p>Looks like you haven't added anything yet.</p>
+                        <button className="btn-primary" onClick={() => navigate('/')}>
+                            Browse Menu
+                        </button>
                     </div>
                 </div>
             </div>
-         )
-     }
+        )
+    }
 
     return (
         <div className="cart">
