@@ -42,6 +42,10 @@ const Cart = () => {
                     ))}
 
                 </div>
+                {/* Sidebar */}
+                <div className="cart-sidebar">
+
+                </div>
 
             </div>
 
