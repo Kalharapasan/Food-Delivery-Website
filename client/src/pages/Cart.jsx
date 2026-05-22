@@ -15,7 +15,11 @@ const Cart = () => {
                 {/* Items table */}
                 <div className="cart-items">
                     <div className="cart-table-header">
-
+                        <span>Product</span>
+                        <span>Price</span>
+                        <span>Quantity</span>
+                        <span>Total</span>
+                        <span></span>
                     </div>
                 </div>
 
