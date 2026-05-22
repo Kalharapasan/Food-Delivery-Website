@@ -93,6 +93,7 @@ const Cart = () => {
                                 onChange={e => { setPromoCode(e.target.value); setPromoError(''); setPromoSuccess('') }}
                                 onKeyDown={e => e.key === 'Enter' && applyPromo()}
                             />
+                            <button className="promo-apply-btn" onClick={applyPromo}>Apply</button>
                         </div>
                     </div>
 
