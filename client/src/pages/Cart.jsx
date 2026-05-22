@@ -86,7 +86,13 @@ const Cart = () => {
                             <span>🎟️</span> Promo Code
                         </h4>
                         <div className="promo-input-row">
-                            
+                            <input
+                                type="text"
+                                placeholder="Enter code..."
+                                value={promoCode}
+                                onChange={e => { setPromoCode(e.target.value); setPromoError(''); setPromoSuccess('') }}
+                                onKeyDown={e => e.key === 'Enter' && applyPromo()}
+                            />
                         </div>
                     </div>
 
