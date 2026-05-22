@@ -27,7 +27,9 @@ const Cart = () => {
             setPromoSuccess(`🎉 ${PROMO_CODES[code]}% discount applied!`)
             setPromoError('')
         } else {
-
+            setPromoError('Invalid promo code')
+            setPromoSuccess('')
+            setDiscount(0)
         }
     }
 
