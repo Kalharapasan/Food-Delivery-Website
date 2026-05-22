@@ -34,7 +34,9 @@ const Cart = () => {
     }
 
      if (cartItems.length === 0) {
-        
+         return (
+            
+         )
      }
 
     return (
