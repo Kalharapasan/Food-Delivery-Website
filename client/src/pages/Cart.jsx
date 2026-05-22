@@ -48,7 +48,8 @@ const Cart = () => {
                     <div className="cart-summary">
                         <h3>Order Summary</h3>
                         <div className="summary-line">
-                            
+                            <span>Subtotal ({cartItems.length} items)</span>
+                            <span>${subtotal.toFixed(2)}</span>
                         </div>
                     </div>
 
