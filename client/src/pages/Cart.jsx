@@ -22,7 +22,8 @@ const Cart = () => {
                         <span></span>
                     </div>
                     {cartItems.map(item => (
-                        
+                        <div key={item._id} className="cart-item-row">
+                            
                     ))}
 
                 </div>
