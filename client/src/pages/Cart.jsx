@@ -36,7 +36,7 @@ const Cart = () => {
      if (cartItems.length === 0) {
          return (
             <div className="cart">
-                
+                <h1 className="cart-page-title">Your Cart</h1>
             </div>
          )
      }
