@@ -21,7 +21,7 @@ const Cart = () => {
     const total = subtotal + delivery - discountAmount
 
     const applyPromo = () => {
-        
+        const code = promoCode.toUpperCase().trim()
     }
 
     return (
