@@ -1,19 +1,21 @@
 import React, { useContext, useState } from 'react'
-import { StoreContext } from '../context/StoreContext'
+import { StoreContext } from '../../context/StoreContext'
 import { useNavigate } from 'react-router-dom'
 
 const Cart = () => {
-
     const {
         cartItem, food_list, removeFromCart, addToCart,
         clearCartItem, getTotalCartAmount, url, token
     } = useContext(StoreContext)
+
     const navigate = useNavigate()
     const [promoCode, setPromoCode] = useState('')
     const [discount, setDiscount] = useState(0)
     const [promoError, setPromoError] = useState('')
     const [promoSuccess, setPromoSuccess] = useState('')
+
     const PROMO_CODES = { 'SAVE10': 10, 'FIRST20': 20, 'WELCOME15': 15 }
+
     const cartItems = food_list.filter(item => cartItem[item._id] > 0)
     const subtotal = getTotalCartAmount()
     const delivery = subtotal === 0 ? 0 : 2
@@ -53,12 +55,10 @@ const Cart = () => {
 
     return (
         <div className="cart">
-
             <h1 className="cart-page-title">Your Cart</h1>
             <p className="cart-subtitle">{cartItems.length} item{cartItems.length !== 1 ? 's' : ''} in your cart</p>
 
             <div className="cart-layout">
-
                 {/* Items table */}
                 <div className="cart-items">
                     <div className="cart-table-header">
@@ -68,6 +68,7 @@ const Cart = () => {
                         <span>Total</span>
                         <span></span>
                     </div>
+
                     {cartItems.map(item => (
                         <div key={item._id} className="cart-item-row">
                             <div className="cart-item-product">
@@ -87,13 +88,14 @@ const Cart = () => {
                             <button className="remove-btn" onClick={() => clearCartItem(item._id)} title="Remove item">✕</button>
                         </div>
                     ))}
-
                 </div>
+
                 {/* Sidebar */}
                 <div className="cart-sidebar">
                     {/* Summary */}
                     <div className="cart-summary">
                         <h3>Order Summary</h3>
+
                         <div className="summary-line">
                             <span>Subtotal ({cartItems.length} items)</span>
                             <span>${subtotal.toFixed(2)}</span>
@@ -112,22 +114,27 @@ const Cart = () => {
                             <span>Total</span>
                             <span className="amount">${total.toFixed(2)}</span>
                         </div>
+
                         <button
                             className="checkout-btn"
                             onClick={() => {
                                 if (!token) { alert('Please sign in to checkout'); return }
                                 navigate('/order')
                             }}
-                        >Proceed to Checkout
+                        >
+                            Proceed to Checkout
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                                 <line x1="5" y1="12" x2="19" y2="12" />
                                 <polyline points="12 5 19 12 12 19" />
                             </svg>
                         </button>
+
                         <p style={{ textAlign: 'center', fontSize: 12, color: 'var(--text-muted)', marginTop: 12 }}>
                             🔒 Secure checkout powered by Stripe
                         </p>
                     </div>
+
+                    {/* Promo Code */}
                     <div className="promo-card">
                         <h4>
                             <span>🎟️</span> Promo Code
@@ -148,15 +155,10 @@ const Cart = () => {
                             Try: SAVE10, FIRST20, WELCOME15
                         </p>
                     </div>
-
                 </div>
-
             </div>
-
-
         </div>
     )
-
 }
 
 export default Cart
