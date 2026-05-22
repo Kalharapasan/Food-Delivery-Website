@@ -61,6 +61,9 @@ const Cart = () => {
                                 <span>−${discountAmount.toFixed(2)}</span>
                             </div>
                         )}
+                        <div className="summary-line total">
+                            
+                        </div>
                     </div>
 
                 </div>
