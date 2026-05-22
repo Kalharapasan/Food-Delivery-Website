@@ -22,10 +22,12 @@ const Cart = () => {
 
     const applyPromo = () => {
         const code = promoCode.toUpperCase().trim()
-        if (condition) {
-            
-        }else{
-            
+        if (PROMO_CODES[code]) {
+            setDiscount(PROMO_CODES[code])
+            setPromoSuccess(`🎉 ${PROMO_CODES[code]}% discount applied!`)
+            setPromoError('')
+        } else {
+
         }
     }
 
