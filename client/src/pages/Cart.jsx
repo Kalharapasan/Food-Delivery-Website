@@ -14,6 +14,11 @@ const Cart = () => {
     const [promoError, setPromoError] = useState('')
     const [promoSuccess, setPromoSuccess] = useState('')
     const PROMO_CODES = { 'SAVE10': 10, 'FIRST20': 20, 'WELCOME15': 15 }
+    const cartItems = food_list.filter(item => cartItem[item._id] > 0)
+    const subtotal = getTotalCartAmount()
+    const delivery = subtotal === 0 ? 0 : 2
+    const discountAmount = subtotal * (discount / 100)
+    const total = subtotal + delivery - discountAmount
 
     return (
         <div className="cart">
