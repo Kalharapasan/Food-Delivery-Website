@@ -81,6 +81,9 @@ const Cart = () => {
                             🔒 Secure checkout powered by Stripe
                         </p>
                     </div>
+                    <div className="promo-card">
+                        
+                    </div>
 
                 </div>
 
