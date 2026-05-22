@@ -82,7 +82,9 @@ const Cart = () => {
                         </p>
                     </div>
                     <div className="promo-card">
-                        
+                        <h4>
+                            <span>🎟️</span> Promo Code
+                        </h4>
                     </div>
 
                 </div>
