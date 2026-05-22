@@ -85,6 +85,9 @@ const Cart = () => {
                         <h4>
                             <span>🎟️</span> Promo Code
                         </h4>
+                        <div className="promo-input-row">
+                            
+                        </div>
                     </div>
 
                 </div>
