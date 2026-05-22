@@ -11,13 +11,17 @@ const Verify = () => {
     const success = searchParams.get('success')
     const orderId = searchParams.get('orderId')
 
-    const [status, setStatus] = useState('loading') 
+    const [status, setStatus] = useState('loading')
 
     useEffect(() => {
         try {
-            const res = await axios.post()
+            const res = await axios.post(
+                `${url}/api/order/verify`,
+                { success, orderId },
+                { headers: { token } }
+            )
         } catch (error) {
-            
+
         }
     }, [token])
 
