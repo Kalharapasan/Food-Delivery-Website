@@ -20,6 +20,10 @@ const Cart = () => {
     const discountAmount = subtotal * (discount / 100)
     const total = subtotal + delivery - discountAmount
 
+    const applyPromo = () => {
+        
+    }
+
     return (
         <div className="cart">
 
