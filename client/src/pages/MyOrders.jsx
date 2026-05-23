@@ -6,6 +6,10 @@ import axios from 'axios'
 
 const STATUS_STEPS = ['Food Processing', 'Out for Delivery', 'Delivered']
 
+const OrderStatusTracker = ({ status }) => {
+  
+}
+
 export const MyOrders = () => {
   return (
     <div>MyOrders</div>
