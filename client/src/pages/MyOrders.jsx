@@ -52,7 +52,7 @@ export const MyOrders = () => {
       if (res.data.success) setOrders((res.data.data || []).reverse())
 
     } catch (error) {
-
+      console.error('Failed to fetch orders:', error)
     }
   }
 
