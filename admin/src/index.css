@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Sinhala:wght@100..900&family=Outfit:wght@100..900&display=swap');
 
-*{
+* {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
@@ -12,18 +12,18 @@ body {
   background-color: #fcfcfc;
 }
 
-a{
+a {
   text-decoration: none;
   color: inherit;
 }
 
-hr{
+hr {
   border: none;
   height: 1px;
   background-color: #a9a9a9;
 }
 
-.app-content{
+.app-content {
   display: flex;
 }
 
@@ -44,6 +44,7 @@ hr{
   &:hover {
     border-color: var(--accent-border);
   }
+
   &:focus-visible {
     outline: 2px solid var(--accent);
     outline-offset: 2px;
@@ -75,8 +76,7 @@ hr{
     z-index: 1;
     top: 34px;
     height: 28px;
-    transform: perspective(2000px) rotateZ(300deg) rotateX(44deg) rotateY(39deg)
-      scale(1.4);
+    transform: perspective(2000px) rotateZ(300deg) rotateX(44deg) rotateY(39deg) scale(1.4);
   }
 
   .vite {
@@ -84,8 +84,7 @@ hr{
     top: 107px;
     height: 26px;
     width: auto;
-    transform: perspective(2000px) rotateZ(300deg) rotateX(40deg) rotateY(39deg)
-      scale(0.8);
+    transform: perspective(2000px) rotateZ(300deg) rotateX(40deg) rotateY(39deg) scale(0.8);
   }
 }
 
@@ -108,9 +107,10 @@ hr{
   border-top: 1px solid var(--border);
   text-align: left;
 
-  & > div {
+  &>div {
     flex: 1 1 0;
     padding: 32px;
+
     @media (max-width: 1024px) {
       padding: 24px 20px;
     }
@@ -163,6 +163,7 @@ hr{
     &:hover {
       box-shadow: var(--shadow);
     }
+
     .button-icon {
       height: 18px;
       width: 18px;
@@ -189,6 +190,7 @@ hr{
 #spacer {
   height: 88px;
   border-top: 1px solid var(--border);
+
   @media (max-width: 1024px) {
     height: 48px;
   }
@@ -210,6 +212,7 @@ hr{
     left: 0;
     border-left-color: var(--border);
   }
+
   &::after {
     right: 0;
     border-right-color: var(--border);
@@ -286,9 +289,11 @@ hr{
   .navbar {
     padding: 12px 5%;
   }
+
   .navbar .logo {
     width: max(10%, 70px);
   }
+
   .navbar .profile {
     width: 44px;
     height: 44px;
@@ -299,9 +304,11 @@ hr{
   .navbar {
     padding: 10px 4%;
   }
+
   .navbar .logo {
     width: 56px;
   }
+
   .navbar .profile {
     width: 36px;
     height: 36px;
@@ -342,7 +349,7 @@ hr{
   color: #2e7d32;
   font-weight: 600;
   background-color: transparent;
-  transition: 
+  transition:
     background-color 0.35s ease,
     border-left-color 0.35s ease,
     box-shadow 0.35s ease,
@@ -382,7 +389,8 @@ hr{
     padding-top: 20px;
     border-left: none;
     box-shadow: none;
-    background: #34a853; /* solid green for compact */
+    background: #34a853;
+    /* solid green for compact */
   }
 
   .sidebar-options {
@@ -547,8 +555,15 @@ hr{
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .dashboard-header {
@@ -576,7 +591,7 @@ hr{
   border-radius: 16px;
   padding: 24px;
   color: white;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
   cursor: pointer;
 }
@@ -585,10 +600,23 @@ hr{
   transform: translateY(-5px);
 }
 
-.gradient-1 { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
-.gradient-2 { background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%); color: #444; }
-.gradient-3 { background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); }
-.gradient-4 { background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%); color: #444; }
+.gradient-1 {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.gradient-2 {
+  background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);
+  color: #444;
+}
+
+.gradient-3 {
+  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+}
+
+.gradient-4 {
+  background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+  color: #444;
+}
 
 .card-label {
   font-size: 0.9rem;
@@ -626,7 +654,7 @@ hr{
   border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 16px;
   padding: 24px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
 }
 
 .section-header {
@@ -701,9 +729,20 @@ hr{
   font-weight: 600;
 }
 
-.order-status-badge.food-processing { background: #fff4e5; color: #ff9800; }
-.order-status-badge.out-for-delivery { background: #e8f5e9; color: #4caf50; }
-.order-status-badge.delivered { background: #e3f2fd; color: #2196f3; }
+.order-status-badge.food-processing {
+  background: #fff4e5;
+  color: #ff9800;
+}
+
+.order-status-badge.out-for-delivery {
+  background: #e8f5e9;
+  color: #4caf50;
+}
+
+.order-status-badge.delivered {
+  background: #e3f2fd;
+  color: #2196f3;
+}
 
 .status-bar-container {
   margin-bottom: 15px;
@@ -752,8 +791,8 @@ hr{
   color: #2a3a1a;
   background: #f7fcf7;
   border-radius: 16px;
-  box-shadow: 
-    0 2px 8px rgba(39, 174, 96, 0.1), 
+  box-shadow:
+    0 2px 8px rgba(39, 174, 96, 0.1),
     inset 0 -2px 5px rgba(255, 255, 255, 0.6);
   transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.4s ease;
   cursor: pointer;
@@ -762,7 +801,7 @@ hr{
 
 .list-table-format:hover {
   transform: translateY(-6px);
-  box-shadow: 
+  box-shadow:
     0 12px 28px rgba(39, 174, 96, 0.3),
     inset 0 -2px 8px rgba(255, 255, 255, 0.9);
   background: #e6f5e6;
@@ -851,12 +890,12 @@ hr{
   border: 1px solid #eee;
   border-radius: 12px;
   padding: 20px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02);
   transition: all 0.2s ease;
 }
 
 .glass-card:hover {
-  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
 }
 
 .order-item {
@@ -952,9 +991,23 @@ hr{
   cursor: pointer;
 }
 
-.status-select.food-processing { background-color: #fff4e5; color: #ff9800; border-color: #ffe0b2; }
-.status-select.out-for-delivery { background-color: #e8f5e9; color: #4caf50; border-color: #c8e6c9; }
-.status-select.delivered { background-color: #e3f2fd; color: #2196f3; border-color: #bbdefb; }
+.status-select.food-processing {
+  background-color: #fff4e5;
+  color: #ff9800;
+  border-color: #ffe0b2;
+}
+
+.status-select.out-for-delivery {
+  background-color: #e8f5e9;
+  color: #4caf50;
+  border-color: #c8e6c9;
+}
+
+.status-select.delivered {
+  background-color: #e3f2fd;
+  color: #2196f3;
+  border-color: #bbdefb;
+}
 
 .no-orders-found {
   text-align: center;
@@ -968,14 +1021,15 @@ hr{
     align-items: flex-start;
     gap: 20px;
   }
+
   .order-item-right {
     align-items: flex-start;
     width: 100%;
     border-top: 1px solid #eee;
     padding-top: 15px;
   }
+
   .order-meta-info {
     text-align: left;
   }
 }
-
