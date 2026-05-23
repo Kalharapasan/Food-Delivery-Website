@@ -79,6 +79,19 @@ export const MyOrders = () => {
           <h2>My Orders</h2>
           <p>Track and manage all your food orders</p>
         </div>
+        <button
+          onClick={() => fetchOrders(true)}
+          style={{
+            display: 'flex', alignItems: 'center', gap: 8,
+            padding: '9px 18px', background: 'var(--surface)',
+            border: '1.5px solid var(--border)', borderRadius: 50,
+            fontSize: 13, fontWeight: 600, cursor: 'pointer',
+            color: 'var(--text-secondary)', transition: 'all 0.22s'
+          }}
+          className={refreshing ? 'refreshing' : ''}
+        >
+          {refreshing ? '⟳ Refreshing...' : '↻ Refresh'}
+        </button>
       </div>
 
     </div>
