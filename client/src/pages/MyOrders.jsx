@@ -99,6 +99,20 @@ export const MyOrders = () => {
           <div style={{ fontSize: 40, marginBottom: 16 }}>🔄</div>
           <p>Loading your orders...</p>
         </div>
+      ) : orders.length === 0 ? (
+        <div className="empty-orders">
+          <div className="icon">📦</div>
+          <h3>No orders yet</h3>
+          <p>When you place your first order, it will appear here.</p>
+          <button
+            className="btn-primary"
+            onClick={() => window.location.href = '/'}
+            style={{ margin: '0 auto' }}
+          >
+            Start Ordering
+          </button>
+        </div>
+      ) 
       )}
 
     </div>
