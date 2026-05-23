@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react'
-import { StoreContext } from '../../context/StoreContext'
+import { StoreContext } from '../context/StoreContext'
 
 const StarIcon = ({ filled }) => (
     <svg width="12" height="12" viewBox="0 0 24 24" fill={filled ? '#F59E0B' : 'none'} stroke="#F59E0B" strokeWidth="2">
