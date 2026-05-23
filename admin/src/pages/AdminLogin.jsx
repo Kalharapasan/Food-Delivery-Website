@@ -40,11 +40,13 @@ const AdminLogin = () => {
   return (
     <div className='admin-login-page'>
       <div className='admin-login-box'>
-       
+
         <div className='admin-login-header'>
           <div className='admin-logo-circle'>
             <span>🍽️</span>
           </div>
+          <h1>Admin Portal</h1>
+          <p>{currState === "Sign In" ? "Sign in to manage your food delivery platform" : "Register a new admin account"}</p>
         </div>
 
 
