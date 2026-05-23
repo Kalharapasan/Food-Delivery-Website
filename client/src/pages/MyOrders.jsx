@@ -7,7 +7,10 @@ import axios from 'axios'
 const STATUS_STEPS = ['Food Processing', 'Out for Delivery', 'Delivered']
 
 const OrderStatusTracker = ({ status }) => {
-  
+  const currentStep = STATUS_STEPS.findIndex(s => s.toLowerCase() === status?.toLowerCase())
+  return (
+
+  )
 }
 
 export const MyOrders = () => {
