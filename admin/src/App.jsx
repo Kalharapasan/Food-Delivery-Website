@@ -15,6 +15,14 @@ function App() {
   const url = import.meta.env.VITE_BACKEND_URL || "http://localhost:4000"
   const [token, setToken] = useState(localStorage.getItem("adminToken") || "")
 
+  useEffect(() => {
+    if (token) {
+      localStorage.setItem("adminToken", token)
+    } else {
+      localStorage.removeItem("adminToken")
+    }
+  }, [token])
+
   return (
     <div>
       <ToastContainer />
