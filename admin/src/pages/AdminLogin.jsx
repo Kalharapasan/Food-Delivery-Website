@@ -48,6 +48,50 @@ const AdminLogin = () => {
           <h1>Admin Portal</h1>
           <p>{currState === "Sign In" ? "Sign in to manage your food delivery platform" : "Register a new admin account"}</p>
         </div>
+        <form onSubmit={onSubmit} className='admin-login-form'>
+          {currState === "Sign In" ? <></> : (
+            <div className='input-group'>
+              <label>Name</label>
+              <input
+                type='text'
+                name='name'
+                placeholder='Your name'
+                value={data.name}
+                onChange={onChangeHandler}
+                required
+              />
+            </div>
+          )}
+          <div className='input-group'>
+            <label>Email Address</label>
+            <input
+              type='email'
+              name='email'
+              placeholder='admin@example.com'
+              value={data.email}
+              onChange={onChangeHandler}
+              required
+            />
+          </div>
+          <div className='input-group'>
+            <label>Password</label>
+            <input
+              type='password'
+              name='password'
+              placeholder='••••••••'
+              value={data.password}
+              onChange={onChangeHandler}
+              required
+            />
+          </div>
+          <button type='submit' className='admin-login-btn' disabled={loading}>
+            {loading ? (currState === "Sign In" ? 'Signing in...' : 'Registering...') : (currState === "Sign In" ? 'Sign In' : 'Register')}
+          </button>
+        </form>
+        {currState === "Sign In"
+          ? <p className='admin-login-note'>Don't have an admin account? <span onClick={() => setCurrState("Register")}>Click here</span></p>
+          : <p className='admin-login-note'>Already have an admin account? <span onClick={() => setCurrState("Sign In")}>Login here</span></p>
+        }
 
 
       </div>
