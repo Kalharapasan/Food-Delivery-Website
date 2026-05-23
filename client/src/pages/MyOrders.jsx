@@ -59,6 +59,8 @@ export const MyOrders = () => {
     }
   }
 
+  useEffect(() => { fetchOrders() }, [token])
+
   return (
     <div>MyOrders</div>
   )
