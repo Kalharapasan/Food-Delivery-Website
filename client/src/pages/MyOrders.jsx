@@ -76,10 +76,11 @@ export const MyOrders = () => {
 
       <div className="page-header" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end' }}>
         <div>
-          
+          <h2>My Orders</h2>
+          <p>Track and manage all your food orders</p>
         </div>
       </div>
-     
+
     </div>
   )
 }
