@@ -45,6 +45,9 @@ export const MyOrders = () => {
   const [expanded, setExpanded] = useState(null)
   const [refreshing, setRefreshing] = useState(false)
 
+  const fetchOrders = async (isRefresh = false) => {
+    
+  }
 
   return (
     <div>MyOrders</div>
