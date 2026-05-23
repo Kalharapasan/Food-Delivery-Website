@@ -11,6 +11,9 @@ const Sidebar = () => {
           <img src={assets.order_icon} alt="" />
           <p>Dashboard</p>
         </NavLink>
+        <NavLink to='/add' className={({ isActive }) => `sidebar-option ${isActive ? 'active' : ''}`}>
+        
+        </NavLink>
       </div>
     </div>
   )
