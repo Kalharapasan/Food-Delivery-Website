@@ -20,6 +20,8 @@ const Sidebar = () => {
           <p>List Items</p>
         </NavLink>
         <NavLink to='/orders' className={({ isActive }) => `sidebar-option ${isActive ? 'active' : ''}`}>
+          <img src={assets.parcel_icon} alt="" />
+          <p>Orders</p>
         </NavLink>
       </div>
     </div>
