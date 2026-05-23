@@ -42,7 +42,9 @@ const AdminLogin = () => {
       <div className='admin-login-box'>
        
         <div className='admin-login-header'>
-          
+          <div className='admin-logo-circle'>
+            
+          </div>
         </div>
 
 
