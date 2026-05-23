@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import { StoreContext } from '../context/StoreContext'
-import Fooditem from '../Fooditem'
+import Fooditem from './Fooditem'
 
 const SkeletonCard = () => (
     <div className="food-item-skeleton">
