@@ -39,6 +39,13 @@ const OrderStatusTracker = ({ status }) => {
 }
 
 export const MyOrders = () => {
+  const { url, token } = useContext(StoreContext)
+  const [orders, setOrders] = useState([])
+  const [loading, setLoading] = useState(true)
+  const [expanded, setExpanded] = useState(null)
+  const [refreshing, setRefreshing] = useState(false)
+
+
   return (
     <div>MyOrders</div>
   )
