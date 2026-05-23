@@ -68,6 +68,7 @@ export const MyOrders = () => {
       'delivered': 'delivered',
       'pending': 'pending',
     }
+    return map[status?.toLowerCase()] || 'pending'
   }
 
   return (
