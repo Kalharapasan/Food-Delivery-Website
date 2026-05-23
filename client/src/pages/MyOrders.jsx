@@ -47,6 +47,11 @@ export const MyOrders = () => {
 
   const fetchOrders = async (isRefresh = false) => {
      if (!token) return isRefresh ? setRefreshing(true) : setLoading(true)
+      try {
+        
+      } catch (error) {
+        
+      }
   }
 
   return (
