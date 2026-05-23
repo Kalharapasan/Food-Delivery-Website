@@ -1,8 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { StoreContext } from '../context/StoreContext'
-import { assets } from '../assets'
+import { assets } from '../assets/assets'
 import axios from 'axios'
-
 
 const STATUS_STEPS = ['Food Processing', 'Out for Delivery', 'Delivered']
 
@@ -38,7 +37,7 @@ const OrderStatusTracker = ({ status }) => {
   )
 }
 
-export const MyOrders = () => {
+const MyOrders = () => {
   const { url, token } = useContext(StoreContext)
   const [orders, setOrders] = useState([])
   const [loading, setLoading] = useState(true)
@@ -46,13 +45,13 @@ export const MyOrders = () => {
   const [refreshing, setRefreshing] = useState(false)
 
   const fetchOrders = async (isRefresh = false) => {
-    if (!token) return isRefresh ? setRefreshing(true) : setLoading(true)
+    if (!token) return
+    isRefresh ? setRefreshing(true) : setLoading(true)
     try {
       const res = await axios.post(`${url}/api/order/userorders`, {}, { headers: { token } })
       if (res.data.success) setOrders((res.data.data || []).reverse())
-
-    } catch (error) {
-      console.error('Failed to fetch orders:', error)
+    } catch (err) {
+      console.error('Failed to fetch orders:', err)
     } finally {
       setLoading(false)
       setRefreshing(false)
@@ -73,7 +72,6 @@ export const MyOrders = () => {
 
   return (
     <div className="my-orders">
-
       <div className="page-header" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end' }}>
         <div>
           <h2>My Orders</h2>
@@ -112,9 +110,98 @@ export const MyOrders = () => {
             Start Ordering
           </button>
         </div>
-      ) 
-      )}
+      ) : (
+        orders.map((order, index) => (
+          <div key={order._id || index} className={`order-card${expanded === index ? ' expanded' : ''}`}>
+            <div className="order-summary-row" onClick={() => setExpanded(expanded === index ? null : index)}>
+              <div className="order-main-info">
+                <div className="parcel-icon-wrapper">
+                  <img src={assets.parcel_icon} alt="Order" />
+                </div>
+                <div>
+                  <p className="order-id">Order <span>#{(order._id || '').substring(18) || String(index + 1).padStart(4, '0')}</span></p>
+                  <p className="order-date">{order.date ? new Date(order.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }) : 'N/A'}</p>
+                </div>
+              </div>
 
+              <div className="order-stats-box">
+                <p className="order-amount">${order.amount?.toFixed(2)}</p>
+                <p className="order-item-count">{order.items?.length} item{order.items?.length !== 1 ? 's' : ''}</p>
+              </div>
+
+              <div>
+                <span className={`status-badge ${statusClass(order.status)}`}>
+                  <span className="status-dot" />
+                  {order.status || 'Pending'}
+                </span>
+              </div>
+
+              <div className="order-actions-row">
+                <button
+                  className="track-btn"
+                  onClick={e => { e.stopPropagation(); fetchOrders(true) }}
+                >
+                  Track
+                </button>
+                <button className="expand-btn">
+                  {expanded === index ? '−' : '+'}
+                </button>
+              </div>
+            </div>
+
+            {expanded === index && (
+              <div className="order-expanded-content">
+                <div className="order-items-list">
+                  <h4>Items Ordered</h4>
+                  <OrderStatusTracker status={order.status} />
+                  {order.items?.map((item, i) => (
+                    <div key={i} className="order-item-row">
+                      <div className="order-item-name">
+                        <span className="item-qty-pill">{item.quantity}×</span>
+                        {item.name}
+                      </div>
+                      <span className="order-item-price" style={{ fontWeight: 700 }}>
+                        ${(item.price * item.quantity).toFixed(2)}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="order-details">
+                  <h4>Delivery Address</h4>
+                  <div className="order-address">
+                    <p style={{ fontWeight: 600 }}>
+                      {order.address?.firstName} {order.address?.lastName}
+                    </p>
+                    <p>{order.address?.street}</p>
+                    <p>{order.address?.city}, {order.address?.state} {order.address?.zipcode}</p>
+                    <p>{order.address?.country}</p>
+                    {order.address?.phone && <p>📞 {order.address.phone}</p>}
+                  </div>
+
+                  <div style={{ marginTop: 20, borderTop: '1px solid var(--border-light)', paddingTop: 14 }}>
+                    <h4 style={{ marginBottom: 10 }}>Payment Summary</h4>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: 14, color: 'var(--text-secondary)', marginBottom: 6 }}>
+                      <span>Subtotal</span>
+                      <span>${(order.amount - 2).toFixed(2)}</span>
+                    </div>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: 14, color: 'var(--text-secondary)', marginBottom: 10 }}>
+                      <span>Delivery</span>
+                      <span>$2.00</span>
+                    </div>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: 16, fontWeight: 800, color: 'var(--accent)' }}>
+                      <span>Total Paid</span>
+                      <span>${order.amount?.toFixed(2)}</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )}
+          </div>
+        ))
+      )}
     </div>
   )
 }
+
+export default MyOrders
