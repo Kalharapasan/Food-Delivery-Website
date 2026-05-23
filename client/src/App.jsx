@@ -34,7 +34,6 @@ const ToastContainer = () => {
 
 const App = () => {
   const [showLogin, setShowLogin] = useState(false)
-
   return (
     <>
       {showLogin && <LoginPopup setShowLogin={setShowLogin} />}
