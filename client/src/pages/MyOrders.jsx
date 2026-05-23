@@ -9,7 +9,9 @@ const STATUS_STEPS = ['Food Processing', 'Out for Delivery', 'Delivered']
 const OrderStatusTracker = ({ status }) => {
   const currentStep = STATUS_STEPS.findIndex(s => s.toLowerCase() === status?.toLowerCase())
   return (
-
+    <div style={{ display: 'flex', alignItems: 'center', gap: 0, margin: '16px 0' }}>
+      
+    </div>
   )
 }
 
