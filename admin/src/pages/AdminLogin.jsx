@@ -13,7 +13,9 @@ const AdminLogin = () => {
     setData(prev => ({ ...prev, [e.target.name]: e.target.value }))
   }
 
-  
+  const onSubmit = async (e) => {
+    
+  }
 
   return (
     <div>AdminLogin</div>
