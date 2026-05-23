@@ -22,6 +22,19 @@ const AdminLogin = () => {
     } else {
       newUrl += "/api/user/admin/register";
     }
+    try {
+      const response = await axios.post(newUrl, data)
+      if (response.data.success) {
+        setToken(response.data.token)
+        toast.success(currState === "Sign In" ? 'Welcome back, Admin!' : 'Admin registered successfully!')
+      } else {
+        toast.error(response.data.message)
+      }
+    } catch (error) {
+      toast.error('Network error. Is the server running?')
+    } finally {
+      setLoading(false)
+    }
   }
 
   return (
