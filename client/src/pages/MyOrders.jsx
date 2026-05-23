@@ -63,7 +63,10 @@ export const MyOrders = () => {
 
   const statusClass = (status) => {
     const map = {
-
+      'food processing': 'food-processing',
+      'out for delivery': 'out-for-delivery',
+      'delivered': 'delivered',
+      'pending': 'pending',
     }
   }
 
