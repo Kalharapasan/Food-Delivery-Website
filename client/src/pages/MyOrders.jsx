@@ -61,6 +61,10 @@ export const MyOrders = () => {
 
   useEffect(() => { fetchOrders() }, [token])
 
+  const statusClass = (status) => {
+    
+  }
+
   return (
     <div>MyOrders</div>
   )
