@@ -14,7 +14,14 @@ const AdminLogin = () => {
   }
 
   const onSubmit = async (e) => {
-    
+    e.preventDefault()
+    setLoading(true)
+    let newUrl = url;
+    if (currState === "Sign In") {
+      newUrl += "/api/user/admin/login";
+    } else {
+      newUrl += "/api/user/admin/register";
+    }
   }
 
   return (
