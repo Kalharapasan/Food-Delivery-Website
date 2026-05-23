@@ -17,7 +17,19 @@ function App() {
 
   return (
     <div>
-
+      <ToastContainer />
+      <Navbar logout={logout} />
+      <hr />
+      <div className="app-content">
+        <Sidebar />
+        <Routes>
+          <Route path='/' element={<Dashboard url={url} token={token} />} />
+          <Route path='/add' element={<Add url={url} token={token} />} />
+          <Route path='/list' element={<List url={url} token={token} />} />
+          <Route path='/orders' element={<Orders url={url} token={token} />} />
+          <Route path='*' element={<Navigate to="/" />} />
+        </Routes>
+      </div>
     </div>
   )
 }
