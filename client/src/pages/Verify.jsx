@@ -14,29 +14,32 @@ const Verify = () => {
     const [status, setStatus] = useState('loading')
 
     useEffect(() => {
-        try {
-            const res = await axios.post(
-                `${url}/api/order/verify`,
-                { success, orderId },
-                { headers: { token } }
-            )
+        const verifyPayment = async () => {
+            try {
+                const res = await axios.post(
+                    `${url}/api/order/verify`,
+                    { success, orderId },
+                    { headers: { token } }
+                )
 
-            if (res.data.success) {
-                setStatus('success')
-                setCartItem({})
-                addToast && addToast('Order placed successfully! 🎉', 'success')
-                setTimeout(() => navigate('/myorders'), 3000)
-            } else {
+                if (res.data.success) {
+                    setStatus('success')
+                    setCartItem({})
+                    addToast && addToast('Order placed successfully! 🎉', 'success')
+                    setTimeout(() => navigate('/myorders'), 3000)
+                } else {
+                    setStatus('failed')
+                    setTimeout(() => navigate('/cart'), 3000)
+                }
+
+            } catch (error) {
                 setStatus('failed')
                 setTimeout(() => navigate('/cart'), 3000)
             }
-
-        } catch (error) {
-            setStatus('failed')
-            setTimeout(() => navigate('/cart'), 3000)
         }
+
         if (token) verifyPayment()
-    }, [token])
+    }, [token, url, success, orderId, navigate, setCartItem, addToast])
 
 
     return (
