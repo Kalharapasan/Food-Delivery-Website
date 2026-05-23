@@ -72,6 +72,8 @@ export const MyOrders = () => {
   }
 
   return (
-    <div>MyOrders</div>
+    <div className="my-orders">
+     
+    </div>
   )
 }
