@@ -96,7 +96,8 @@ export const MyOrders = () => {
 
       {loading ? (
         <div style={{ textAlign: 'center', padding: 80, color: 'var(--text-muted)' }}>
-
+          <div style={{ fontSize: 40, marginBottom: 16 }}>🔄</div>
+          <p>Loading your orders...</p>
         </div>
       )}
 
