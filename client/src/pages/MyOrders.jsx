@@ -46,12 +46,14 @@ export const MyOrders = () => {
   const [refreshing, setRefreshing] = useState(false)
 
   const fetchOrders = async (isRefresh = false) => {
-     if (!token) return isRefresh ? setRefreshing(true) : setLoading(true)
-      try {
-        
-      } catch (error) {
-        
-      }
+    if (!token) return isRefresh ? setRefreshing(true) : setLoading(true)
+    try {
+      const res = await axios.post(`${url}/api/order/userorders`, {}, { headers: { token } })
+      if (res.data.success) setOrders((res.data.data || []).reverse())
+
+    } catch (error) {
+
+    }
   }
 
   return (
