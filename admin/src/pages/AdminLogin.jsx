@@ -9,6 +9,12 @@ const AdminLogin = () => {
   const [data, setData] = useState({ name: '', email: '', password: '' })
   const [loading, setLoading] = useState(false)
 
+  const onChangeHandler = (e) => {
+    setData(prev => ({ ...prev, [e.target.name]: e.target.value }))
+  }
+
+  
+
   return (
     <div>AdminLogin</div>
   )
