@@ -8,7 +8,8 @@ const Sidebar = () => {
     <div className='sidebar'>
       <div className="sidebar-options">
         <NavLink to='/' end className={({ isActive }) => `sidebar-option ${isActive ? 'active' : ''}`}>
-        
+          <img src={assets.order_icon} alt="" />
+          <p>Dashboard</p>
         </NavLink>
       </div>
     </div>
