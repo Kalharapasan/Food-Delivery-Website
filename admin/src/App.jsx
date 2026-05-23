@@ -27,6 +27,15 @@ function App() {
     setToken("")
   }
 
+  if (!token) {
+    return (
+      <>
+        <ToastContainer />
+        <AdminLogin url={url} setToken={setToken} />
+      </>
+    )
+  }
+
   return (
     <div>
       <ToastContainer />
