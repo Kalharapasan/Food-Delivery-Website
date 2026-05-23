@@ -23,6 +23,10 @@ function App() {
     }
   }, [token])
 
+  const logout = () => {
+    setToken("")
+  }
+
   return (
     <div>
       <ToastContainer />
