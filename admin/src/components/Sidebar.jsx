@@ -12,7 +12,8 @@ const Sidebar = () => {
           <p>Dashboard</p>
         </NavLink>
         <NavLink to='/add' className={({ isActive }) => `sidebar-option ${isActive ? 'active' : ''}`}>
-        
+          <img src={assets.add_icon} alt="" />
+          <p>Add Items</p>
         </NavLink>
       </div>
     </div>
