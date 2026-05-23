@@ -75,7 +75,9 @@ export const MyOrders = () => {
     <div className="my-orders">
 
       <div className="page-header" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end' }}>
-        
+        <div>
+          
+        </div>
       </div>
      
     </div>
