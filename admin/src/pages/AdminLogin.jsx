@@ -43,7 +43,7 @@ const AdminLogin = () => {
        
         <div className='admin-login-header'>
           <div className='admin-logo-circle'>
-            
+            <span>🍽️</span>
           </div>
         </div>
 
