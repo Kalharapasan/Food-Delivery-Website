@@ -46,7 +46,7 @@ export const MyOrders = () => {
   const [refreshing, setRefreshing] = useState(false)
 
   const fetchOrders = async (isRefresh = false) => {
-    
+     if (!token) return isRefresh ? setRefreshing(true) : setLoading(true)
   }
 
   return (
