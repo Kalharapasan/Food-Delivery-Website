@@ -7,6 +7,9 @@ const Navbar = () => {
     <div>
       <div className='navbar'>
         <img className='logo' src={assets.logo} alt="Logo" />
+        <div className='navbar-right'>
+          
+        </div>
       </div>
     </div>
   )
