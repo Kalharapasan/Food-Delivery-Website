@@ -38,7 +38,9 @@ const AdminLogin = () => {
   }
 
   return (
-    <div>AdminLogin</div>
+    <div className='admin-login-page'>
+      AdminLogin
+    </div>
   )
 }
 
