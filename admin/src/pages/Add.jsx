@@ -45,6 +45,8 @@ const Add = () => {
       }
     } catch (error) {
       toast.error('Error adding food item')
+    } finally {
+      setLoading(false)
     }
 
   }
