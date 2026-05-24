@@ -89,7 +89,7 @@ const Add = () => {
           </div>
         </div>
         <button type='submit' className='add-btn' disabled={loading}>
-
+          {loading ? 'Adding...' : '+ Add Food Item'}
         </button>
       </form>
     </div>
