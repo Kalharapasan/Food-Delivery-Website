@@ -62,6 +62,9 @@ const Add = () => {
 
             <div className='form-group'>
               <label>Category</label>
+              <select onChange={onChangeHandler} name='category' value={data.category}>
+                
+              </select>
             </div>
 
 
