@@ -54,7 +54,9 @@ const Dashboard = () => {
       <div className='dashboard-grid'>
 
         <div className='recent-orders-panel'>
-          
+          <div className='panel-header'>
+            
+          </div>
         </div>
 
       </div>
