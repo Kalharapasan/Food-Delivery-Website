@@ -17,6 +17,7 @@ const Dashboard = () => {
           <h1>Dashboard</h1>
           <p>Real-time overview of your food delivery platform</p>
         </div>
+        <button className='refresh-dash-btn' onClick={fetchSummary}>↻ Refresh</button>
       </div>
 
     </div>
