@@ -20,6 +20,10 @@ const Dashboard = () => {
         <button className='refresh-dash-btn' onClick={fetchSummary}>↻ Refresh</button>
       </div>
 
+       <div className='stat-cards'>
+        
+       </div>
+
     </div>
   )
 }
