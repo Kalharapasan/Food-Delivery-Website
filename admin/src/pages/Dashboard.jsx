@@ -5,7 +5,9 @@ import { assets } from '../assets/assets'
 import './Dashboard.css'
 
 const StatCard = ({ label, value, trend, icon, colorClass }) => (
-  
+  <div className={`stat-card ${colorClass}`}>
+    
+  </div>
 )
 
 const Dashboard = () => {
