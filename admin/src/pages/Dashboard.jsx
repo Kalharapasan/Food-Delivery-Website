@@ -10,8 +10,12 @@ const Dashboard = () => {
   const [loading, setLoading] = useState(true)
 
   const fetchSummary = async () => {
-    const response = await axios.get(`${url}/api/order/summary`, { headers: { token } })
-    
+    try {
+      const response = await axios.get(`${url}/api/order/summary`, { headers: { token } })
+    } catch (error) {
+      
+    }
+
   }
 
   if (loading) return <div className='dashboard-loading'>Loading dashboard...</div>
