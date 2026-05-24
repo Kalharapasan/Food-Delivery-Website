@@ -28,6 +28,14 @@ const Dashboard = () => {
           icon='💰'
           colorClass='orange'
         />
+        <StatCard
+          label='Total Orders'
+          value={data.totalOrders}
+          trend={`${Object.values(data.statusStats).reduce((a, b) => a + b, 0)} tracked`}
+          icon='📦'
+          colorClass='blue'
+        />
+        
        </div>
 
     </div>
