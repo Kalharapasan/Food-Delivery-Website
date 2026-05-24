@@ -16,7 +16,10 @@ const Add = () => {
             {image ? (
               <img src={URL.createObjectURL(image)} alt='Preview' className='preview-img' />
             ) : (
-              
+              <div className='upload-placeholder'>
+                <img src={assets.upload_area} alt='Upload' />
+                <span>Click to upload image</span>
+              </div>
             )}
           </label>
         </div>
