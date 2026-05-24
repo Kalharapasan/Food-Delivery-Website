@@ -87,14 +87,11 @@ const Add = () => {
               required
             />
           </div>
-
-
         </div>
+        <button type='submit' className='add-btn' disabled={loading}>
 
-
+        </button>
       </form>
-
-
     </div>
   )
 }
