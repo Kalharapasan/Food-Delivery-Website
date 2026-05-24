@@ -13,7 +13,10 @@ const Dashboard = () => {
     <div className='dashboard'>
 
       <div className='dashboard-top'>
-        
+        <div>
+          <h1>Dashboard</h1>
+          <p>Real-time overview of your food delivery platform</p>
+        </div>
       </div>
 
     </div>
