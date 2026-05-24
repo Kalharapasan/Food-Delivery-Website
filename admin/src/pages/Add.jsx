@@ -15,7 +15,12 @@ const Add = () => {
     price: '',
     category: 'Salad'
   })
-  
+
+  const onChangeHandler = (event) => {
+    const { name, value } = event.target
+    setData(prev => ({ ...prev, [name]: value }))
+  }
+
 
   return (
     <div className='add'>
