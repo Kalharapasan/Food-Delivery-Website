@@ -9,6 +9,10 @@ const Dashboard = () => {
   const [data, setData] = useState(null)
   const [loading, setLoading] = useState(true)
 
+  const fetchSummary = async () => {
+    
+  }
+
   if (loading) return <div className='dashboard-loading'>Loading dashboard...</div>
   if (!data) return <div className='dashboard-loading'>No data available.</div>
 
