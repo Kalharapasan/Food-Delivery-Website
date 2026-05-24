@@ -7,6 +7,9 @@ import './Dashboard.css'
 const StatCard = ({ label, value, trend, icon, colorClass }) => (
   <div className={`stat-card ${colorClass}`}>
     <div className='stat-icon'>{icon}</div>
+    <div className='stat-content'>
+      
+    </div>
   </div>
 )
 
