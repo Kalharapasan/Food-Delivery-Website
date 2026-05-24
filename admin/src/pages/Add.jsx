@@ -21,6 +21,10 @@ const Add = () => {
     setData(prev => ({ ...prev, [name]: value }))
   }
 
+  const onSubmitHandler = async (event) => {
+    
+  }
+
 
   return (
     <div className='add'>
