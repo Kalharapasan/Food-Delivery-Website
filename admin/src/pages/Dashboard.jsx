@@ -58,6 +58,9 @@ const Dashboard = () => {
             <h3>Recent Orders</h3>
             <span className='badge'>{data.latestOrders.length} latest</span>
           </div>
+          <div className='orders-mini'>
+            
+          </div>
         </div>
 
       </div>
