@@ -84,7 +84,7 @@ const Dashboard = () => {
 
         <div className='distribution-panel'>
           <div className='panel-header'>
-            
+            <h3>Order Status Distribution</h3>
           </div>
         </div>
 
