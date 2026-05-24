@@ -21,7 +21,13 @@ const Dashboard = () => {
       </div>
 
        <div className='stat-cards'>
-        
+        <StatCard
+          label='Total Revenue'
+          value={`$${data.totalRevenue.toLocaleString()}`}
+          trend='From paid orders'
+          icon='💰'
+          colorClass='orange'
+        />
        </div>
 
     </div>
