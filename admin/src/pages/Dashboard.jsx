@@ -9,6 +9,9 @@ const Dashboard = () => {
   const [data, setData] = useState(null)
   const [loading, setLoading] = useState(true)
 
+  if (loading) return <div className='dashboard-loading'>Loading dashboard...</div>
+  if (!data) return <div className='dashboard-loading'>No data available.</div>
+
   const statusColors = {
     'Food Processing': '#f97316',
     'Out for Delivery': '#3b82f6',
