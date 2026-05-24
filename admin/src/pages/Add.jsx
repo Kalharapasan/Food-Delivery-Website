@@ -7,7 +7,8 @@ import './Add.css'
 
 const Add = () => {
 
-
+  const [image, setImage] = useState(false)
+  const [loading, setLoading] = useState(false)
 
   return (
     <div className='add'>
