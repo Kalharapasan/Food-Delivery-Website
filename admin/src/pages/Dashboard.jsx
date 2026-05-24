@@ -83,7 +83,9 @@ const Dashboard = () => {
         </div>
 
         <div className='distribution-panel'>
-          
+          <div className='panel-header'>
+            
+          </div>
         </div>
 
       </div>
