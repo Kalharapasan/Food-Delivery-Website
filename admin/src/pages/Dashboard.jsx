@@ -15,7 +15,7 @@ const StatCard = ({ label, value, trend, icon, colorClass }) => (
   </div>
 )
 
-const Dashboard = () => {
+const Dashboard = ({ url, token }) => {
   const [data, setData] = useState(null)
   const [loading, setLoading] = useState(true)
 
@@ -32,8 +32,8 @@ const Dashboard = () => {
     } finally {
       setLoading(false)
     }
-
   }
+
   useEffect(() => {
     fetchSummary()
   }, [])
@@ -49,7 +49,6 @@ const Dashboard = () => {
 
   return (
     <div className='dashboard'>
-
       <div className='dashboard-top'>
         <div>
           <h1>Dashboard</h1>
@@ -90,7 +89,6 @@ const Dashboard = () => {
       </div>
 
       <div className='dashboard-grid'>
-
         <div className='recent-orders-panel'>
           <div className='panel-header'>
             <h3>Recent Orders</h3>
@@ -151,9 +149,7 @@ const Dashboard = () => {
             </div>
           )}
         </div>
-
       </div>
-
     </div>
   )
 }
