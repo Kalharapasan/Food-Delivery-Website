@@ -10,6 +10,7 @@ const StatCard = ({ label, value, trend, icon, colorClass }) => (
     <div className='stat-content'>
       <div className='stat-label'>{label}</div>
       <div className='stat-value'>{value}</div>
+      {trend && <div className='stat-trend'>{trend}</div>}
     </div>
   </div>
 )
