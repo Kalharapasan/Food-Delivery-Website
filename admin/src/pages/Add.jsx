@@ -34,6 +34,11 @@ const Add = () => {
     formData.append('price', Number(data.price))
     formData.append('category', data.category)
     formData.append('image', image)
+    try {
+      
+    } catch (error) {
+      
+    }
 
   }
 
