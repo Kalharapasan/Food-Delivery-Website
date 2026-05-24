@@ -13,7 +13,11 @@ const Add = () => {
         <div className='add-img-upload'>
           <p>Food Image</p>
           <label htmlFor='image' className='image-upload-label'>
-            
+            {image ? (
+              <img src={URL.createObjectURL(image)} alt='Preview' className='preview-img' />
+            ) : (
+              
+            )}
           </label>
         </div>
       </form>
