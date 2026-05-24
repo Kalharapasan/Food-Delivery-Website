@@ -44,7 +44,7 @@ const Add = () => {
         toast.error(response.data.message)
       }
     } catch (error) {
-
+      toast.error('Error adding food item')
     }
 
   }
