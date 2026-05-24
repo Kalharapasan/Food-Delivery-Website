@@ -59,7 +59,12 @@ const Add = () => {
         </div>
 
         <div className='form-row'>
-          
+
+            <div className='form-group'>
+              
+            </div>
+
+
         </div>
 
 
