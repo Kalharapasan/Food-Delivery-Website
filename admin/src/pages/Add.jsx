@@ -75,6 +75,7 @@ const Add = () => {
           </div>
 
           <div className='form-group'>
+            <label>Price (USD)</label>
             
           </div>
 
