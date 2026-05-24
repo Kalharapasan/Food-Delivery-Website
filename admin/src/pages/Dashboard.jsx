@@ -53,6 +53,10 @@ const Dashboard = () => {
 
       <div className='dashboard-grid'>
 
+        <div className='recent-orders-panel'>
+          
+        </div>
+
       </div>
 
     </div>
