@@ -11,7 +11,7 @@ const Add = () => {
 
       <form className='add-form' onSubmit={onSubmitHandler}>
         <div className='add-img-upload'>
-
+          <p>Food Image</p>
         </div>
       </form>
 
