@@ -76,7 +76,16 @@ const Add = () => {
 
           <div className='form-group'>
             <label>Price (USD)</label>
-            
+            <input
+              onChange={onChangeHandler}
+              value={data.price}
+              type='number'
+              name='price'
+              placeholder='e.g. 12.99'
+              min='0'
+              step='0.01'
+              required
+            />
           </div>
 
 
