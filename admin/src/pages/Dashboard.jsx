@@ -10,7 +10,7 @@ const Dashboard = () => {
   const [loading, setLoading] = useState(true)
 
   return (
-    <div>
+    <div className='dashboard'>
 
     </div>
   )
