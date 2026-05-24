@@ -61,7 +61,7 @@ const Add = () => {
         <div className='form-row'>
 
             <div className='form-group'>
-              
+              <label>Category</label>
             </div>
 
 
