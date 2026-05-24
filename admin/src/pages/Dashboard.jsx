@@ -19,11 +19,14 @@ const Dashboard = () => {
       }
     } catch (error) {
       toast.error('Network error loading dashboard')
-    }finally {
+    } finally {
       setLoading(false)
     }
 
   }
+  useEffect(() => {
+    fetchSummary()
+  }, [])
 
   if (loading) return <div className='dashboard-loading'>Loading dashboard...</div>
   if (!data) return <div className='dashboard-loading'>No data available.</div>
