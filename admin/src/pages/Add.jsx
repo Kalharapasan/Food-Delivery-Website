@@ -8,6 +8,10 @@ const Add = () => {
         <h2>Add New Food Item</h2>
         <p>Fill in the details to add a new item to your menu</p>
       </div>
+      
+      <form className='add-form' onSubmit={onSubmitHandler}>
+
+      </form>
 
 
     </div>
