@@ -22,7 +22,11 @@ const Add = () => {
   }
 
   const onSubmitHandler = async (event) => {
-    
+    event.preventDefault()
+    if (!image) {
+      toast.error('Please upload a food image')
+      return
+    }
   }
 
 
