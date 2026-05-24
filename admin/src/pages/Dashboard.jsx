@@ -61,7 +61,8 @@ const Dashboard = () => {
           <div className='orders-mini'>
             {data.latestOrders.length === 0 ? (
               <p className='empty-state'>No recent orders</p>
-            ) :
+            ) :data.latestOrders.map((order, i) => (
+                <div key={i} className='order-mini-row'>
             }
           </div>
         </div>
