@@ -86,6 +86,32 @@ const Dashboard = () => {
           <div className='panel-header'>
             <h3>Order Status Distribution</h3>
           </div>
+          {data.totalOrders === 0 ? (
+            <p className='empty-state'>No orders yet</p>
+          ) : (
+            <div className='status-bars'>
+              {Object.entries(data.statusStats).map(([status, count]) => {
+                const pct = Math.round((count / data.totalOrders) * 100)
+                return (
+                  <div key={status} className='status-bar-item'>
+                    <div className='bar-label'>
+                      <span>{status}</span>
+                      <span>{count} ({pct}%)</span>
+                    </div>
+                    <div className='bar-track'>
+                      <div
+                        className='bar-fill'
+                        style={{
+                          width: `${pct}%`,
+                          background: statusColors[status] || '#94a3b8'
+                        }}
+                      />
+                    </div>
+                  </div>
+                )
+              })}
+            </div>
+          )}
         </div>
 
       </div>
