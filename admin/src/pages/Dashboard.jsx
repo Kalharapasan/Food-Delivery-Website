@@ -19,6 +19,8 @@ const Dashboard = () => {
       }
     } catch (error) {
 
+    }finally {
+      setLoading(false)
     }
 
   }
