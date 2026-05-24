@@ -10,6 +10,8 @@ const Add = () => {
       </div>
 
       <form className='add-form' onSubmit={onSubmitHandler}>
+        
+        
         <div className='add-img-upload'>
           <p>Food Image</p>
           <label htmlFor='image' className='image-upload-label'>
@@ -22,7 +24,17 @@ const Add = () => {
               </div>
             )}
           </label>
+          <input
+            onChange={(e) => setImage(e.target.files[0])}
+            type='file'
+            id='image'
+            accept='image/*'
+            hidden
+            required
+          />
         </div>
+
+
       </form>
 
 
