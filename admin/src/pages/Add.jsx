@@ -33,9 +33,10 @@ const Add = () => {
             required
           />
         </div>
-        
-        <div className='form-group'>
 
+        <div className='form-group'>
+            <label>Product Name</label>
+            
         </div>
 
 
