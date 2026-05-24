@@ -55,7 +55,8 @@ const Dashboard = () => {
 
         <div className='recent-orders-panel'>
           <div className='panel-header'>
-            
+            <h3>Recent Orders</h3>
+            <span className='badge'>{data.latestOrders.length} latest</span>
           </div>
         </div>
 
