@@ -18,7 +18,7 @@ const Dashboard = () => {
         toast.error(response.data.message || 'Error fetching stats')
       }
     } catch (error) {
-
+      toast.error('Network error loading dashboard')
     }finally {
       setLoading(false)
     }
