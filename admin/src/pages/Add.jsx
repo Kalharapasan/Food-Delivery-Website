@@ -1,12 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { assets } from '../assets/assets'
 import axios from 'axios'
 import { toast } from 'react-toastify'
 import './Add.css'
 
-
-const Add = () => {
-
+const Add = ({ url, token }) => {
   const [image, setImage] = useState(false)
   const [loading, setLoading] = useState(false)
   const [data, setData] = useState({
@@ -34,8 +32,11 @@ const Add = () => {
     formData.append('price', Number(data.price))
     formData.append('category', data.category)
     formData.append('image', image)
+
     try {
-      const response = await axios.post(`${url}/api/food/add`, formData, { headers: { token } })
+      const response = await axios.post(`${url}/api/food/add`, formData, {
+        headers: { token }
+      })
       if (response.data.success) {
         setData({ name: '', description: '', price: '', category: 'Salad' })
         setImage(false)
@@ -48,21 +49,16 @@ const Add = () => {
     } finally {
       setLoading(false)
     }
-
   }
-
 
   return (
     <div className='add'>
-
       <div className='add-header'>
         <h2>Add New Food Item</h2>
         <p>Fill in the details to add a new item to your menu</p>
       </div>
 
       <form className='add-form' onSubmit={onSubmitHandler}>
-
-
         <div className='add-img-upload'>
           <p>Food Image</p>
           <label htmlFor='image' className='image-upload-label'>
@@ -110,7 +106,6 @@ const Add = () => {
         </div>
 
         <div className='form-row'>
-
           <div className='form-group'>
             <label>Category</label>
             <select onChange={onChangeHandler} name='category' value={data.category}>
@@ -139,6 +134,7 @@ const Add = () => {
             />
           </div>
         </div>
+
         <button type='submit' className='add-btn' disabled={loading}>
           {loading ? 'Adding...' : '+ Add Food Item'}
         </button>
