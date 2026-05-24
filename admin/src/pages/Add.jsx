@@ -48,6 +48,14 @@ const Add = () => {
 
         <div className='form-group'>
           <label>Description</label>
+          <textarea
+            onChange={onChangeHandler}
+            value={data.description}
+            name='description'
+            rows='4'
+            placeholder='Describe the dish, ingredients, and flavors...'
+            required
+          />
         </div>
 
 
