@@ -12,8 +12,13 @@ const Dashboard = () => {
   const fetchSummary = async () => {
     try {
       const response = await axios.get(`${url}/api/order/summary`, { headers: { token } })
+      if (response.data.success) {
+        setData(response.data.data)
+      } else {
+        toast.error(response.data.message || 'Error fetching stats')
+      }
     } catch (error) {
-      
+
     }
 
   }
