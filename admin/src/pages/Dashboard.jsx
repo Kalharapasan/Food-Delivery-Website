@@ -34,12 +34,20 @@ const Dashboard = () => {
           trend={`${Object.values(data.statusStats).reduce((a, b) => a + b, 0)} tracked`}
           icon='📦'
           colorClass='blue'
-        /><StatCard
+        />
+        <StatCard
           label='Menu Items'
           value={data.totalFoods}
           trend='Items available'
           icon='🍔'
           colorClass='green'
+        />
+        <StatCard
+          label='Total Users'
+          value={data.totalUsers}
+          trend='Registered customers'
+          icon='👥'
+          colorClass='purple'
         />
        </div>
 
