@@ -61,21 +61,31 @@ const Dashboard = () => {
           <div className='orders-mini'>
             {data.latestOrders.length === 0 ? (
               <p className='empty-state'>No recent orders</p>
-            ) : data.latestOrders.map((order, i) => (
-              <div key={i} className='order-mini-row'>
-                <img src={assets.parcel_icon} alt='' className='mini-icon' />
-                <div className='mini-info'>
-                  <span className='mini-id'>#{order._id?.substring(0, 10)}...</span>
-                  <span className='mini-date'>{new Date(order.date).toLocaleDateString()}</span>
+            ) : (
+              data.latestOrders.map((order, i) => (
+                <div key={i} className='order-mini-row'>
+                  <img src={assets.parcel_icon} alt='' className='mini-icon' />
+                  <div className='mini-info'>
+                    <span className='mini-id'>#{order._id?.substring(0, 10)}...</span>
+                    <span className='mini-date'>{new Date(order.date).toLocaleDateString()}</span>
+                  </div>
+                  <span className='mini-amount'>${order.amount?.toFixed(2)}</span>
+                  <span
+                    className='mini-status'
+                    style={{ color: statusColors[order.status] || '#64748b' }}
+                  >
+                    ● {order.status}
+                  </span>
                 </div>
-            }
-              </div>
-        </div>
-
+              ))
+            )}
+          </div>
         </div>
 
       </div>
-      )
+
+    </div>
+  )
 }
 
-      export default Dashboard
+export default Dashboard
