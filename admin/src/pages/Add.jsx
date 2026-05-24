@@ -9,6 +9,13 @@ const Add = () => {
 
   const [image, setImage] = useState(false)
   const [loading, setLoading] = useState(false)
+  const [data, setData] = useState({
+    name: '',
+    description: '',
+    price: '',
+    category: 'Salad'
+  })
+  
 
   return (
     <div className='add'>
