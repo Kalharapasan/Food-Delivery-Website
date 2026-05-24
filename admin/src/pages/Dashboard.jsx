@@ -4,6 +4,9 @@ import { toast } from 'react-toastify'
 import { assets } from '../assets/assets'
 import './Dashboard.css'
 
+const StatCard = ({ label, value, trend, icon, colorClass }) => (
+  
+)
 
 const Dashboard = () => {
   const [data, setData] = useState(null)
