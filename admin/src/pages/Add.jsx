@@ -47,7 +47,7 @@ const Add = () => {
         </div>
 
         <div className='form-group'>
-          
+          <label>Description</label>
         </div>
 
 
