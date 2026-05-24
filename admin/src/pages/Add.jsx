@@ -10,8 +10,8 @@ const Add = () => {
       </div>
 
       <form className='add-form' onSubmit={onSubmitHandler}>
-        
-        
+
+
         <div className='add-img-upload'>
           <p>Food Image</p>
           <label htmlFor='image' className='image-upload-label'>
@@ -35,8 +35,15 @@ const Add = () => {
         </div>
 
         <div className='form-group'>
-            <label>Product Name</label>
-            
+          <label>Product Name</label>
+          <input
+            onChange={onChangeHandler}
+            value={data.name}
+            type='text'
+            name='name'
+            placeholder='e.g. Classic Caesar Salad'
+            required
+          />
         </div>
 
 
