@@ -36,6 +36,13 @@ const Add = () => {
     formData.append('image', image)
     try {
       const response = await axios.post(`${url}/api/food/add`, formData, { headers: { token } })
+      if (response.data.success) {
+        setData({ name: '', description: '', price: '', category: 'Salad' })
+        setImage(false)
+        toast.success('Food item added successfully!')
+      } else {
+        toast.error(response.data.message)
+      }
     } catch (error) {
 
     }
