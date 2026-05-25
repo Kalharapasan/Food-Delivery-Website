@@ -25,11 +25,15 @@ const List = () => {
       </div>
 
       <div className='list-table-wrapper'>
-        
-        <div className='list-table-head'>
 
+        <div className='list-table-head'>
+          <span>Image</span>
+          <span>Name</span>
+          <span>Category</span>
+          <span>Price</span>
+          <span>Actions</span>
         </div>
-        
+
       </div>
 
 
