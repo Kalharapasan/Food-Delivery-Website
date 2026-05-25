@@ -5,6 +5,10 @@ import './List.css'
 
 const List = () => {
   const [list, setList] = useState([])
+  const [editingItem, setEditingItem] = useState(null)
+  const [editData, setEditData] = useState({ name: '', description: '', price: '', category: '' })
+  const [searchQuery, setSearchQuery] = useState('')
+  const [loading, setLoading] = useState(true)
 
   return (
     <div className='list'>
