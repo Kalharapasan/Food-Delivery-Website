@@ -16,7 +16,9 @@ const Orders = () => {
           <p>{orders.length} total orders</p>
         </div>
         <div className='order-filters'>
+          <select value={filter} onChange={(e) => setFilter(e.target.value)}>
 
+          </select>
         </div>
       </div>
 
