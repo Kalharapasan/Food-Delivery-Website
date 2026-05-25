@@ -63,7 +63,8 @@ const List = () => {
   }, [])
 
   const filteredList = list.filter(item =>
-    
+    item.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+    item.category.toLowerCase().includes(searchQuery.toLowerCase())
   )
 
   if (loading) return <div className='list-loading'>Loading items...</div>
