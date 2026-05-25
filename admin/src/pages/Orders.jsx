@@ -6,7 +6,7 @@ import './Orders.css'
 
 const STATUS_OPTIONS = ['Food Processing', 'Out for Delivery', 'Delivered']
 
-const Orders = () => {
+const Orders = ({ url, token }) => {
 
   useEffect(() => {
     fetchAllOrders()
