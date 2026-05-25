@@ -31,7 +31,7 @@ const List = () => {
     try {
       
     } catch (error) {
-      
+      toast.error(response.data.message)
     }
   }
 
