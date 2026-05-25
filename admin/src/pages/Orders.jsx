@@ -12,6 +12,10 @@ const Orders = ({ url, token }) => {
   const [filter, setFilter] = useState('All')
   const [loading, setLoading] = useState(true)
 
+  const fetchAllOrders = async () => {
+    
+  }
+
   useEffect(() => {
     fetchAllOrders()
   }, [])
