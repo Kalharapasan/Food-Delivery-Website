@@ -20,6 +20,7 @@ const Orders = () => {
             <option value='All'>All Status</option>
             {STATUS_OPTIONS.map(s => <option key={s} value={s}>{s}</option>)}
           </select>
+          <button className='refresh-btn' onClick={fetchAllOrders}>↻ Refresh</button>
         </div>
       </div>
 
