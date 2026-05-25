@@ -34,7 +34,7 @@ const List = () => {
         toast.success('Item removed successfully')
         await fetchList()
       }else{
-
+        toast.error(response.data.message)
       }
     } catch (error) {
       toast.error(response.data.message)
