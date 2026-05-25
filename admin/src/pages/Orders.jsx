@@ -5,14 +5,17 @@ import { assets } from '../assets/assets'
 import './Orders.css'
 
 const Orders = () => {
+  
+  
   return (
     <div className='order-page'>
 
-    <div className='order-page-header'>
-      <div>
-        
+      <div className='order-page-header'>
+        <div>
+          <h2>Order Management</h2>
+          <p>{orders.length} total orders</p>
+        </div>
       </div>
-    </div>
 
     </div>
   )
