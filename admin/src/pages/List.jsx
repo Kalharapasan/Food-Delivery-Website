@@ -10,6 +10,10 @@ const List = () => {
   const [searchQuery, setSearchQuery] = useState('')
   const [loading, setLoading] = useState(true)
 
+  const fetchList = async () => {
+    
+  }
+
   return (
     <div className='list'>
 
