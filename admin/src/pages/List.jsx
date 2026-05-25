@@ -44,7 +44,10 @@ const List = () => {
   const startEditing = (item) => {
     setEditingItem(item._id)
     setEditData({
-      
+      name: item.name,
+      description: item.description,
+      price: item.price,
+      category: item.category
     })
   }
 
