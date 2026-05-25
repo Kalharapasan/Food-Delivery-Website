@@ -13,7 +13,11 @@ const Orders = ({ url, token }) => {
   const [loading, setLoading] = useState(true)
 
   const fetchAllOrders = async () => {
-    
+    try {
+      
+    } catch (error) {
+      
+    }
   }
 
   useEffect(() => {
