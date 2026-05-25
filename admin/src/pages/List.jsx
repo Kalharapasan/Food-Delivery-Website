@@ -3,13 +3,12 @@ import React, { useEffect, useState } from 'react'
 import { toast } from 'react-toastify'
 import './List.css'
 
-const List = () => {
+const List = ({ url, token }) => {
   const [list, setList] = useState([])
   const [editingItem, setEditingItem] = useState(null)
   const [editData, setEditData] = useState({ name: '', description: '', price: '', category: '' })
   const [searchQuery, setSearchQuery] = useState('')
   const [loading, setLoading] = useState(true)
-
 
   const fetchList = async () => {
     try {
@@ -70,12 +69,10 @@ const List = () => {
       } else {
         toast.error(response.data.message || 'Update failed')
       }
-    } catch (error) {
+    } catch (err) {
       toast.error('Error updating item')
     }
   }
-
-
 
   useEffect(() => {
     fetchList()
@@ -90,7 +87,6 @@ const List = () => {
 
   return (
     <div className='list'>
-
       <div className='list-header'>
         <div>
           <h2>Food Items</h2>
@@ -107,7 +103,6 @@ const List = () => {
       </div>
 
       <div className='list-table-wrapper'>
-
         <div className='list-table-head'>
           <span>Image</span>
           <span>Name</span>
@@ -169,10 +164,7 @@ const List = () => {
             </div>
           ))
         )}
-
       </div>
-
-
     </div>
   )
 }
