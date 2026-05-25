@@ -18,7 +18,7 @@ const Orders = ({ url, token }) => {
       if (response.data.success) {
         setOrders(response.data.data)
       }else{
-
+        toast.error(response.data.message || 'Error fetching orders')
       }
     } catch (error) {
 
