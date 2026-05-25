@@ -15,98 +15,100 @@ const List = () => {
       const response = await axios.get(`${url}/api/food/list`)
       if (response.data.success) {
         setList(response.data.foods)
-    } catch (error) {
+      } catch (error) {
 
+      } finally {
+        setLoading(false)
+      }
     }
-  }
 
   return (
-    <div className='list'>
+      <div className='list'>
 
-      <div className='list-header'>
-        <div>
-          <h2>Food Items</h2>
-          <p>{list.length} items on menu</p>
+        <div className='list-header'>
+          <div>
+            <h2>Food Items</h2>
+            <p>{list.length} items on menu</p>
+          </div>
+          <div className='list-search'>
+            <input
+              type='text'
+              placeholder='Search by name or category...'
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+            />
+          </div>
         </div>
-        <div className='list-search'>
-          <input
-            type='text'
-            placeholder='Search by name or category...'
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
-          />
+
+        <div className='list-table-wrapper'>
+
+          <div className='list-table-head'>
+            <span>Image</span>
+            <span>Name</span>
+            <span>Category</span>
+            <span>Price</span>
+            <span>Actions</span>
+          </div>
+
+          {filteredList.length === 0 ? (
+            <div className='list-empty'>No items found</div>
+          ) : (
+            filteredList.map((item) => (
+              <div key={item._id} className='list-table-row'>
+                {editingItem === item._id ? (
+                  <div className='edit-row'>
+                    <img src={`${url}/image/${item.image}`} alt={item.name} className='list-item-img' />
+                    <div className='edit-fields'>
+                      <input
+                        value={editData.name}
+                        onChange={(e) => setEditData(p => ({ ...p, name: e.target.value }))}
+                        placeholder='Name'
+                      />
+                      <input
+                        value={editData.price}
+                        type='number'
+                        onChange={(e) => setEditData(p => ({ ...p, price: e.target.value }))}
+                        placeholder='Price'
+                      />
+                      <select
+                        value={editData.category}
+                        onChange={(e) => setEditData(p => ({ ...p, category: e.target.value }))}
+                      >
+                        {['Salad', 'Rolls', 'Deserts', 'Sandwich', 'Cake', 'Pure Veg', 'Pasta', 'Noodles'].map(c => (
+                          <option key={c} value={c}>{c}</option>
+                        ))}
+                      </select>
+                    </div>
+                    <div className='edit-actions'>
+                      <button className='save-btn' onClick={() => saveEdit(item._id)}>Save</button>
+                      <button className='cancel-btn' onClick={cancelEdit}>Cancel</button>
+                    </div>
+                  </div>
+                ) : (
+                  <>
+                    <img src={`${url}/image/${item.image}`} alt={item.name} className='list-item-img' />
+                    <p className='item-name'>{item.name}</p>
+                    <span className='category-badge'>{item.category}</span>
+                    <p className='item-price'>${Number(item.price).toFixed(2)}</p>
+                    <div className='list-actions'>
+                      <button className='edit-btn' onClick={() => startEditing(item)} title='Edit'>
+                        ✏️ Edit
+                      </button>
+                      <button className='delete-btn' onClick={() => removeFood(item._id)} title='Delete'>
+                        🗑️ Delete
+                      </button>
+                    </div>
+                  </>
+                )}
+              </div>
+            ))
+          )}
+
         </div>
+
+
       </div>
+    )
+  }
 
-      <div className='list-table-wrapper'>
-
-        <div className='list-table-head'>
-          <span>Image</span>
-          <span>Name</span>
-          <span>Category</span>
-          <span>Price</span>
-          <span>Actions</span>
-        </div>
-
-        {filteredList.length === 0 ? (
-          <div className='list-empty'>No items found</div>
-        ) : (
-          filteredList.map((item) => (
-            <div key={item._id} className='list-table-row'>
-              {editingItem === item._id ? (
-                <div className='edit-row'>
-                  <img src={`${url}/image/${item.image}`} alt={item.name} className='list-item-img' />
-                  <div className='edit-fields'>
-                    <input
-                      value={editData.name}
-                      onChange={(e) => setEditData(p => ({ ...p, name: e.target.value }))}
-                      placeholder='Name'
-                    />
-                    <input
-                      value={editData.price}
-                      type='number'
-                      onChange={(e) => setEditData(p => ({ ...p, price: e.target.value }))}
-                      placeholder='Price'
-                    />
-                    <select
-                      value={editData.category}
-                      onChange={(e) => setEditData(p => ({ ...p, category: e.target.value }))}
-                    >
-                      {['Salad', 'Rolls', 'Deserts', 'Sandwich', 'Cake', 'Pure Veg', 'Pasta', 'Noodles'].map(c => (
-                        <option key={c} value={c}>{c}</option>
-                      ))}
-                    </select>
-                  </div>
-                  <div className='edit-actions'>
-                    <button className='save-btn' onClick={() => saveEdit(item._id)}>Save</button>
-                    <button className='cancel-btn' onClick={cancelEdit}>Cancel</button>
-                  </div>
-                </div>
-              ) : (
-                <>
-                  <img src={`${url}/image/${item.image}`} alt={item.name} className='list-item-img' />
-                  <p className='item-name'>{item.name}</p>
-                  <span className='category-badge'>{item.category}</span>
-                  <p className='item-price'>${Number(item.price).toFixed(2)}</p>
-                  <div className='list-actions'>
-                    <button className='edit-btn' onClick={() => startEditing(item)} title='Edit'>
-                      ✏️ Edit
-                    </button>
-                    <button className='delete-btn' onClick={() => removeFood(item._id)} title='Delete'>
-                      🗑️ Delete
-                    </button>
-                  </div>
-                </>
-              )}
-            </div>
-          ))
-        )}
-
-      </div>
-
-
-    </div>
-  )
-}
-
-export default List
+  export default List
