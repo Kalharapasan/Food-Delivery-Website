@@ -67,11 +67,11 @@ const List = () => {
         toast.success('Item updated successfully')
         setEditingItem(null)
         await fetchList()
-      }else{
-
+      } else {
+        toast.error(response.data.message || 'Update failed')
       }
     } catch (error) {
-      
+
     }
   }
 
