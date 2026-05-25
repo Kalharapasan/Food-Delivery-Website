@@ -6,7 +6,8 @@ import './Orders.css'
 
 const Orders = () => {
 
-
+  if (loading) return <div className='orders-loading'>Loading orders...</div>
+  
   return (
     <div className='order-page'>
       <div className='order-page-header'>
