@@ -6,8 +6,15 @@ import './Orders.css'
 
 const STATUS_OPTIONS = ['Food Processing', 'Out for Delivery', 'Delivered']
 
-const Orders = ({ url, token }) => {
+const statusColor = (status) => {
+  switch (status) {
+    case 'Delivered': return 'delivered'
+    case 'Out for Delivery': return 'out-for-delivery'
+    default: return 'processing'
+  }
+}
 
+const Orders = ({ url, token }) => {
   const [orders, setOrders] = useState([])
   const [filter, setFilter] = useState('All')
   const [loading, setLoading] = useState(true)
@@ -68,6 +75,7 @@ const Orders = ({ url, token }) => {
           <button className='refresh-btn' onClick={fetchAllOrders}>↻ Refresh</button>
         </div>
       </div>
+
       {filteredOrders.length === 0 ? (
         <div className='no-orders'>No orders found for "{filter}"</div>
       ) : (
@@ -95,6 +103,7 @@ const Orders = ({ url, token }) => {
                   </div>
                 </div>
               </div>
+
               <div className='order-card-right'>
                 <div className='order-meta'>
                   <span className='order-amount'>${order.amount.toFixed(2)}</span>
