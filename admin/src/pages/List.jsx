@@ -37,7 +37,7 @@ const List = () => {
         toast.error(response.data.message)
       }
     } catch (error) {
-      toast.error(response.data.message)
+      toast.error('Error removing item')
     }
   }
 
