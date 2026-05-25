@@ -29,7 +29,7 @@ const List = () => {
   const removeFood = async (foodId) => {
     if (!window.confirm('Are you sure you want to remove this item?')) return
     try {
-      
+      const response = await axios.post(`${url}/api/food/remove`, { id: foodId }, { headers: { token } })
     } catch (error) {
       toast.error(response.data.message)
     }
