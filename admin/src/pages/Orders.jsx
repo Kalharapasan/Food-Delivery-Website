@@ -6,8 +6,10 @@ import './Orders.css'
 
 const Orders = () => {
 
+  const filteredOrders = filter === 'All' ? orders : orders.filter(o => o.status === filter)
+
   if (loading) return <div className='orders-loading'>Loading orders...</div>
-  
+
   return (
     <div className='order-page'>
       <div className='order-page-header'>
