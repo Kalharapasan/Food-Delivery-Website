@@ -64,9 +64,11 @@ const List = () => {
         { headers: { token } }
       )
       if (response.data.success) {
-
+        toast.success('Item updated successfully')
+        setEditingItem(null)
+        await fetchList()
       }else{
-        
+
       }
     } catch (error) {
       
