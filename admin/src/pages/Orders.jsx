@@ -34,8 +34,13 @@ const Orders = ({ url, token }) => {
         { orderId, status: event.target.value },
         { headers: { token } }
       )
+      if (response.data.success) {
+
+      } else {
+
+      }
     } catch (error) {
-      
+
     }
   }
 
