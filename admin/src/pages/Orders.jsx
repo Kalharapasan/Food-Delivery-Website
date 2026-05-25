@@ -27,6 +27,10 @@ const Orders = ({ url, token }) => {
     }
   }
 
+  const statusHandler = async (event, orderId) => {
+    
+  }
+
   useEffect(() => {
     fetchAllOrders()
   }, [])
