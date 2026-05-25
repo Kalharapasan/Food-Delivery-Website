@@ -41,7 +41,7 @@ const Orders = ({ url, token }) => {
         toast.error(response.data.message)
       }
     } catch (error) {
-
+      toast.error('Error updating status')
     }
   }
 
