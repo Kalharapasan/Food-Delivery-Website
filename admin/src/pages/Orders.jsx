@@ -35,7 +35,8 @@ const Orders = ({ url, token }) => {
         { headers: { token } }
       )
       if (response.data.success) {
-
+        toast.success('Status updated')
+        await fetchAllOrders()
       } else {
 
       }
