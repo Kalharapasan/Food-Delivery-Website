@@ -43,6 +43,9 @@ const List = () => {
 
   const startEditing = (item) => {
     setEditingItem(item._id)
+    setEditData({
+      
+    })
   }
 
   useEffect(() => {
