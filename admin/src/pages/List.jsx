@@ -15,7 +15,12 @@ const List = () => {
           <p>{list.length} items on menu</p>
         </div>
         <div className='list-search'>
-          
+          <input
+            type='text'
+            placeholder='Search by name or category...'
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+          />
         </div>
       </div>
 
