@@ -29,7 +29,11 @@ const Orders = ({ url, token }) => {
 
   const statusHandler = async (event, orderId) => {
     try {
-      
+      const response = await axios.post(
+        `${url}/api/order/status`,
+        { orderId, status: event.target.value },
+        { headers: { token } }
+      )
     } catch (error) {
       
     }
