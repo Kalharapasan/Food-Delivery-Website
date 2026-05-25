@@ -58,7 +58,11 @@ const List = () => {
 
   const saveEdit = async (itemId) => {
     try {
-      
+      const response = await axios.post(
+        `${url}/api/food/update`,
+        { id: itemId, ...editData, price: Number(editData.price) },
+        { headers: { token } }
+      )
     } catch (error) {
       
     }
