@@ -62,6 +62,10 @@ const List = () => {
     fetchList()
   }, [])
 
+  const filteredList = list.filter(item =>
+    
+  )
+
   if (loading) return <div className='list-loading'>Loading items...</div>
 
   return (
