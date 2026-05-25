@@ -5,7 +5,7 @@ import './List.css'
 
 const List = () => {
   const [list, setList] = useState([])
-  
+
   return (
     <div className='list'>
 
@@ -13,6 +13,9 @@ const List = () => {
         <div>
           <h2>Food Items</h2>
           <p>{list.length} items on menu</p>
+        </div>
+        <div className='list-search'>
+          
         </div>
       </div>
 
