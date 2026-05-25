@@ -16,7 +16,7 @@ const List = () => {
       if (response.data.success) {
         setList(response.data.foods)
       } catch (error) {
-
+        toast.error('Server error fetching list')
       } finally {
         setLoading(false)
       }
