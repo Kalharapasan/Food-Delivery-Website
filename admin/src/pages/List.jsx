@@ -28,6 +28,11 @@ const List = () => {
 
   const removeFood = async (foodId) => {
     if (!window.confirm('Are you sure you want to remove this item?')) return
+    try {
+      
+    } catch (error) {
+      
+    }
   }
 
   return (
