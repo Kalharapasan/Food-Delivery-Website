@@ -28,7 +28,11 @@ const Orders = ({ url, token }) => {
   }
 
   const statusHandler = async (event, orderId) => {
-    
+    try {
+      
+    } catch (error) {
+      
+    }
   }
 
   useEffect(() => {
