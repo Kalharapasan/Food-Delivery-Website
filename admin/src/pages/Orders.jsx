@@ -14,9 +14,10 @@ const Orders = ({ url, token }) => {
 
   const fetchAllOrders = async () => {
     try {
-      
+      const response = await axios.get(`${url}/api/order/list`, { headers: { token } })
+
     } catch (error) {
-      
+
     }
   }
 
