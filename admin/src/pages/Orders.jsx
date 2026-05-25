@@ -8,6 +8,10 @@ const STATUS_OPTIONS = ['Food Processing', 'Out for Delivery', 'Delivered']
 
 const Orders = ({ url, token }) => {
 
+  const [orders, setOrders] = useState([])
+  const [filter, setFilter] = useState('All')
+  const [loading, setLoading] = useState(true)
+
   useEffect(() => {
     fetchAllOrders()
   }, [])
