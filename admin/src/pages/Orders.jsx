@@ -4,6 +4,8 @@ import axios from 'axios'
 import { assets } from '../assets/assets'
 import './Orders.css'
 
+const STATUS_OPTIONS = ['Food Processing', 'Out for Delivery', 'Delivered']
+
 const Orders = () => {
 
   useEffect(() => {
