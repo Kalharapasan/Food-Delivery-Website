@@ -31,9 +31,10 @@ const List = () => {
     try {
       const response = await axios.post(`${url}/api/food/remove`, { id: foodId }, { headers: { token } })
       if (response.data.success) {
-
+        toast.success('Item removed successfully')
+        await fetchList()
       }else{
-        
+
       }
     } catch (error) {
       toast.error(response.data.message)
