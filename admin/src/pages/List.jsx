@@ -15,14 +15,18 @@ const List = () => {
       const response = await axios.get(`${url}/api/food/list`)
       if (response.data.success) {
         setList(response.data.foods)
-      } catch (error) {
-        toast.error('Server error fetching list')
-      } finally {
-        setLoading(false)
       }
+    } catch (error) {
+      toast.error('Server error fetching list')
+    } finally {
+      setLoading(false)
     }
 
-  return (
+    const removeFood = async (foodId) => {
+
+    }
+
+    return (
       <div className='list'>
 
         <div className='list-header'>
