@@ -71,7 +71,7 @@ const List = () => {
         toast.error(response.data.message || 'Update failed')
       }
     } catch (error) {
-
+      toast.error('Error updating item')
     }
   }
 
