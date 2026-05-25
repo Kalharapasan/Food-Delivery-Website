@@ -24,6 +24,10 @@ const List = () => {
         </div>
       </div>
 
+      <div className='list-table-wrapper'>
+        
+      </div>
+
 
     </div>
   )
