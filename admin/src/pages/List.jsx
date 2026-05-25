@@ -4,6 +4,7 @@ import { toast } from 'react-toastify'
 import './List.css'
 
 const List = () => {
+  const [list, setList] = useState([])
   
   return (
     <div className='list'>
