@@ -11,7 +11,11 @@ const List = () => {
   const [loading, setLoading] = useState(true)
 
   const fetchList = async () => {
-    
+    try {
+
+    } catch (error) {
+
+    }
   }
 
   return (
