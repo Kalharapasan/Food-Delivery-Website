@@ -52,7 +52,8 @@ const List = () => {
   }
 
   const cancelEdit = () => {
-    
+    setEditingItem(null)
+    setEditData({ name: '', description: '', price: '', category: '' })
   }
 
   useEffect(() => {
