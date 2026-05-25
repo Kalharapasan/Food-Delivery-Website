@@ -56,9 +56,13 @@ const List = () => {
     setEditData({ name: '', description: '', price: '', category: '' })
   }
 
+
+
   useEffect(() => {
     fetchList()
   }, [])
+
+  if (loading) return <div className='list-loading'>Loading items...</div>
 
   return (
     <div className='list'>
