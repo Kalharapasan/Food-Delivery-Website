@@ -17,11 +17,13 @@ const Orders = ({ url, token }) => {
       const response = await axios.get(`${url}/api/order/list`, { headers: { token } })
       if (response.data.success) {
         setOrders(response.data.data)
-      }else{
+      } else {
         toast.error(response.data.message || 'Error fetching orders')
       }
     } catch (error) {
       toast.error('Network error fetching orders')
+    } finally {
+      setLoading(false)
     }
   }
 
