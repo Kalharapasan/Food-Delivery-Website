@@ -17,7 +17,8 @@ const Orders = () => {
         </div>
         <div className='order-filters'>
           <select value={filter} onChange={(e) => setFilter(e.target.value)}>
-
+            <option value='All'>All Status</option>
+            {STATUS_OPTIONS.map(s => <option key={s} value={s}>{s}</option>)}
           </select>
         </div>
       </div>
