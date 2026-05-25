@@ -33,13 +33,17 @@ const List = () => {
       if (response.data.success) {
         toast.success('Item removed successfully')
         await fetchList()
-      }else{
+      } else {
         toast.error(response.data.message)
       }
-    } catch (error) {
+    } catch (err) {
       toast.error('Error removing item')
     }
   }
+
+  useEffect(() => {
+    fetchList()
+  }, [])
 
   return (
     <div className='list'>
