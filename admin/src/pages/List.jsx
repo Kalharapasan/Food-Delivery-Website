@@ -63,6 +63,11 @@ const List = () => {
         { id: itemId, ...editData, price: Number(editData.price) },
         { headers: { token } }
       )
+      if (response.data.success) {
+
+      }else{
+        
+      }
     } catch (error) {
       
     }
