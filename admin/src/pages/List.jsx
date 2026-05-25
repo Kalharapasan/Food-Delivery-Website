@@ -41,6 +41,10 @@ const List = () => {
     }
   }
 
+  const startEditing = (item) => {
+    
+  }
+
   useEffect(() => {
     fetchList()
   }, [])
