@@ -9,7 +9,6 @@ const Orders = () => {
 
   return (
     <div className='order-page'>
-
       <div className='order-page-header'>
         <div>
           <h2>Order Management</h2>
@@ -23,7 +22,54 @@ const Orders = () => {
           <button className='refresh-btn' onClick={fetchAllOrders}>↻ Refresh</button>
         </div>
       </div>
-
+      {filteredOrders.length === 0 ? (
+        <div className='no-orders'>No orders found for "{filter}"</div>
+      ) : (
+        <div className='order-list'>
+          {filteredOrders.map((order, index) => (
+            <div key={index} className='order-card'>
+              <div className='order-card-left'>
+                <img src={assets.parcel_icon} alt='Order' className='order-icon' />
+                <div className='order-details'>
+                  <p className='order-id'>#{order._id.substring(0, 12)}...</p>
+                  <div className='order-items-text'>
+                    {order.items.map((item, i) => (
+                      <span key={i}>
+                        {item.name} <small>×{item.quantity}</small>
+                        {i < order.items.length - 1 ? ', ' : ''}
+                      </span>
+                    ))}
+                  </div>
+                  <div className='order-customer'>
+                    <strong>{order.address.firstName} {order.address.lastName}</strong>
+                    <span>{order.address.phone}</span>
+                  </div>
+                  <div className='order-address'>
+                    {order.address.street}, {order.address.city}, {order.address.state} {order.address.zipcode}
+                  </div>
+                </div>
+              </div>
+              <div className='order-card-right'>
+                <div className='order-meta'>
+                  <span className='order-amount'>${order.amount.toFixed(2)}</span>
+                  <span className='order-count'>{order.items.length} item{order.items.length > 1 ? 's' : ''}</span>
+                  <span className='order-date'>{new Date(order.date).toLocaleDateString()}</span>
+                  <span className={`payment-badge ${order.payment ? 'paid' : 'unpaid'}`}>
+                    {order.payment ? '✓ Paid' : '✗ Unpaid'}
+                  </span>
+                </div>
+                <select
+                  className={`status-select ${statusColor(order.status)}`}
+                  value={order.status}
+                  onChange={(e) => statusHandler(e, order._id)}
+                >
+                  {STATUS_OPTIONS.map(s => <option key={s} value={s}>{s}</option>)}
+                </select>
+              </div>
+            </div>
+          ))}
+        </div>
+      )}
     </div>
   )
 }
