@@ -21,7 +21,7 @@ const Orders = ({ url, token }) => {
         toast.error(response.data.message || 'Error fetching orders')
       }
     } catch (error) {
-
+      toast.error('Network error fetching orders')
     }
   }
 
