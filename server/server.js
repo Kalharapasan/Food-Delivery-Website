@@ -9,6 +9,11 @@ dotenv.config();
 const app = express();
 const port = process.env.PORT;
 
+// Ensure uploads directory exists
+if (!fs.existsSync("uploads")) {
+    fs.mkdirSync("uploads");
+}
+
 // Webhook MUST be before express.json() middleware
 app.post(
     "/api/order/webhook",
@@ -22,7 +27,7 @@ app.use(
     cors({
         origin: [
             process.env.FRONTEND_URL,
-            process.env.ADMIN_URL, 
+            process.env.ADMIN_URL,
         ],
         credentials: true,
     })
