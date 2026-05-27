@@ -56,7 +56,11 @@ const registerUser = async (req, res) => {
             .eq("email", email)
             .maybeSingle();
 
+        if (exists) {
 
+        }
+
+        
     } catch (error) {
 
     }
