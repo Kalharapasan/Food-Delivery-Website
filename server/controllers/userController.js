@@ -89,7 +89,7 @@ const adminLogin = async (req, res) => {
             .eq("email", email)
             .maybeSingle();
 
-        if (error || !user) { 
+        if (error || !user) {
             return res.json({ success: false, message: "Admin account not found" });
         }
 
@@ -102,6 +102,9 @@ const adminLogin = async (req, res) => {
         if (!isMatch) {
             return res.json({ success: false, message: "Invalid credentials" });
         }
+
+        const token = createToken(user.id);
+        res.json({ success: true, token });
 
     } catch (error) {
 
