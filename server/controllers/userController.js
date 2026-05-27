@@ -107,7 +107,8 @@ const adminLogin = async (req, res) => {
         res.json({ success: true, token });
 
     } catch (error) {
-
+        console.error("Admin login error:", error);
+        res.json({ success: false, message: "Admin login failed. Please try again." });
     }
 };
 
