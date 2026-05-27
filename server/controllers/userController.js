@@ -94,7 +94,7 @@ const adminLogin = async (req, res) => {
         }
 
         if (user.role !== "admin") {
-            
+            return res.json({ success: false, message: "Not authorized as admin" });
         }
 
     } catch (error) {
