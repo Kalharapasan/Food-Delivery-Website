@@ -14,16 +14,20 @@ const createToken = (id) => {
 const loginUser = async (req, res) => {
     const { email, password } = req.body;
     try {
-        
+        const { data: user, error } = await supabase
+            .from("users")
+            .select("*")
+            .eq("email", email)
+            .maybeSingle();
     } catch (error) {
-        
+
     }
 };
 
-const registerUser = async (req, res) => {};
+const registerUser = async (req, res) => { };
 
-const adminLogin = async (req, res) => {};
+const adminLogin = async (req, res) => { };
 
-const adminRegister = async (req, res) => {};
+const adminRegister = async (req, res) => { };
 
 export { loginUser, registerUser, adminLogin, adminRegister };
