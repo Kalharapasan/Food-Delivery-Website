@@ -19,6 +19,11 @@ const loginUser = async (req, res) => {
             .select("*")
             .eq("email", email)
             .maybeSingle();
+
+        if (error || !user) {
+            return res.json({ success: false, message: "User does not exist" });
+        }
+
     } catch (error) {
 
     }
