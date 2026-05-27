@@ -71,6 +71,9 @@ const registerUser = async (req, res) => {
 
         if (error) throw error;
 
+        const token = createToken(newUser.id);
+        res.json({ success: true, token });
+
     } catch (error) {
 
     }
