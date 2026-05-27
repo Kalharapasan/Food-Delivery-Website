@@ -82,6 +82,11 @@ const registerUser = async (req, res) => {
 
 const adminLogin = async (req, res) => {
     const { email, password } = req.body;
+    try {
+        
+    } catch (error) {
+        
+    }
 };
 
 const adminRegister = async (req, res) => { };
