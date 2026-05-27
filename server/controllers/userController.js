@@ -11,7 +11,9 @@ const createToken = (id) => {
 };
 
 
-const loginUser = async (req, res) => {};
+const loginUser = async (req, res) => {
+    const { email, password } = req.body;
+};
 
 const registerUser = async (req, res) => {};
 
