@@ -13,6 +13,11 @@ const createToken = (id) => {
 
 const loginUser = async (req, res) => {
     const { email, password } = req.body;
+    try {
+        
+    } catch (error) {
+        
+    }
 };
 
 const registerUser = async (req, res) => {};
