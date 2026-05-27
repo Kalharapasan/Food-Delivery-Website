@@ -83,9 +83,15 @@ const registerUser = async (req, res) => {
 const adminLogin = async (req, res) => {
     const { email, password } = req.body;
     try {
+        const { data: user, error } = await supabase
+            .from("users")
+            .select("*")
+            .eq("email", email)
+            .maybeSingle();
         
+            
     } catch (error) {
-        
+
     }
 };
 
