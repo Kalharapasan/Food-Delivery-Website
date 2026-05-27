@@ -9,8 +9,14 @@ const adminAuth = async (req, res, next) => {
 
     try {
         const decoded = jwt.verify(token, process.env.JWT_SECRET);
-    } catch (error) {
+        const { data: user, error } = await supabase
+            .from("users")
+            .select("role")
+            .eq("id", decoded.id)
+            .single();
         
+    } catch (error) {
+
     }
 
 };
