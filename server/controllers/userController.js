@@ -99,6 +99,8 @@ const adminLogin = async (req, res) => {
 
         const isMatch = await bcrypt.compare(password, user.password);
 
+        if (!isMatch) {}
+
     } catch (error) {
 
     }
