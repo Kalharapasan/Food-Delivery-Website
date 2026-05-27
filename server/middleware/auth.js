@@ -16,6 +16,6 @@ const authMiddleware = async (req, res, next) => {
         res.json({ success: false, message: "Invalid or expired token. Please log in again." });
     }
 
-}
+};
 
 export default authMiddleware;
