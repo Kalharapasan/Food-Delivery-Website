@@ -34,7 +34,8 @@ const loginUser = async (req, res) => {
         res.json({ success: true, token });
 
     } catch (error) {
-
+        console.error("Login error:", error);
+        res.json({ success: false, message: "Login failed. Please try again." });
     }
 };
 
