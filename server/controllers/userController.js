@@ -15,3 +15,5 @@ const registerUser = async (req, res) => {};
 const adminLogin = async (req, res) => {};
 
 const adminRegister = async (req, res) => {};
+
+export { loginUser, registerUser, adminLogin, adminRegister };
