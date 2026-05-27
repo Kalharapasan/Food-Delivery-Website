@@ -9,3 +9,5 @@ const createToken = (id) => {
 
 
 const loginUser = async (req, res) => {};
+
+const registerUser = async (req, res) => {};
