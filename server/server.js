@@ -5,3 +5,6 @@ import fs from "fs";
 
 // Load env first, before anything else
 dotenv.config();
+
+const app = express();
+const port = process.env.PORT || 4000;
