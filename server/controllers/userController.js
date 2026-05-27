@@ -90,8 +90,10 @@ const adminLogin = async (req, res) => {
             .maybeSingle();
 
         if (error || !user) { 
-            
+            return res.json({ success: false, message: "Admin account not found" });
         }
+
+        
 
     } catch (error) {
 
