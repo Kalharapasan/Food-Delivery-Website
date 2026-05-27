@@ -93,7 +93,9 @@ const adminLogin = async (req, res) => {
             return res.json({ success: false, message: "Admin account not found" });
         }
 
-        
+        if (user.role !== "admin") {
+            
+        }
 
     } catch (error) {
 
