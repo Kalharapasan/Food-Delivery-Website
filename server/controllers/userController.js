@@ -46,7 +46,7 @@ const registerUser = async (req, res) => {
             return res.json({ success: false, message: "Please enter a valid email" });
         }
         if (password.length < 8) {
-            
+            return res.json({ success: false, message: "Password must be at least 8 characters" });
         }
     } catch (error) {
         
