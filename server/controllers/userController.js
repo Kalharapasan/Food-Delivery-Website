@@ -39,17 +39,26 @@ const loginUser = async (req, res) => {
     }
 };
 
-const registerUser = async (req, res) => { 
+const registerUser = async (req, res) => {
     const { name, password, email } = req.body;
     try {
         if (!validator.isEmail(email)) {
             return res.json({ success: false, message: "Please enter a valid email" });
         }
+
         if (password.length < 8) {
             return res.json({ success: false, message: "Password must be at least 8 characters" });
         }
+
+        const { data: exists } = await supabase
+            .from("users")
+            .select("id")
+            .eq("email", email)
+            .maybeSingle();
+
+
     } catch (error) {
-        
+
     }
 };
 
