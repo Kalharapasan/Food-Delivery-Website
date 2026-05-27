@@ -14,7 +14,9 @@ const adminAuth = async (req, res, next) => {
             .select("role")
             .eq("id", decoded.id)
             .single();
-        
+        if (error || !user || user.role !== "admin") {
+      return res.json({ success: false, message: "Admin access denied." });
+    }
     } catch (error) {
 
     }
