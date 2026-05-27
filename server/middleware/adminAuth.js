@@ -7,6 +7,12 @@ const adminAuth = async (req, res, next) => {
         return res.json({ success: false, message: "Not authorized. Admin login required." });
     }
 
+    try {
+        
+    } catch (error) {
+        
+    }
+
 };
 
 export default adminAuth;
