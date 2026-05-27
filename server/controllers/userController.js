@@ -6,3 +6,6 @@ import validator from "validator";
 const createToken = (id) => {
 
 };
+
+
+const loginUser = async (req, res) => {};
