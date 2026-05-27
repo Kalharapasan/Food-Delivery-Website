@@ -30,6 +30,9 @@ const loginUser = async (req, res) => {
             return res.json({ success: false, message: "Invalid credentials" });
         }
 
+        const token = createToken(user.id);
+        res.json({ success: true, token });
+
     } catch (error) {
 
     }
