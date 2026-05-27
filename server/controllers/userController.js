@@ -97,6 +97,8 @@ const adminLogin = async (req, res) => {
             return res.json({ success: false, message: "Not authorized as admin" });
         }
 
+        const isMatch = await bcrypt.compare(password, user.password);
+
     } catch (error) {
 
     }
