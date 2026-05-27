@@ -57,10 +57,10 @@ const registerUser = async (req, res) => {
             .maybeSingle();
 
         if (exists) {
-
+            return res.json({ success: false, message: "An account with this email already exists" });
         }
 
-        
+
     } catch (error) {
 
     }
