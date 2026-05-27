@@ -88,8 +88,11 @@ const adminLogin = async (req, res) => {
             .select("*")
             .eq("email", email)
             .maybeSingle();
-        
+
+        if (error || !user) { 
             
+        }
+
     } catch (error) {
 
     }
