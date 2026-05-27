@@ -20,7 +20,8 @@ const adminAuth = async (req, res, next) => {
         req.body.userId = decoded.id;
         next();
     } catch (error) {
-
+        console.error("Admin auth error:", error.message);
+        res.json({ success: false, message: "Invalid or expired admin token." });
     }
 
 };
