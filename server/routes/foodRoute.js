@@ -5,4 +5,8 @@ import multer from "multer";
 
 const foodRouter = express.Router();
 
+const storage = multer.diskStorage({
+    
+});
+
 export default foodRouter;
