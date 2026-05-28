@@ -116,7 +116,7 @@ const adminRegister = async (req, res) => {
     const { name, email, password } = req.body;
     try {
         if (!validator.isEmail(email)) {
-            
+            return res.json({ success: false, message: "Please enter a valid email" });
         }
     } catch (error) {
         
