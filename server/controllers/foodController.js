@@ -5,6 +5,7 @@ const addFood = async (req, res) => {
     if (!req.file) {
         return res.status(400).json({ success: false, message: "Image file is required" });
     }
+    const image_filename = req.file.filename;
 }
 
 const listFood = async (req, res) => {}
