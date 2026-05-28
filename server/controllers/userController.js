@@ -126,6 +126,7 @@ const adminRegister = async (req, res) => {
             .select("id")
             .eq("email", email)
             .maybeSingle();
+        if (exists) {}
     } catch (error) {
 
     }
