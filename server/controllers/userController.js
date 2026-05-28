@@ -136,6 +136,7 @@ const adminRegister = async (req, res) => {
             .insert([{ name, email, password: hashedPassword, role: "admin", cartData: {} }])
             .select()
             .single();
+        if (error) throw error;
     } catch (error) {
 
     }
