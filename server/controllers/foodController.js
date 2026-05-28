@@ -67,7 +67,8 @@ const updateFood = async (req, res) => {
         if (error) throw error;
         res.json({ success: true, message: "Food item updated successfully" });
     } catch (error) {
-
+        console.error("Update food error:", error);
+        res.json({ success: false, message: "Error updating food item" });
     }
 }
 
