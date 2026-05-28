@@ -7,18 +7,26 @@ const addFood = async (req, res) => {
     }
     const image_filename = req.file.filename;
     try {
-        
+        const { error } = await supabase.from("foods").insert([
+            {
+                name: req.body.name,
+                description: req.body.description,
+                price: Number(req.body.price),
+                category: req.body.category,
+                image: image_filename,
+            },
+        ]);
     } catch (error) {
-        
+
     }
 }
 
-const listFood = async (req, res) => {}
+const listFood = async (req, res) => { }
 
-const removeFood = async (req, res) => {}
+const removeFood = async (req, res) => { }
 
 
-const updateFood = async (req, res) => {}
+const updateFood = async (req, res) => { }
 
 
 export { addFood, listFood, removeFood, updateFood };
