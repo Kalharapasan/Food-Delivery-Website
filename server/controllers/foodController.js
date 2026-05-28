@@ -24,11 +24,13 @@ const addFood = async (req, res) => {
     }
 }
 
-const listFood = async (req, res) => { 
+const listFood = async (req, res) => {
     try {
         const { data: foods, error } = await supabase.from("foods").select("*");
-    } catch (error) {
+        if (error) throw error;
         
+    } catch (error) {
+
     }
 }
 
