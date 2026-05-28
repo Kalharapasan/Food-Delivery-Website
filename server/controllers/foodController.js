@@ -28,7 +28,8 @@ const listFood = async (req, res) => {
     try {
         const { data: foods, error } = await supabase.from("foods").select("*");
         if (error) throw error;
-        
+        const mappedFoods = foods.map((food) => ({ ...food, _id: food.id }));
+        res.json({ success: true, foods: mappedFoods });
     } catch (error) {
 
     }
