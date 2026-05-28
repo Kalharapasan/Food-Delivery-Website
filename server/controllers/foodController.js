@@ -45,13 +45,14 @@ const removeFood = async (req, res) => {
             .eq("id", id)
             .single();
         if (fetchError) throw fetchError;
-        fs.unlink(`uploads/${food.image}`, () => {});
+        fs.unlink(`uploads/${food.image}`, () => { });
         const { error: deleteError } = await supabase.from("foods").delete().eq("id", id);
-        
+
         if (deleteError) throw deleteError;
         res.json({ success: true, message: "Food item removed successfully" });
     } catch (error) {
-        
+        console.error("Remove food error:", error);
+        res.json({ success: false, message: "Error removing food item" });
     }
 }
 
