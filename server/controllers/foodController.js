@@ -44,6 +44,7 @@ const removeFood = async (req, res) => {
             .select("*")
             .eq("id", id)
             .single();
+        if (fetchError) throw fetchError;
 
     } catch (error) {
 
