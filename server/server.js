@@ -38,6 +38,7 @@ connectDB();
 
 // API endpoints
 app.use("/api/user", userRouter);
+app.use("/api/food", foodRouter);
 
 app.get("/", (req, res) => {
     res.send("API Working ✅");
