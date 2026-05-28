@@ -38,7 +38,7 @@ const listFood = async (req, res) => {
 
 const removeFood = async (req, res) => { 
     try {
-        
+        const id = req.body.id || req.body._id;
     } catch (error) {
         
     }
