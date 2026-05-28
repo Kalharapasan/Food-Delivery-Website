@@ -36,6 +36,9 @@ app.use(
 // DB connection
 connectDB();
 
+// API endpoints
+app.use("/api/user", userRouter);
+
 app.get("/", (req, res) => {
     res.send("API Working ✅");
 });
