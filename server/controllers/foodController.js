@@ -57,7 +57,13 @@ const removeFood = async (req, res) => {
 }
 
 
-const updateFood = async (req, res) => { }
+const updateFood = async (req, res) => { 
+    try {
+        const { id, name, description, price, category } = req.body;
+    } catch (error) {
+        
+    }
+}
 
 
 export { addFood, listFood, removeFood, updateFood };
