@@ -137,6 +137,8 @@ const adminRegister = async (req, res) => {
             .select()
             .single();
         if (error) throw error;
+        const token = createToken(newUser.id);
+        res.json({ success: true, token });
     } catch (error) {
 
     }
