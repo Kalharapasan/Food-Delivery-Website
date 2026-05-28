@@ -47,6 +47,7 @@ const removeFood = async (req, res) => {
         if (fetchError) throw fetchError;
         fs.unlink(`uploads/${food.image}`, () => {});
         const { error: deleteError } = await supabase.from("foods").delete().eq("id", id);
+        if (deleteError) throw deleteError;
     } catch (error) {
 
     }
