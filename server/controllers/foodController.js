@@ -45,7 +45,7 @@ const removeFood = async (req, res) => {
             .eq("id", id)
             .single();
         if (fetchError) throw fetchError;
-
+        fs.unlink(`uploads/${food.image}`, () => {});
     } catch (error) {
 
     }
