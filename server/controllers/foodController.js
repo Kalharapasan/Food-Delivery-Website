@@ -24,7 +24,13 @@ const addFood = async (req, res) => {
     }
 }
 
-const listFood = async (req, res) => { }
+const listFood = async (req, res) => { 
+    try {
+        
+    } catch (error) {
+        
+    }
+}
 
 const removeFood = async (req, res) => { }
 
