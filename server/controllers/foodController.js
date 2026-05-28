@@ -64,6 +64,8 @@ const updateFood = async (req, res) => {
             .from("foods")
             .update({ name, description, price: Number(price), category })
             .eq("id", id);
+        if (error) throw error;
+        res.json({ success: true, message: "Food item updated successfully" });
     } catch (error) {
 
     }
