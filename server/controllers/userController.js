@@ -112,6 +112,9 @@ const adminLogin = async (req, res) => {
     }
 };
 
-const adminRegister = async (req, res) => { };
+const adminRegister = async (req, res) => {
+    const { name, email, password } = req.body;
+    
+ };
 
 export { loginUser, registerUser, adminLogin, adminRegister };
