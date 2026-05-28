@@ -57,11 +57,15 @@ const removeFood = async (req, res) => {
 }
 
 
-const updateFood = async (req, res) => { 
+const updateFood = async (req, res) => {
     try {
         const { id, name, description, price, category } = req.body;
+        const { error } = await supabase
+            .from("foods")
+            .update({ name, description, price: Number(price), category })
+            .eq("id", id);
     } catch (error) {
-        
+
     }
 }
 
