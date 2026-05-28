@@ -16,6 +16,8 @@ const addFood = async (req, res) => {
                 image: image_filename,
             },
         ]);
+        if (error) throw error;
+        res.json({ success: true, message: "Food item added successfully" });
     } catch (error) {
 
     }
