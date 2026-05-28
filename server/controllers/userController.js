@@ -131,6 +131,11 @@ const adminRegister = async (req, res) => {
         }
         const salt = await bcrypt.genSalt(10);
         const hashedPassword = await bcrypt.hash(password, salt);
+        const { data: newUser, error } = await supabase
+            .from("users")
+            .insert([{ name, email, password: hashedPassword, role: "admin", cartData: {} }])
+            .select()
+            .single();
     } catch (error) {
 
     }
