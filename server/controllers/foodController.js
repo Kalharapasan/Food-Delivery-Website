@@ -1,7 +1,9 @@
 import { supabase } from "../config/Databases.js";
 import fs from "fs";
 
-const addFood = async (req, res) => {}
+const addFood = async (req, res) => {
+    if (!req.file) {}
+}
 
 const listFood = async (req, res) => {}
 
