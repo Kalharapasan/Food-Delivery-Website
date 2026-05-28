@@ -36,11 +36,17 @@ const listFood = async (req, res) => {
     }
 }
 
-const removeFood = async (req, res) => { 
+const removeFood = async (req, res) => {
     try {
         const id = req.body.id || req.body._id;
+        const { data: food, error: fetchError } = await supabase
+            .from("foods")
+            .select("*")
+            .eq("id", id)
+            .single();
+
     } catch (error) {
-        
+
     }
 }
 
