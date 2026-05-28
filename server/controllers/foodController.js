@@ -19,7 +19,8 @@ const addFood = async (req, res) => {
         if (error) throw error;
         res.json({ success: true, message: "Food item added successfully" });
     } catch (error) {
-
+        console.error("Add food error:", error);
+        res.json({ success: false, message: "Error adding food item" });
     }
 }
 
