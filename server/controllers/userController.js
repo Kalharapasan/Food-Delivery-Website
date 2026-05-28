@@ -114,6 +114,11 @@ const adminLogin = async (req, res) => {
 
 const adminRegister = async (req, res) => {
     const { name, email, password } = req.body;
+    try {
+        
+    } catch (error) {
+        
+    }
     
  };
 
