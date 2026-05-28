@@ -140,7 +140,8 @@ const adminRegister = async (req, res) => {
         const token = createToken(newUser.id);
         res.json({ success: true, token });
     } catch (error) {
-
+        console.error("Admin register error:", error);
+        res.json({ success: false, message: "Admin registration failed. Please try again." });
     }
 
 };
