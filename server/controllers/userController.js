@@ -121,10 +121,15 @@ const adminRegister = async (req, res) => {
         if (password.length < 8) {
             return res.json({ success: false, message: "Password must be at least 8 characters" });
         }
+        const { data: exists } = await supabase
+            .from("users")
+            .select("id")
+            .eq("email", email)
+            .maybeSingle();
     } catch (error) {
-        
+
     }
-    
- };
+
+};
 
 export { loginUser, registerUser, adminLogin, adminRegister };
