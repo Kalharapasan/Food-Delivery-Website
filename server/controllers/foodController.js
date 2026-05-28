@@ -31,7 +31,8 @@ const listFood = async (req, res) => {
         const mappedFoods = foods.map((food) => ({ ...food, _id: food.id }));
         res.json({ success: true, foods: mappedFoods });
     } catch (error) {
-
+        console.error("List food error:", error);
+        res.json({ success: false, message: "Error fetching foods" });
     }
 }
 
