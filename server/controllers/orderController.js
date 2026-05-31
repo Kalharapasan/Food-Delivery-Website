@@ -22,7 +22,7 @@ const placeOrder = async (req, res) => {
             .select()
             .single();
         
-        
+        if (error) throw error;
         
     } catch (error) {
 
