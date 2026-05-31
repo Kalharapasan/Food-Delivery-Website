@@ -109,7 +109,20 @@ const listOrders = async (req, res) => {
     }
 };
 
-const updateStatus = async (req, res) => { };
+const updateStatus = async (req, res) => {
+    try {
+        const { error } = await supabase
+            .from("orders")
+            .update({ status: req.body.status })
+            .eq("id", req.body.orderId);
+
+        if (error) throw error;
+        res.json({ success: true, message: "Status updated" });
+    } catch (error) {
+        console.error("Update status error:", error);
+        res.json({ success: false, message: "Error updating status" });
+    }
+};
 
 const getSummary = async (req, res) => { };
 
