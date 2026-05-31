@@ -3,7 +3,7 @@ import axios from 'axios'
 import { toast } from 'react-toastify'
 import './AdminLogin.css'
 
-const AdminLogin = () => {
+const AdminLogin = ({ url, setToken }) => {
 
   const [currState, setCurrState] = useState("Sign In")
   const [data, setData] = useState({ name: '', email: '', password: '' })
