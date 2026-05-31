@@ -80,4 +80,4 @@ Where to look
 If you want, I can also add a `.env.example` and update `package.json` scripts. Want me to do that next?
 
 License
-- This project is released under a proprietary license. See `LICENSE.md` for full terms and contact information.
+- This project is released under a proprietary license. See [License](./LICENSE.md) for full terms and contact information.
