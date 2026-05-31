@@ -32,7 +32,15 @@ const placeOrder = async (req, res) => {
             },
             quantity: item.quantity,
         }));
-        
+
+        line_items.push({
+            price_data: {
+                currency: "usd",
+                product_data: { name: "Delivery Charges" },
+                unit_amount: 200,
+            },
+            quantity: 1,
+        });
 
     } catch (error) {
 
