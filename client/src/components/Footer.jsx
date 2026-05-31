@@ -45,8 +45,8 @@ const Footer = () => {
                 <div className="footer-col">
                     <h4>Get in Touch</h4>
                     <ul>
-                        <li>📞 +94 58965478</li>
-                        <li>✉️ YummyJet@gmail.com</li>
+                        <li>📞 +94 723466524</li>
+                        <li>✉️ chai@gmail.com</li>
                         <li>📍 Colombo, Sri Lanka</li>
                     </ul>
                 </div>
