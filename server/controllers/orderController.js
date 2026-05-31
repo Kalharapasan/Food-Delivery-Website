@@ -23,6 +23,7 @@ const placeOrder = async (req, res) => {
             .single();
         
         if (error) throw error;
+        await supabase.from("cart_items").delete().eq("userId", req.body.userId);
         
     } catch (error) {
 
