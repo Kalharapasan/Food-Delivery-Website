@@ -50,7 +50,6 @@ const Navbar = ({ setShowLogin }) => {
     const navLinks = [
         { label: 'Home', path: '/' },
         { label: 'Menu', href: '#explore-menu' },
-        { label: 'App', href: '#app-download' },
         { label: 'Contact', href: '#footer' },
     ]
 
