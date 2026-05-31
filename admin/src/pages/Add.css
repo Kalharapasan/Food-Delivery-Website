@@ -1,6 +1,6 @@
 .add {
   padding: 32px;
-  max-width: 720px;
+  max-width: 1000px;
 }
 
 .add-header {
@@ -118,6 +118,7 @@
   background: linear-gradient(135deg, #f97316, #ef4444);
   color: #fff;
   border: none;
+  width: 100%;
   border-radius: 12px;
   padding: 14px 28px;
   font-size: 15px;
