@@ -124,7 +124,44 @@ const updateStatus = async (req, res) => {
     }
 };
 
-const getSummary = async (req, res) => { };
+const getSummary = async (req, res) => {
+    try {
+        const [{ data: orders }, { data: foods }, { data: users }] = await Promise.all([
+            supabase.from("orders").select("*"),
+            supabase.from("foods").select("*"),
+            supabase.from("users").select("*"),
+        ]);
+
+        const totalRevenue = (orders || [])
+            .filter((o) => o.payment === true)
+            .reduce((acc, o) => acc + o.amount, 0);
+
+        const latestOrders = [...(orders || [])]
+            .sort((a, b) => new Date(b.date) - new Date(a.date))
+            .slice(0, 5)
+            .map((o) => ({ ...o, _id: o.id }));
+
+        const statusStats = (orders || []).reduce((acc, o) => {
+            acc[o.status] = (acc[o.status] || 0) + 1;
+            return acc;
+        }, {});
+
+        res.json({
+            success: true,
+            data: {
+                totalRevenue,
+                totalOrders: (orders || []).length,
+                totalFoods: (foods || []).length,
+                totalUsers: (users || []).length,
+                latestOrders,
+                statusStats,
+            },
+        });
+    } catch (error) {
+        console.error("Summary error:", error);
+        res.json({ success: false, message: "Error fetching summary" });
+    }
+};
 
 const stripeWebhook = async (request, response) => { };
 
