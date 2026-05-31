@@ -163,7 +163,26 @@ const getSummary = async (req, res) => {
     }
 };
 
-const stripeWebhook = async (request, response) => { };
+const stripeWebhook = async (request, response) => {
+    const sig = request.headers["stripe-signature"];
+    const endpointSecret = process.env.STRIPE_WEBHOOK_SECRET;
+
+    let event;
+    try {
+        event = stripe.webhooks.constructEvent(request.body, sig, endpointSecret);
+    } catch (err) {
+        console.error(`Webhook Error: ${err.message}`);
+        return response.status(400).send(`Webhook Error: ${err.message}`);
+    }
+
+    if (event.type === "checkout.session.completed") {
+        const session = event.data.object;
+        const orderId = session.metadata.orderId;
+        await supabase.from("orders").update({ payment: true }).eq("id", orderId);
+    }
+
+    response.send();
+};
 
 
 export { placeOrder, verifyOrder, userOrders, listOrders, updateStatus, getSummary, stripeWebhook };
