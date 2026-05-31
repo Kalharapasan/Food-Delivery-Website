@@ -49,9 +49,20 @@ const Navbar = ({ setShowLogin }) => {
 
     const navLinks = [
         { label: 'Home', path: '/' },
-        { label: 'Menu', href: '#explore-menu' },
-        { label: 'Contact', href: '#footer' },
+        { label: 'Menu', anchor: 'explore-menu' },
+        { label: 'Contact', anchor: 'footer' },
     ]
+
+    const handleAnchorClick = (anchor) => {
+        if (location.pathname !== '/') {
+            navigate('/')
+            setTimeout(() => {
+                document.getElementById(anchor)?.scrollIntoView({ behavior: 'smooth' })
+            }, 300)
+        } else {
+            document.getElementById(anchor)?.scrollIntoView({ behavior: 'smooth' })
+        }
+    }
 
     useEffect(() => {
         const handleClick = (e) => {
@@ -86,7 +97,9 @@ const Navbar = ({ setShowLogin }) => {
                                 {link.label}
                             </Link>
                         ) : (
-                            <a href={link.href}>{link.label}</a>
+                            <a href={`#${link.anchor}`} onClick={(e) => { e.preventDefault(); handleAnchorClick(link.anchor) }}>
+                                {link.label}
+                            </a>
                         )}
                     </li>
                 ))}
