@@ -74,7 +74,23 @@ const verifyOrder = async (req, res) => {
     }
 };
 
-const userOrders = async (req, res) => { };
+const userOrders = async (req, res) => {
+    try {
+        const { data: orders, error } = await supabase
+            .from("orders")
+            .select("*")
+            .eq("userId", req.body.userId)
+            .order("date", { ascending: false });
+
+        if (error) throw error;
+
+        const mappedOrders = orders.map((order) => ({ ...order, _id: order.id }));
+        res.json({ success: true, data: mappedOrders });
+    } catch (error) {
+        console.error("User orders error:", error);
+        res.json({ success: false, message: "Error fetching orders" });
+    }
+};
 
 const listOrders = async (req, res) => { };
 
