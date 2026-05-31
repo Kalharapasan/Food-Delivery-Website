@@ -3,9 +3,11 @@ import dotenv from 'dotenv';
 import bcrypt from 'bcryptjs';
 dotenv.config();
 
+const supabaseKey = process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.SUPABASE_ANON_KEY;
+
 const supabase = createClient(
   process.env.SUPABASE_URL,
-  process.env.SUPABASE_ANON_KEY
+  supabaseKey
 );
 
 const food_list = [
@@ -44,8 +46,13 @@ const food_list = [
 ];
 
 const seedDatabase = async () => {
-  if (!process.env.SUPABASE_URL || !process.env.SUPABASE_ANON_KEY) {
-      console.error("Error: Missing SUPABASE_URL or SUPABASE_ANON_KEY in your .env file!");
+  if (!process.env.SUPABASE_URL || !supabaseKey) {
+    console.error("Error: Missing SUPABASE_URL or a Supabase API key in your .env file!");
+    return;
+  }
+
+  if (!process.env.SUPABASE_SERVICE_ROLE_KEY) {
+    console.error("Error: SUPABASE_SERVICE_ROLE_KEY is required to seed because row-level security blocks anon inserts.");
       return;
   }
 
