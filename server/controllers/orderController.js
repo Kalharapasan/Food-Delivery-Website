@@ -21,10 +21,19 @@ const placeOrder = async (req, res) => {
             ])
             .select()
             .single();
-        
+
         if (error) throw error;
         await supabase.from("cart_items").delete().eq("userId", req.body.userId);
+        const line_items = req.body.items.map((item) => ({
+            price_data: {
+                currency: "usd",
+                product_data: { name: item.name },
+                unit_amount: Math.round(item.price * 100),
+            },
+            quantity: item.quantity,
+        }));
         
+
     } catch (error) {
 
     }
