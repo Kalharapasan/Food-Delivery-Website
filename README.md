@@ -78,3 +78,6 @@ Where to look
 - Database seed: `server/seed.js`
 
 If you want, I can also add a `.env.example` and update `package.json` scripts. Want me to do that next?
+
+License
+- This project is released under a proprietary license. See `LICENSE.md` for full terms and contact information.
