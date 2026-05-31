@@ -42,6 +42,14 @@ const placeOrder = async (req, res) => {
             quantity: 1,
         });
 
+        const session = await stripe.checkout.sessions.create({
+            line_items,
+            mode: "payment",
+            success_url: `${frontend_url}/verify?success=true&orderId=${newOrder.id}`,
+            cancel_url: `${frontend_url}/verify?success=false&orderId=${newOrder.id}`,
+            metadata: { orderId: newOrder.id },
+        });
+
     } catch (error) {
 
     }
