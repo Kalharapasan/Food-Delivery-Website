@@ -5,6 +5,11 @@ const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 
 const placeOrder = async (req, res) => {
     const frontend_url = process.env.FRONTEND_URL;
+    try {
+        
+    } catch (error) {
+        
+    }
 };
 
 const verifyOrder = async (req, res) => {};
