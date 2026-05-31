@@ -17,6 +17,7 @@ const adminAuth = async (req, res, next) => {
         if (error || !user || user.role !== "admin") {
             return res.json({ success: false, message: "Admin access denied." });
         }
+        if (!req.body) req.body = {};
         req.body.userId = decoded.id;
         next();
     } catch (error) {
