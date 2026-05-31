@@ -14,7 +14,7 @@ const StoreContextProvider = ({ children }) => {
     const [searchQuery, setSearchQuery] = useState("");
     const [userProfile, setUserProfile] = useState(null);
 
-    const url = import.meta.env.VITE_BACKEND_URL || "http://localhost:4000";
+    const url = import.meta.env.VITE_BACKEND_URL;
 
     const addToast = useCallback((message, type = "info") => {
         const id = Date.now();
