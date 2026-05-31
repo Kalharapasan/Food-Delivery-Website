@@ -27,6 +27,11 @@ const placeOrder = async (req, res) => {
 
         if (error) throw error;
         await supabase.from("cart_items").delete().eq("userId", req.body.userId);
+
+        if (req.body.paymentMethod === "COD") {
+            return res.json({ success: true, message: "Order placed successfully" });
+        }
+
         const line_items = req.body.items.map((item) => ({
             price_data: {
                 currency: "usd",
