@@ -90,20 +90,39 @@ const seedDatabase = async () => {
   console.log("Inserting", food_list.length, "food items...");
   for (const food of food_list) {
     const { data: existingFood } = await supabase.from('foods').select('id').eq('name', food.name).maybeSingle();
-    
-    if (!existingFood) {
-      const { data, error } = await supabase.from('foods').insert([food]);
-      if (error) {
-        console.error(`❌ Error inserting ${food.name}:`, error.message);
-        hadErrors = true;
-      } else {
-        console.log(`✅ Inserted: ${food.name}`);
-      }
-    } else {
-      console.log(`⚠️ Skipped: ${food.name} (already exists)`);
-    }
+      // Seed dummy cart data
+  console.log("Seeding dummy cart data...");
+  const dummyCart = {
+    user_id: adminEmail, // using admin email as identifier
+    items: JSON.stringify(food_list.slice(0, 3).map(f => ({ food_id: f.name, quantity: 1 }))),
+    total: food_list.slice(0, 3).reduce((sum, f) => sum + f.price, 0),
+    status: "active",
+  };
+  const { error: cartError } = await supabase.from('carts').insert([dummyCart]);
+  if (cartError) {
+    console.error("❌ Error inserting dummy cart:", cartError.message);
+    hadErrors = true;
+  } else {
+    console.log("✅ Inserted dummy cart for admin user");
   }
-  
+
+  // Seed dummy order data
+  console.log("Seeding dummy order data...");
+  const dummyOrder = {
+    user_id: adminEmail,
+    items: JSON.stringify(food_list.slice(0, 3).map(f => ({ food_id: f.name, quantity: 1 }))),
+    total: food_list.slice(0, 3).reduce((sum, f) => sum + f.price, 0),
+    status: "pending",
+    created_at: new Date().toISOString(),
+  };
+  const { error: orderError } = await supabase.from('orders').insert([dummyOrder]);
+  if (orderError) {
+    console.error("❌ Error inserting dummy order:", orderError.message);
+    hadErrors = true;
+  } else {
+    console.log("✅ Inserted dummy order for admin user");
+  }
+
   if (hadErrors) {
     console.error("Seed finished with errors. Fix the Supabase credentials/policies and run it again.");
     process.exit(1);

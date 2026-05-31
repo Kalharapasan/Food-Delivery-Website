@@ -28,10 +28,12 @@ app.post(
 );
 
 // Middleware
-app.use(cors({
-    origin: true, // allow any origin (development mode)
+app.use(
+  cors({
+    origin: [process.env.FRONTEND_URL, process.env.ADMIN_URL],
     credentials: true,
-}));
+  })
+);
 app.use(express.json());
 
 // DB connection
