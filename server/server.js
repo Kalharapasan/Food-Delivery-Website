@@ -28,13 +28,11 @@ app.post(
 );
 
 // Middleware
+app.use(cors({
+    origin: true, // allow any origin (development mode)
+    credentials: true,
+}));
 app.use(express.json());
-app.use(
-    cors({
-        origin: true, // allow any origin (development mode)
-        credentials: true,
-    })
-);
 
 // DB connection
 connectDB();
