@@ -2,6 +2,12 @@ import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
 import fs from "fs";
+import { connectDB } from "./config/Databases.js";
+import cartRouter from "./routes/cartRoute.js";
+import foodRouter from "./routes/foodRoute.js";
+import orderRouter from "./routes/orderRoute.js";
+import userRouter from "./routes/userRoute.js";
+import { stripeWebhook } from "./controllers/orderController.js";
 
 // Load env first, before anything else
 dotenv.config();

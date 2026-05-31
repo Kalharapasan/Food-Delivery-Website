@@ -1,5 +1,8 @@
+import dotenv from "dotenv";
 import { supabase } from "../config/Databases.js";
 import Stripe from "stripe";
+
+dotenv.config();
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 
