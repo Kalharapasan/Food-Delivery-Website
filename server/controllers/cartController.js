@@ -69,7 +69,26 @@ const removeFromCart = async (req, res) => {
 };
 
 const getCart = async (req, res) => {
+    try {
+        // Fetch all cart items for user
+        const { data: items, error } = await supabase
+            .from('cart_items')
+            .select('*')
+            .eq('userId', req.body.userId);
 
+        if (error) throw error;
+
+        // Convert array of items back to { foodId: quantity } format for the frontend
+        let cartData = {};
+        items.forEach(item => {
+            cartData[item.foodId] = item.quantity;
+        });
+
+        res.json({ success: true, cartData });
+    } catch (error) {
+        console.log(error);
+        res.json({ success: false, message: "Error" });
+    }
 };
 
 export { addToCart, removeFromCart, getCart }
