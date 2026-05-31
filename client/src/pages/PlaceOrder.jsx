@@ -222,7 +222,7 @@ const PlaceOrder = () => {
                     type="submit"
                     className="btn-primary"
                     disabled={loading}
-                    style={{ width: '100%', justifyContent: 'center', padding: '15px', fontSize: 16, marginTop: '20px' }}
+                    style={{ width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', padding: '15px', fontSize: 16, marginTop: '20px', textAlign: 'center' }}
                 >
                     {loading ? 'Processing...' : (paymentMethod === 'COD' ? 'Place Order' : 'Proceed to Payment →')}
                 </button>
