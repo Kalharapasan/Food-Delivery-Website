@@ -53,7 +53,8 @@ const placeOrder = async (req, res) => {
         res.json({ success: true, session_url: session.url });
 
     } catch (error) {
-
+        console.error("Place order error:", error);
+        res.json({ success: false, message: "Failed to place order. Please try again." });
     }
 };
 
