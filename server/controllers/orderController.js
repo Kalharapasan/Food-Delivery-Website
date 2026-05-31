@@ -1,7 +1,11 @@
 import { supabase } from "../config/Databases.js";
 import Stripe from "stripe";
 
-const placeOrder = async (req, res) => {};
+const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
+
+const placeOrder = async (req, res) => {
+
+};
 
 const verifyOrder = async (req, res) => {};
 
