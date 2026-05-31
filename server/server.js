@@ -31,10 +31,7 @@ app.post(
 app.use(express.json());
 app.use(
     cors({
-        origin: [
-            process.env.FRONTEND_URL,
-            process.env.ADMIN_URL,
-        ],
+        origin: true, // allow any origin (development mode)
         credentials: true,
     })
 );
