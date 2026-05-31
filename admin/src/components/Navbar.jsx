@@ -2,7 +2,7 @@ import React from 'react'
 import { assets } from '../assets/assets'
 import './Navbar.css'
 
-const Navbar = () => {
+const Navbar = ({ logout }) => {
   return (
     <div>
       <div className='navbar'>
