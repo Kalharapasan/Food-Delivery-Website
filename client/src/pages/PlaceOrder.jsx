@@ -1,10 +1,13 @@
 import React, { useContext, useState } from 'react'
 import { StoreContext } from '../context/StoreContext'
+import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 
 const PlaceOrder = () => {
     const { getTotalCartAmount, token, food_list, cartItem, url } = useContext(StoreContext)
+    const navigate = useNavigate()
 
+    const [paymentMethod, setPaymentMethod] = useState("Stripe")
     const [data, setData] = useState({
         firstName: '', lastName: '', email: '',
         street: '', city: '', state: '', zipcode: '', country: '',
@@ -47,7 +50,8 @@ const PlaceOrder = () => {
             const orderData = {
                 address: data,
                 items: orderItems,
-                amount: getTotalCartAmount() + 2
+                amount: getTotalCartAmount() + 2,
+                paymentMethod
             }
 
             const res = await axios.post(`${url}/api/order/place`, orderData, {
@@ -55,7 +59,11 @@ const PlaceOrder = () => {
             })
 
             if (res.data.success) {
-                window.location.replace(res.data.session_url)
+                if (paymentMethod === 'COD') {
+                    navigate('/myorders')
+                } else {
+                    window.location.replace(res.data.session_url)
+                }
             } else {
                 alert(res.data.message || 'Order failed. Please try again.')
             }
@@ -186,13 +194,37 @@ const PlaceOrder = () => {
                     </div>
                 </div>
 
+                <div className="form-card">
+                    <h3>
+                        <span className="step-num">2</span>
+                        Payment Method
+                    </h3>
+                    <div style={{ display: 'flex', gap: '15px', marginTop: '15px' }}>
+                        <div 
+                            onClick={() => setPaymentMethod('Stripe')} 
+                            style={{ flex: 1, padding: '15px', border: `2px solid ${paymentMethod === 'Stripe' ? 'var(--primary-color)' : 'var(--border-light)'}`, borderRadius: '8px', cursor: 'pointer', textAlign: 'center' }}
+                        >
+                            <div style={{ width: '14px', height: '14px', borderRadius: '50%', border: '2px solid var(--primary-color)', background: paymentMethod === 'Stripe' ? 'var(--primary-color)' : 'transparent', display: 'inline-block', marginRight: '8px', verticalAlign: 'middle' }}></div>
+                            <span style={{ verticalAlign: 'middle', fontWeight: paymentMethod === 'Stripe' ? 600 : 400 }}>Stripe (Card)</span>
+                        </div>
+                        <div 
+                            onClick={() => setPaymentMethod('COD')} 
+                            style={{ flex: 1, padding: '15px', border: `2px solid ${paymentMethod === 'COD' ? 'var(--primary-color)' : 'var(--border-light)'}`, borderRadius: '8px', cursor: 'pointer', textAlign: 'center' }}
+                        >
+                            <div style={{ width: '14px', height: '14px', borderRadius: '50%', border: '2px solid var(--primary-color)', background: paymentMethod === 'COD' ? 'var(--primary-color)' : 'transparent', display: 'inline-block', marginRight: '8px', verticalAlign: 'middle' }}></div>
+                            <span style={{ verticalAlign: 'middle', fontWeight: paymentMethod === 'COD' ? 600 : 400 }}>Cash on Delivery</span>
+                        </div>
+                    </div>
+                </div>
+
+
                 <button
                     type="submit"
                     className="btn-primary"
                     disabled={loading}
-                    style={{ width: '100%', justifyContent: 'center', padding: '15px', fontSize: 16 }}
+                    style={{ width: '100%', justifyContent: 'center', padding: '15px', fontSize: 16, marginTop: '20px' }}
                 >
-                    {loading ? 'Processing...' : 'Proceed to Payment →'}
+                    {loading ? 'Processing...' : (paymentMethod === 'COD' ? 'Place Order' : 'Proceed to Payment →')}
                 </button>
             </form>
 
@@ -235,7 +267,7 @@ const PlaceOrder = () => {
                     </div>
 
                     <p style={{ textAlign: 'center', fontSize: 12, color: 'var(--text-muted)', marginTop: 16, display: 'flex', alignItems: 'center', gap: 6, justifyContent: 'center' }}>
-                        🔒 Secured by Stripe · SSL encrypted
+                        {paymentMethod === 'Stripe' ? '🔒 Secured by Stripe · SSL encrypted' : '🚚 Pay with cash upon delivery'}
                     </p>
                 </div>
             </div>
