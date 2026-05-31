@@ -59,7 +59,19 @@ const placeOrder = async (req, res) => {
 };
 
 const verifyOrder = async (req, res) => {
-
+    const { orderId, success } = req.body;
+    try {
+        if (success === "true") {
+            await supabase.from("orders").update({ payment: true }).eq("id", orderId);
+            res.json({ success: true, message: "Payment confirmed" });
+        } else {
+            await supabase.from("orders").delete().eq("id", orderId);
+            res.json({ success: false, message: "Payment cancelled" });
+        }
+    } catch (error) {
+        console.error("Verify order error:", error);
+        res.json({ success: false, message: "Error verifying payment" });
+    }
 };
 
 const userOrders = async (req, res) => { };
