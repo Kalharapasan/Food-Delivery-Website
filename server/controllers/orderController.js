@@ -58,7 +58,9 @@ const placeOrder = async (req, res) => {
     }
 };
 
-const verifyOrder = async (req, res) => { };
+const verifyOrder = async (req, res) => {
+
+};
 
 const userOrders = async (req, res) => { };
 
