@@ -50,6 +50,8 @@ const placeOrder = async (req, res) => {
             metadata: { orderId: newOrder.id },
         });
 
+        res.json({ success: true, session_url: session.url });
+
     } catch (error) {
 
     }
