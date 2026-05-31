@@ -48,15 +48,18 @@ const food_list = [
 const seedDatabase = async () => {
   if (!process.env.SUPABASE_URL || !supabaseKey) {
     console.error("Error: Missing SUPABASE_URL or a Supabase API key in your .env file!");
+    process.exit(1);
     return;
   }
 
   if (!process.env.SUPABASE_SERVICE_ROLE_KEY) {
     console.error("Error: SUPABASE_SERVICE_ROLE_KEY is required to seed because row-level security blocks anon inserts.");
+    process.exit(1);
       return;
   }
 
   console.log("Starting database seed...");
+  let hadErrors = false;
 
   // Seed Admin User
   console.log("Seeding default admin user...");
@@ -76,6 +79,7 @@ const seedDatabase = async () => {
 
     if (adminError) {
       console.error("❌ Error creating admin user:", adminError.message);
+      hadErrors = true;
     } else {
       console.log("✅ Created default admin user (admin@example.com / admin1234)");
     }
@@ -91,6 +95,7 @@ const seedDatabase = async () => {
       const { data, error } = await supabase.from('foods').insert([food]);
       if (error) {
         console.error(`❌ Error inserting ${food.name}:`, error.message);
+        hadErrors = true;
       } else {
         console.log(`✅ Inserted: ${food.name}`);
       }
@@ -99,8 +104,13 @@ const seedDatabase = async () => {
     }
   }
   
+  if (hadErrors) {
+    console.error("Seed finished with errors. Fix the Supabase credentials/policies and run it again.");
+    process.exit(1);
+  }
+
   console.log("🎉 Database seed complete!");
-  process.exit();
+  process.exit(0);
 };
 
 seedDatabase();
