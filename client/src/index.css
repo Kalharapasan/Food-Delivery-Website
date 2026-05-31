@@ -499,6 +499,7 @@ input, textarea { font-family: 'DM Sans', sans-serif; outline: none; }
   overflow-x: auto;
   padding-bottom: 8px;
   scrollbar-width: none;
+  justify-content: center;
 }
 
 .explore-menu-list::-webkit-scrollbar { display: none; }
